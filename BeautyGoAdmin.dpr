@@ -7,7 +7,8 @@ uses
   Vcl.Themes,
   Vcl.Styles,
   uCategoria in 'src\model\uCategoria.pas',
-  IRepositorio in 'src\interfaces\IRepositorio.pas';
+  IRepositorio in 'src\interfaces\IRepositorio.pas',
+  uCategoriaDAO in 'src\dao\uCategoriaDAO.pas';
 
 {$R *.res}
 
