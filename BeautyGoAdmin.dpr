@@ -5,7 +5,9 @@ uses
   uFrmMain in 'src\forms\uFrmMain.pas' {frmMain},
   uDmConexao in 'src\connection\uDmConexao.pas' {dmConexao: TDataModule},
   Vcl.Themes,
-  Vcl.Styles;
+  Vcl.Styles,
+  uCategoria in 'src\model\uCategoria.pas',
+  IRepositorio in 'src\interfaces\IRepositorio.pas';
 
 {$R *.res}
 
