@@ -13,7 +13,7 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   TStyleManager.TrySetStyle('Windows11 Dark');
-  Application.CreateForm(TfrmMain, frmMain);
   Application.CreateForm(TdmConexao, dmConexao);
+  Application.CreateForm(TfrmMain, frmMain);
   Application.Run;
 end.
