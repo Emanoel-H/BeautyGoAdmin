@@ -13,7 +13,7 @@ object frmMain: TfrmMain
   Font.Name = 'Segoe UI'
   Font.Style = []
   TextHeight = 15
-  object PageControl1: TPageControl
+  object pcMain: TPageControl
     Left = 8
     Top = 8
     Width = 249

@@ -8,7 +8,7 @@ uses
 
 type
   TfrmMain = class(TForm)
-    PageControl1: TPageControl;
+    pcMain: TPageControl;
   private
     { Private declarations }
   public
