@@ -1,0 +1,15 @@
+# Arquivos compilados e binários
+*.dcu
+*.ddp
+*.~*
+*.local
+*.identcache
+*.tvsconfig
+*.stat
+
+# Pastas de output que configuramos no Delphi
+/bin/
+/dcu/
+
+# Arquivos de histórico do Delphi
+__history/
