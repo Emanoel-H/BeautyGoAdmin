@@ -1,15 +1,27 @@
-# Arquivos compilados e binários
+# Project-specific binaries and history
+__history/
+__recovery/
 *.dcu
-*.ddp
 *.~*
 *.local
 *.identcache
+*.projdata
 *.tvsconfig
 *.stat
 
-# Pastas de output que configuramos no Delphi
-/bin/
-/dcu/
+# Build Outputs
+Win32/
+Win64/
+Android/
+Android64/
+iOSDevice64/
+iOSSimARM64/
+OSX64/
+OSXARM64/
 
-# Arquivos de histórico do Delphi
-__history/
+# User-specific settings
+*.dsk
+*.dof
+*.cfg
+*.res
+config.ini
