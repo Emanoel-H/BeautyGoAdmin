@@ -15,6 +15,7 @@ type
     procedure Deletar(AEntidade: TuCategoria);
     function BuscarPorCodigo(ACodigo: string): TuCategoria;
     function Listar(AEntidade: TuCategoria): TFDQuery;
+    function Existe(AEntidade: TuCategoria): boolean;
   end;
 
 implementation
@@ -103,6 +104,29 @@ begin
   finally
     fSet.Close;
     fSet.Free;
+  end;
+end;
+
+function CategoriaDAO.Existe(AEntidade: TuCategoria): boolean;
+var
+  sSQL: string;
+  fGet: TFDQuery;
+begin
+  fGet := TFDQuery.Create(nil);
+  try
+    fGet.Connection := dmConexao.FDConnection;
+
+    sSQL := 'SELECT id from categorias_servico WHERE id = '''+AEntidade.Id.ToString+''' ';
+
+    fGet.Close;
+    fGet.SQL.Clear;
+    fGet.SQL.Text := sSQL;
+    fGet.Open;
+
+    Result := fGet.IsEmpty;
+  finally
+    fGet.Close;
+    fGet.Free;
   end;
 end;
 
