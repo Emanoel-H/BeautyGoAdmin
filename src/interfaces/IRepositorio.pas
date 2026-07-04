@@ -2,7 +2,7 @@ unit IRepositorio;
 
 interface
 uses
-  System.SysUtils, System.Generics.Collections, FireDAC.Comp.Client;
+  System.SysUtils, FireDAC.Comp.Client;
 type
   Repositorio<T: class> = interface
     procedure Inserir(AEntidade: T);
