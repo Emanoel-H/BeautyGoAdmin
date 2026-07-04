@@ -39,18 +39,26 @@ begin
     Abort;
   end;
 
-
   FDAO.Deletar(ACategoria);
 end;
 
 function CategoriaService.Listar(ACategoria: TuCategoria): TFDQuery;
 begin
-
+  Result := FDAO.Listar(ACategoria);
 end;
 
 procedure CategoriaService.Salvar(ACategoria: TuCategoria);
 begin
+  if ACategoria.Nome = '' then
+  begin
+    Application.MessageBox('A Categoria deve possuir um nome!', 'Atenção', MB_OK + MB_ICONERROR);
+    Abort;
+  end;
 
+  if ACategoria.Id = 0 then
+    FDAO.Inserir(ACategoria)
+  else
+    FDAO.Atualizar(ACategoria);
 end;
 
 end.
