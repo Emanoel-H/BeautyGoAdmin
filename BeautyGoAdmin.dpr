@@ -10,7 +10,7 @@ uses
   IRepositorio in 'src\interfaces\IRepositorio.pas',
   uCategoriaDAO in 'src\dao\uCategoriaDAO.pas',
   uCategoriaService in 'src\services\uCategoriaService.pas',
-  uFrmCategoriasRegistrar in 'src\forms\uFrmCategoriasRegistrar.pas' {Form1};
+  uFrmCategoriasRegistrar in 'src\forms\uFrmCategoriasRegistrar.pas' {frmCategoriasRegistrar};
 
 {$R *.res}
 
@@ -20,6 +20,6 @@ begin
   TStyleManager.TrySetStyle('Windows11 Dark');
   Application.CreateForm(TdmConexao, dmConexao);
   Application.CreateForm(TfrmMain, frmMain);
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TfrmCategoriasRegistrar, frmCategoriasRegistrar);
   Application.Run;
 end.

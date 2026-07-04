@@ -1,7 +1,9 @@
-object Form1: TForm1
+object frmCategoriasRegistrar: TfrmCategoriasRegistrar
   Left = 0
   Top = 0
-  Caption = 'Form1'
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'Categorias'
   ClientHeight = 442
   ClientWidth = 628
   Color = clBtnFace
@@ -10,5 +12,6 @@ object Form1: TForm1
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poScreenCenter
   TextHeight = 15
 end
