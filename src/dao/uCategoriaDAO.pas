@@ -31,7 +31,7 @@ begin
     fSet.Connection := dmConexao.FDConnection;
 
     sSQL := 'UPDATE categorias_servico SET            '+
-            'nome = '''+AEntidade.Nome+'''            '+
+            'nome = '''+AEntidade.Nome+''',           '+
             'descricao = '''+AEntidade.Descricao+'''  '+
             'WHERE id = '''+AEntidade.Id.ToString+''' ';
 
