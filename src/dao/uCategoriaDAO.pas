@@ -56,8 +56,24 @@ begin
 end;
 
 procedure CategoriaDAO.Deletar(AEntidade: TuCategoria);
+var
+  sSQL: string;
+  fSet: TFDQuery;
 begin
+  fSet := TFDQuery.Create(nil);
+  try
+    fSet.Connection := dmConexao.FDConnection;
 
+    sSQL := 'DELETE categorias_servico WHERE id = '''+AEntidade.Id.ToString+''' ';
+
+    fSet.Close;
+    fSet.SQL.Clear;
+    fSet.SQL.Text := sSQL;
+    fSet.ExecSQL;
+  finally
+    fSet.Close;
+    fSet.Free;
+  end;
 end;
 
 procedure CategoriaDAO.Inserir(AEntidade: TuCategoria);
