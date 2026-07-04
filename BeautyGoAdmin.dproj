@@ -115,6 +115,7 @@
         <DCCReference Include="src\model\uCategoria.pas"/>
         <DCCReference Include="src\interfaces\IRepositorio.pas"/>
         <DCCReference Include="src\dao\uCategoriaDAO.pas"/>
+        <DCCReference Include="src\services\uCategoriaService.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

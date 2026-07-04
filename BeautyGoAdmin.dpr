@@ -8,7 +8,8 @@ uses
   Vcl.Styles,
   uCategoria in 'src\model\uCategoria.pas',
   IRepositorio in 'src\interfaces\IRepositorio.pas',
-  uCategoriaDAO in 'src\dao\uCategoriaDAO.pas';
+  uCategoriaDAO in 'src\dao\uCategoriaDAO.pas',
+  uCategoriaService in 'src\services\uCategoriaService.pas';
 
 {$R *.res}
 
