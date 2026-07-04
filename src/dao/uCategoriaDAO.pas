@@ -123,7 +123,8 @@ begin
   try
     fGet.Connection := FConexao;
 
-    sSQL := 'SELECT id from categorias_servico WHERE id = '''+AEntidade.Id.ToString+''' ';
+    sSQL :=
+    'SELECT id FROM servicos_oferecidos WHERE categoria_id = '''+AEntidade.Id.ToString+''' ';
 
     fGet.Close;
     fGet.SQL.Clear;
