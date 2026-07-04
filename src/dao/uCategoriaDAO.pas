@@ -61,7 +61,25 @@ begin
 end;
 
 procedure CategoriaDAO.Inserir(AEntidade: TuCategoria);
+var
+  sSQL: string;
+  fSet: TFDQuery;
 begin
+  fSet := TFDQuery.Create(nil);
+  try
+    fSet.Connection := dmConexao.FDConnection;
+
+    sSQL := 'INSERT INTO categorias_servico(nome, descricao)'+
+            'VALUES('''+AEntidade.Nome+''', '''+AEntidade.Descricao+''')';
+
+    fSet.Close;
+    fSet.SQL.Clear;
+    fSet.SQL.Text := sSQL;
+    fSet.ExecSQL;
+  finally
+    fSet.Close;
+    fSet.Free;
+  end;
 
 end;
 
