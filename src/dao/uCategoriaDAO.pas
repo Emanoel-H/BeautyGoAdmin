@@ -31,7 +31,7 @@ var
 begin
   fSet := TFDQuery.Create(nil);
   try
-    fSet.Connection := dmConexao.FDConnection;
+    fSet.Connection := FConexao;
 
     sSQL := 'UPDATE categorias_servico SET            '+
             'nome = '''+AEntidade.Nome+''',           '+
@@ -56,7 +56,7 @@ var
 begin
   fGet := TFDQuery.Create(nil);
   try
-    fGet.Connection := dmConexao.FDConnection;
+    fGet.Connection := FConexao;
 
     sSQL := 'SELECT                       '+
             'id,                          '+
@@ -100,7 +100,7 @@ var
 begin
   fSet := TFDQuery.Create(nil);
   try
-    fSet.Connection := dmConexao.FDConnection;
+    fSet.Connection := FConexao;
 
     sSQL := 'DELETE categorias_servico WHERE id = '''+AEntidade.Id.ToString+''' ';
 
@@ -121,7 +121,7 @@ var
 begin
   fGet := TFDQuery.Create(nil);
   try
-    fGet.Connection := dmConexao.FDConnection;
+    fGet.Connection := FConexao;
 
     sSQL := 'SELECT id from categorias_servico WHERE id = '''+AEntidade.Id.ToString+''' ';
 
@@ -144,7 +144,7 @@ var
 begin
   fSet := TFDQuery.Create(nil);
   try
-    fSet.Connection := dmConexao.FDConnection;
+    fSet.Connection := FConexao;
 
     sSQL := 'INSERT INTO categorias_servico(nome, descricao)'+
             'VALUES('''+AEntidade.Nome+''', '''+AEntidade.Descricao+''')';
@@ -167,7 +167,7 @@ var
 begin
   fGet := TFDQuery.Create(nil);
   try
-    fGet.Connection := dmConexao.FDConnection;
+    fGet.Connection := FConexao;
 
     sSQL := 'SELECT                  '+
             'id,                     '+
