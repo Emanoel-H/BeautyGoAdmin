@@ -13,8 +13,8 @@ type
     procedure Inserir(AEntidade: TuCategoria);
     procedure Atualizar(AEntidade: TuCategoria);
     procedure Deletar(AEntidade: TuCategoria);
-    function BuscarPorId(AId: Int64): TuCategoria;
-    function BuscarTodos: TObjectList<TuCategoria>;
+    function BuscarPorCodigo(ACodigo: string): TuCategoria;
+    function Listar(AEntidade: TuCategoria): TFDQuery;
   end;
 
 implementation
@@ -45,12 +45,7 @@ begin
   end;
 end;
 
-function CategoriaDAO.BuscarPorId(AId: Int64): TuCategoria;
-begin
-
-end;
-
-function CategoriaDAO.BuscarTodos: TObjectList<TuCategoria>;
+function CategoriaDAO.BuscarPorCodigo(ACodigo: string): TuCategoria;
 begin
 
 end;
@@ -96,6 +91,11 @@ begin
     fSet.Close;
     fSet.Free;
   end;
+
+end;
+
+function CategoriaDAO.Listar(AEntidade: TuCategoria): TFDQuery;
+begin
 
 end;
 
