@@ -2,7 +2,7 @@ unit uCategoriaService;
 
 interface
 uses
-  System.SysUtils, IRepositorio, uCategoria, FireDAC.Comp.Client, uCategoriaDAO;
+  System.SysUtils, IRepositorio, uCategoria, FireDAC.Comp.Client, uCategoriaDAO, Vcl.Forms, Winapi.Windows;
 type
   CategoriaService = class
     private
@@ -33,7 +33,14 @@ end;
 
 procedure CategoriaService.Excluir(ACategoria: TuCategoria);
 begin
+  if FDAO.Existe(ACategoria) then
+  begin
+    Application.MessageBox('Esta categoria possui serviços vinculados e não pode ser excluída.', 'Erro de exclusão', MB_OK + MB_ICONERROR);
+    Abort;
+  end;
 
+
+  FDAO.Deletar(ACategoria);
 end;
 
 function CategoriaService.Listar(ACategoria: TuCategoria): TFDQuery;

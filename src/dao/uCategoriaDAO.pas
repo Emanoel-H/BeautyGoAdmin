@@ -131,7 +131,7 @@ begin
     fGet.SQL.Text := sSQL;
     fGet.Open;
 
-    Result := fGet.IsEmpty;
+    Result := not (fGet.IsEmpty);
   finally
     fGet.Close;
     fGet.Free;
