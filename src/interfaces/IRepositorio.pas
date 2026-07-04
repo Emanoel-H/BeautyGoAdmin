@@ -10,6 +10,7 @@ type
     procedure Deletar(AEntidade: T);
     function BuscarPorCodigo(ACodigo: string): T;
     function Listar(AEntidade: T): TFDQuery;
+    function Existe(AEntidade: T): boolean;
   end;
 implementation
 
