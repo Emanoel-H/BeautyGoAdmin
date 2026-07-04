@@ -8,8 +8,10 @@ uses
 type
   CategoriaDAO = class(TInterfacedObject, IRepositorio.Repositorio<TuCategoria>)
   private
-
+    FConexao: TFDConnection;
   public
+    constructor Create(AConexao: TFDConnection);
+
     procedure Inserir(AEntidade: TuCategoria);
     procedure Atualizar(AEntidade: TuCategoria);
     procedure Deletar(AEntidade: TuCategoria);
@@ -84,6 +86,11 @@ begin
     fGet.Close;
     fGet.Free;
   end;
+end;
+
+constructor CategoriaDAO.Create(AConexao: TFDConnection);
+begin
+  FConexao := AConexao;
 end;
 
 procedure CategoriaDAO.Deletar(AEntidade: TuCategoria);
