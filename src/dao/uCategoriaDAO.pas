@@ -95,8 +95,43 @@ begin
 end;
 
 function CategoriaDAO.Listar(AEntidade: TuCategoria): TFDQuery;
+var
+  sSQL: string;
+  fGet: TFDQuery;
 begin
+  fGet := TFDQuery.Create(nil);
+  try
+    fGet.Connection := dmConexao.FDConnection;
 
+    sSQL := 'SELECT                  '+
+            'id,                     '+
+            'code,                   '+
+            'nome,                   '+
+            'descricao               '+
+            'FROM categorias_servico '+
+            'WHERE 1=1               ';
+
+    if (AEntidade.Codigo <> '') then
+      sSQL := sSQL + 'AND code = '''+AEntidade.Codigo+''' ';
+
+    if (AEntidade.Nome <> '') then
+      sSQL := sSQL + 'AND nome ILIKE ''%'+AEntidade.Nome+'%'' ';
+
+    sSQL := sSQL + 'ORDER BY nome DESC';
+
+    fGet.Close;
+    fGet.SQL.Clear;
+    fGet.SQL.Text := sSQL;
+    fGet.Open;
+
+    if not fGet.IsEmpty then
+      Result := fGet;
+  except on E: Exception do
+    begin
+      fGet.Close;
+      fGet.Free;
+    end;
+  end;
 end;
 
 end.
