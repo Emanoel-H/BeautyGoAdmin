@@ -46,8 +46,43 @@ begin
 end;
 
 function CategoriaDAO.BuscarPorCodigo(ACodigo: string): TuCategoria;
+var
+  sSQL: string;
+  fGet: TFDQuery;
+  Categoria: TuCategoria;
 begin
+  fGet := TFDQuery.Create(nil);
+  try
+    fGet.Connection := dmConexao.FDConnection;
 
+    sSQL := 'SELECT                       '+
+            'id,                          '+
+            'code,                        '+
+            'nome,                        '+
+            'descricao                    '+
+            'FROM categorias_servico      '+
+            'WHERE code = '''+ACodigo+''' ';
+
+    fGet.Close;
+    fGet.SQL.Clear;
+    fGet.SQL.Text := sSQL;
+    fGet.Open;
+
+    if not fGet.IsEmpty then
+    begin
+      Categoria           := TuCategoria.Create;
+      Categoria.Id        := fGet.FieldByName('id').AsInteger;
+      Categoria.Nome      := fGet.FieldByName('nome').AsString;
+      Categoria.Codigo    := fGet.FieldByName('codigo').AsString;
+      Categoria.Descricao := fGet.FieldByName('descricao').AsString;
+
+      Result := Categoria;
+    end;
+
+  finally
+    fGet.Close;
+    fGet.Free;
+  end;
 end;
 
 procedure CategoriaDAO.Deletar(AEntidade: TuCategoria);
