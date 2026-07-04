@@ -9,10 +9,12 @@ type
     private
       iId: Int64;
       sNome: string;
+      sCodigo: string;
       sDescricao: string;
     public
       property Id: Int64 read iId write iId;
       property Nome: string read sNome write sNome;
+      property Codigo: string read sCodigo write sCodigo;
       property Descricao: string read sDescricao write sDescricao;
   end;
 implementation
