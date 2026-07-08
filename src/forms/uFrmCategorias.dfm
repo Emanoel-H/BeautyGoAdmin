@@ -112,6 +112,7 @@ object frmCategoriasRegistrar: TfrmCategoriasRegistrar
       ImageName = 'checkmark 72'
       ParentShowHint = False
       ShowHint = True
+      OnClick = btnConfirmarClick
     end
   end
   object pnPrincipal: TPanel

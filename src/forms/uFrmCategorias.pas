@@ -30,6 +30,7 @@ type
     procedure btnDeletarClick(Sender: TObject);
     procedure btnAtualizarClick(Sender: TObject);
     procedure btnInserirClick(Sender: TObject);
+    procedure btnConfirmarClick(Sender: TObject);
   private
     Service: CategoriaService;
     Categoria: TuCategoria;
@@ -56,6 +57,14 @@ procedure TfrmCategoriasRegistrar.btnCancelarClick(Sender: TObject);
 begin
   estadoInicial;
   limparCampos;
+end;
+
+procedure TfrmCategoriasRegistrar.btnConfirmarClick(Sender: TObject);
+begin
+  Categoria.Nome      := trim(edtNome.Text);
+  Categoria.Descricao := trim(mmDescricao.Text);
+
+  Service.Salvar(Categoria);
 end;
 
 procedure TfrmCategoriasRegistrar.btnDeletarClick(Sender: TObject);
