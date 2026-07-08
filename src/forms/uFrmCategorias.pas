@@ -11,25 +11,26 @@ type
   TfrmCategoriasRegistrar = class(TForm)
     tbCategorias: TToolBar;
     btnVoltar: TToolButton;
-    btnCancel: TToolButton;
-    btnDelete: TToolButton;
-    btnUpdate: TToolButton;
-    btnAdd: TToolButton;
-    btnSearch: TToolButton;
-    btnConfirm: TToolButton;
-    pnMain: TPanel;
+    btnCancelar: TToolButton;
+    btnDeletar: TToolButton;
+    btnAtualizar: TToolButton;
+    btnInserir: TToolButton;
+    btnPesquisar: TToolButton;
+    btnConfirmar: TToolButton;
+    pnPrincipal: TPanel;
     lblName: TLabel;
     edtName: TEdit;
     mmDescricao: TMemo;
     lblDescricao: TLabel;
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormShow(Sender: TObject);
   private
     Service: CategoriaService;
     Categoria: TuCategoria;
-    { Private declarations }
+    procedure estadoInicial;
   public
-    { Public declarations }
+    bInserir: boolean;
   end;
 
 var
@@ -38,6 +39,19 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TfrmCategoriasRegistrar.estadoInicial;
+begin
+  btnAtualizar.Enabled := false;
+  btnInserir.Enabled   := true;
+  btnDeletar.Enabled   := false;
+  btnPesquisar.Enabled := true;
+  btnCancelar.Enabled  := false;
+  btnConfirmar.Enabled := false;
+  pnPrincipal.Enabled  := false;
+
+  bInserir := false;
+end;
 
 procedure TfrmCategoriasRegistrar.FormClose(Sender: TObject;
   var Action: TCloseAction);
@@ -55,6 +69,11 @@ procedure TfrmCategoriasRegistrar.FormCreate(Sender: TObject);
 begin
   Service   := CategoriaService.Create(dmConexao.FDConnection);
   Categoria := TuCategoria.Create;
+end;
+
+procedure TfrmCategoriasRegistrar.FormShow(Sender: TObject);
+begin
+  estadoInicial;
 end;
 
 end.

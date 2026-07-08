@@ -4,8 +4,8 @@ object frmCategoriasRegistrar: TfrmCategoriasRegistrar
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Categorias'
-  ClientHeight = 442
-  ClientWidth = 628
+  ClientHeight = 260
+  ClientWidth = 484
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,11 +15,12 @@ object frmCategoriasRegistrar: TfrmCategoriasRegistrar
   Position = poScreenCenter
   OnClose = FormClose
   OnCreate = FormCreate
+  OnShow = FormShow
   TextHeight = 15
   object tbCategorias: TToolBar
     Left = 0
     Top = 0
-    Width = 628
+    Width = 484
     Height = 56
     ButtonHeight = 62
     ButtonWidth = 67
@@ -45,28 +46,28 @@ object frmCategoriasRegistrar: TfrmCategoriasRegistrar
       ParentShowHint = False
       ShowHint = True
     end
-    object btnCancel: TToolButton
+    object btnCancelar: TToolButton
       Left = 67
       Top = 0
       Hint = 'Cancel'
-      Caption = 'btnCancelar'
+      Caption = 'cancel 72'
       Enabled = False
       ImageIndex = 20
       ImageName = 'cancel 72'
       ParentShowHint = False
       ShowHint = True
     end
-    object btnDelete: TToolButton
+    object btnDeletar: TToolButton
       Left = 134
       Top = 0
       Hint = 'Delete Product'
-      Caption = 'btnDeletar'
+      Caption = 'recycle'
       ImageIndex = 10
       ImageName = 'recycle'
       ParentShowHint = False
       ShowHint = True
     end
-    object btnUpdate: TToolButton
+    object btnAtualizar: TToolButton
       Left = 201
       Top = 0
       Hint = 'Edit Product'
@@ -76,7 +77,7 @@ object frmCategoriasRegistrar: TfrmCategoriasRegistrar
       ParentShowHint = False
       ShowHint = True
     end
-    object btnAdd: TToolButton
+    object btnInserir: TToolButton
       Left = 268
       Top = 0
       Hint = 'Add Product'
@@ -86,7 +87,7 @@ object frmCategoriasRegistrar: TfrmCategoriasRegistrar
       ParentShowHint = False
       ShowHint = True
     end
-    object btnSearch: TToolButton
+    object btnPesquisar: TToolButton
       Left = 335
       Top = 0
       Hint = 'Search Products'
@@ -96,7 +97,7 @@ object frmCategoriasRegistrar: TfrmCategoriasRegistrar
       ParentShowHint = False
       ShowHint = True
     end
-    object btnConfirm: TToolButton
+    object btnConfirmar: TToolButton
       Left = 402
       Top = 0
       Hint = 'Confirm'
@@ -108,11 +109,11 @@ object frmCategoriasRegistrar: TfrmCategoriasRegistrar
       ShowHint = True
     end
   end
-  object pnMain: TPanel
+  object pnPrincipal: TPanel
     Left = 0
     Top = 56
-    Width = 628
-    Height = 386
+    Width = 484
+    Height = 204
     Align = alClient
     Color = clBlack
     Enabled = False
