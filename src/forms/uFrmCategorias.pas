@@ -10,7 +10,7 @@ uses
 type
   TfrmCategoriasRegistrar = class(TForm)
     tbCategorias: TToolBar;
-    btnBack: TToolButton;
+    btnVoltar: TToolButton;
     btnCancel: TToolButton;
     btnDelete: TToolButton;
     btnUpdate: TToolButton;

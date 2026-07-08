@@ -33,11 +33,11 @@ object frmCategoriasRegistrar: TfrmCategoriasRegistrar
     ParentFont = False
     TabOrder = 0
     ExplicitWidth = 616
-    object btnBack: TToolButton
+    object btnVoltar: TToolButton
       Left = 0
       Top = 0
       Hint = 'Back'
-      Caption = 'btnBack'
+      Caption = 'btnVoltar'
       ImageIndex = 6
       ImageName = 'back'
       ParentShowHint = False
@@ -47,7 +47,7 @@ object frmCategoriasRegistrar: TfrmCategoriasRegistrar
       Left = 67
       Top = 0
       Hint = 'Cancel'
-      Caption = 'btnCancel'
+      Caption = 'btnCancelar'
       Enabled = False
       ImageIndex = 20
       ImageName = 'cancel 72'
@@ -58,7 +58,7 @@ object frmCategoriasRegistrar: TfrmCategoriasRegistrar
       Left = 134
       Top = 0
       Hint = 'Delete Product'
-      Caption = 'btnDelete'
+      Caption = 'btnDeletar'
       ImageIndex = 10
       ImageName = 'recycle'
       ParentShowHint = False
@@ -68,7 +68,7 @@ object frmCategoriasRegistrar: TfrmCategoriasRegistrar
       Left = 201
       Top = 0
       Hint = 'Edit Product'
-      Caption = 'btnUpdate'
+      Caption = 'btnAtualizar'
       ImageIndex = 22
       ImageName = 'asterisk 72'
       ParentShowHint = False
@@ -78,7 +78,7 @@ object frmCategoriasRegistrar: TfrmCategoriasRegistrar
       Left = 268
       Top = 0
       Hint = 'Add Product'
-      Caption = 'btnAdd'
+      Caption = 'btnInserir'
       ImageIndex = 19
       ImageName = 'plus 72'
       ParentShowHint = False
@@ -88,7 +88,7 @@ object frmCategoriasRegistrar: TfrmCategoriasRegistrar
       Left = 335
       Top = 0
       Hint = 'Search Products'
-      Caption = 'btnSearch'
+      Caption = 'btnPesquisar'
       ImageIndex = 24
       ImageName = 'search 72'
       ParentShowHint = False
@@ -98,7 +98,7 @@ object frmCategoriasRegistrar: TfrmCategoriasRegistrar
       Left = 402
       Top = 0
       Hint = 'Confirm'
-      Caption = 'btnConfirm'
+      Caption = 'btnConfirmar'
       Enabled = False
       ImageIndex = 11
       ImageName = 'checkmark 72'
