@@ -23,6 +23,7 @@ type
     mmDescricao: TMemo;
     lblDescricao: TLabel;
     procedure FormCreate(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     Service: CategoriaService;
     Categoria: TuCategoria;
@@ -37,6 +38,18 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TfrmCategoriasRegistrar.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+  try
+    Categoria.Free;
+    Service.Free;
+  finally
+    Action                 := caFree;
+    frmCategoriasRegistrar := nil;
+  end;
+end;
 
 procedure TfrmCategoriasRegistrar.FormCreate(Sender: TObject);
 begin
