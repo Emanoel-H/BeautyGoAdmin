@@ -79,6 +79,7 @@ object frmCategoriasRegistrar: TfrmCategoriasRegistrar
       ImageName = 'asterisk 72'
       ParentShowHint = False
       ShowHint = True
+      OnClick = btnAtualizarClick
     end
     object btnInserir: TToolButton
       Left = 268
@@ -89,6 +90,7 @@ object frmCategoriasRegistrar: TfrmCategoriasRegistrar
       ImageName = 'plus 72'
       ParentShowHint = False
       ShowHint = True
+      OnClick = btnInserirClick
     end
     object btnPesquisar: TToolButton
       Left = 335

@@ -28,6 +28,8 @@ type
     procedure btnVoltarClick(Sender: TObject);
     procedure btnCancelarClick(Sender: TObject);
     procedure btnDeletarClick(Sender: TObject);
+    procedure btnAtualizarClick(Sender: TObject);
+    procedure btnInserirClick(Sender: TObject);
   private
     Service: CategoriaService;
     Categoria: TuCategoria;
@@ -45,6 +47,11 @@ implementation
 
 {$R *.dfm}
 
+procedure TfrmCategoriasRegistrar.btnAtualizarClick(Sender: TObject);
+begin
+  estadoEdicao;
+end;
+
 procedure TfrmCategoriasRegistrar.btnCancelarClick(Sender: TObject);
 begin
   estadoInicial;
@@ -58,6 +65,11 @@ begin
     Service.Excluir(Categoria);
     estadoInicial;  
   end;
+end;
+
+procedure TfrmCategoriasRegistrar.btnInserirClick(Sender: TObject);
+begin
+  estadoEdicao;
 end;
 
 procedure TfrmCategoriasRegistrar.btnVoltarClick(Sender: TObject);
