@@ -10,7 +10,7 @@ uses
   IRepositorio in 'src\interfaces\IRepositorio.pas',
   uCategoriaDAO in 'src\dao\uCategoriaDAO.pas',
   uCategoriaService in 'src\services\uCategoriaService.pas',
-  uFrmCategoriasRegistrar in 'src\forms\uFrmCategoriasRegistrar.pas' {frmCategoriasRegistrar};
+  uFrmCategorias in 'src\forms\uFrmCategorias.pas' {frmCategoriasRegistrar};
 
 {$R *.res}
 

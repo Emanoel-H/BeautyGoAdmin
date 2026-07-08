@@ -116,7 +116,7 @@
         <DCCReference Include="src\interfaces\IRepositorio.pas"/>
         <DCCReference Include="src\dao\uCategoriaDAO.pas"/>
         <DCCReference Include="src\services\uCategoriaService.pas"/>
-        <DCCReference Include="src\forms\uFrmCategoriasRegistrar.pas">
+        <DCCReference Include="src\forms\uFrmCategorias.pas">
             <Form>frmCategoriasRegistrar</Form>
             <FormType>dfm</FormType>
         </DCCReference>
