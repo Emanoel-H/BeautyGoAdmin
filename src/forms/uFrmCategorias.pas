@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.ToolWin, Vcl.StdCtrls,
-  Vcl.ExtCtrls, uDmConexao, uCategoriaService;
+  Vcl.ExtCtrls, uDmConexao, uCategoriaService, uCategoria;
 
 type
   TfrmCategoriasRegistrar = class(TForm)
@@ -25,6 +25,7 @@ type
     procedure FormCreate(Sender: TObject);
   private
     Service: CategoriaService;
+    Categoria: TuCategoria;
     { Private declarations }
   public
     { Public declarations }
