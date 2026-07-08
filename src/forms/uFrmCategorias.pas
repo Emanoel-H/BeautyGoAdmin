@@ -32,6 +32,7 @@ type
     Service: CategoriaService;
     Categoria: TuCategoria;
     procedure estadoInicial;
+    procedure estadoEdicao;
     procedure limparCampos;
   public
     bInserir: boolean;
@@ -62,6 +63,17 @@ end;
 procedure TfrmCategoriasRegistrar.btnVoltarClick(Sender: TObject);
 begin
   Close;
+end;
+
+procedure TfrmCategoriasRegistrar.estadoEdicao;
+begin
+  btnAtualizar.Enabled := false;
+  btnInserir.Enabled   := false;
+  btnDeletar.Enabled   := false;
+  btnPesquisar.Enabled := false;
+  btnCancelar.Enabled  := true;
+  btnConfirmar.Enabled := true;
+  pnPrincipal.Enabled  := true;
 end;
 
 procedure TfrmCategoriasRegistrar.estadoInicial;
