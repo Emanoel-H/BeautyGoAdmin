@@ -40,11 +40,8 @@ implementation
 
 procedure TfrmCategoriasRegistrar.FormCreate(Sender: TObject);
 begin
-  try
-
-  finally
-
-  end;
+  Service   := CategoriaService.Create(dmConexao.FDConnection);
+  Categoria := TuCategoria.Create;
 end;
 
 end.
