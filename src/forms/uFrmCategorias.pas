@@ -23,6 +23,8 @@ type
     mmDescricao: TMemo;
     lblDescricao: TLabel;
   private
+    Service: CategoriaService;
+    Conexao: TDmConexao;
     { Private declarations }
   public
     { Public declarations }
