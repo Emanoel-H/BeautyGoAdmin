@@ -39,6 +39,7 @@ type
     procedure limparCampos;
   public
     bInserir: boolean;
+    procedure recebeCategoria(ACategoria: TuCategoria);
   end;
 
 var
@@ -139,6 +140,16 @@ procedure TfrmCategoriasRegistrar.limparCampos;
 begin
   edtNome.Text := '';
   mmDescricao.Clear;
+end;
+
+procedure TfrmCategoriasRegistrar.recebeCategoria(ACategoria: TuCategoria);
+begin
+  Categoria.Id        := ACategoria.Id;
+  Categoria.Nome      := ACategoria.Nome;
+  Categoria.Descricao := ACategoria.Descricao;
+
+  edtNome.Text     := Categoria.Nome;
+  mmDescricao.Text := Categoria.Descricao;
 end;
 
 end.
