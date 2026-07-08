@@ -30,6 +30,7 @@ type
     Service: CategoriaService;
     Categoria: TuCategoria;
     procedure estadoInicial;
+    procedure limparCampos;
   public
     bInserir: boolean;
   end;
@@ -80,6 +81,12 @@ end;
 procedure TfrmCategoriasRegistrar.FormShow(Sender: TObject);
 begin
   estadoInicial;
+end;
+
+procedure TfrmCategoriasRegistrar.limparCampos;
+begin
+  edtName.Text := '';
+  mmDescricao.Clear;
 end;
 
 end.
