@@ -121,7 +121,7 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="src\forms\uFrmCategoriasPesquisar.pas">
-            <Form>Form1</Form>
+            <Form>frmCategoriasPesquisar</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Base">

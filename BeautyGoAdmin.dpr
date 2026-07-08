@@ -11,7 +11,7 @@ uses
   uCategoriaDAO in 'src\dao\uCategoriaDAO.pas',
   uCategoriaService in 'src\services\uCategoriaService.pas',
   uFrmCategorias in 'src\forms\uFrmCategorias.pas' {frmCategoriasRegistrar},
-  uFrmCategoriasPesquisar in 'src\forms\uFrmCategoriasPesquisar.pas' {Form1};
+  uFrmCategoriasPesquisar in 'src\forms\uFrmCategoriasPesquisar.pas' {frmCategoriasPesquisar};
 
 {$R *.res}
 
@@ -21,6 +21,6 @@ begin
   TStyleManager.TrySetStyle('Windows11 Dark');
   Application.CreateForm(TdmConexao, dmConexao);
   Application.CreateForm(TfrmMain, frmMain);
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TfrmCategoriasPesquisar, frmCategoriasPesquisar);
   Application.Run;
 end.
