@@ -20,7 +20,8 @@ type
     pnMain: TPanel;
     lblName: TLabel;
     edtName: TEdit;
-    Memo1: TMemo;
+    mmDescricao: TMemo;
+    lblDescricao: TLabel;
   private
     { Private declarations }
   public

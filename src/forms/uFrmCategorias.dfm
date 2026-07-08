@@ -121,9 +121,25 @@ object frmCategoriasRegistrar: TfrmCategoriasRegistrar
     object lblName: TLabel
       Left = 14
       Top = 14
-      Width = 40
+      Width = 41
       Height = 17
-      Caption = 'Name:'
+      Caption = 'Nome:'
+      Color = clWhite
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      Font.Quality = fqClearType
+      ParentColor = False
+      ParentFont = False
+    end
+    object lblDescricao: TLabel
+      Left = 14
+      Top = 60
+      Width = 63
+      Height = 17
+      Caption = 'Descri'#231#227'o:'
       Color = clWhite
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
@@ -149,13 +165,11 @@ object frmCategoriasRegistrar: TfrmCategoriasRegistrar
       ParentFont = False
       TabOrder = 0
     end
-    object Memo1: TMemo
-      Left = 24
-      Top = 88
-      Width = 185
+    object mmDescricao: TMemo
+      Left = 14
+      Top = 80
+      Width = 339
       Height = 89
-      Lines.Strings = (
-        'Memo1')
       TabOrder = 1
     end
   end
