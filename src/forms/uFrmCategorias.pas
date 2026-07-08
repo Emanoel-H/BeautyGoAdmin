@@ -128,7 +128,7 @@ end;
 
 procedure TfrmCategoriasRegistrar.limparCampos;
 begin
-  edtName.Text := '';
+  edtNome.Text := '';
   mmDescricao.Clear;
 end;
 
