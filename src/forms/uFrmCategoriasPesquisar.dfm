@@ -13,5 +13,6 @@ object frmCategoriasPesquisar: TfrmCategoriasPesquisar
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poScreenCenter
+  OnClose = FormClose
   TextHeight = 15
 end

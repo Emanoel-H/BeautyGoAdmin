@@ -8,6 +8,7 @@ uses
 
 type
   TfrmCategoriasPesquisar = class(TForm)
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     Categoria: TuCategoria;
     Service: CategoriaService;
@@ -21,5 +22,17 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TfrmCategoriasPesquisar.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+  try
+    Categoria.Free;
+    Service.Free;
+  finally
+    Action                 := caFree;
+    frmCategoriasPesquisar := nil;
+  end;
+end;
 
 end.
