@@ -27,6 +27,7 @@ type
     procedure FormShow(Sender: TObject);
     procedure btnVoltarClick(Sender: TObject);
     procedure btnCancelarClick(Sender: TObject);
+    procedure btnDeletarClick(Sender: TObject);
   private
     Service: CategoriaService;
     Categoria: TuCategoria;
@@ -47,6 +48,15 @@ procedure TfrmCategoriasRegistrar.btnCancelarClick(Sender: TObject);
 begin
   estadoInicial;
   limparCampos;
+end;
+
+procedure TfrmCategoriasRegistrar.btnDeletarClick(Sender: TObject);
+begin
+  if MessageBox(Handle, PChar('Tem certeza que deseja excluir essa categoria?'), PChar('Atenção!'), MB_YESNO + MB_ICONQUESTION) = IDYES then
+  begin
+    Service.Excluir(Categoria);
+    estadoInicial;  
+  end;
 end;
 
 procedure TfrmCategoriasRegistrar.btnVoltarClick(Sender: TObject);

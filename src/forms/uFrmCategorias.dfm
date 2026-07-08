@@ -68,6 +68,7 @@ object frmCategoriasRegistrar: TfrmCategoriasRegistrar
       ImageName = 'recycle'
       ParentShowHint = False
       ShowHint = True
+      OnClick = btnDeletarClick
     end
     object btnAtualizar: TToolButton
       Left = 201
