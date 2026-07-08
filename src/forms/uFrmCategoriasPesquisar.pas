@@ -9,7 +9,8 @@ uses
 type
   TfrmCategoriasPesquisar = class(TForm)
   private
-    { Private declarations }
+    Categoria: TuCategoria;
+    Service: CategoriaService;
   public
     { Public declarations }
   end;
