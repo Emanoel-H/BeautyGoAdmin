@@ -13,6 +13,7 @@ object frmCategoriasRegistrar: TfrmCategoriasRegistrar
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poScreenCenter
+  OnCreate = FormCreate
   TextHeight = 15
   object tbCategorias: TToolBar
     Left = 0

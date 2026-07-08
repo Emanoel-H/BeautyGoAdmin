@@ -22,9 +22,9 @@ type
     edtName: TEdit;
     mmDescricao: TMemo;
     lblDescricao: TLabel;
+    procedure FormCreate(Sender: TObject);
   private
     Service: CategoriaService;
-    Conexao: TDmConexao;
     { Private declarations }
   public
     { Public declarations }
@@ -36,5 +36,14 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TfrmCategoriasRegistrar.FormCreate(Sender: TObject);
+begin
+  try
+
+  finally
+
+  end;
+end;
 
 end.
