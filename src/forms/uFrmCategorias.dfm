@@ -158,7 +158,7 @@ object frmCategoriasRegistrar: TfrmCategoriasRegistrar
       ParentColor = False
       ParentFont = False
     end
-    object edtName: TEdit
+    object edtNome: TEdit
       Left = 14
       Top = 33
       Width = 341

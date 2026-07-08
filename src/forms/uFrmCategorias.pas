@@ -19,7 +19,7 @@ type
     btnConfirmar: TToolButton;
     pnPrincipal: TPanel;
     lblName: TLabel;
-    edtName: TEdit;
+    edtNome: TEdit;
     mmDescricao: TMemo;
     lblDescricao: TLabel;
     procedure FormCreate(Sender: TObject);
@@ -86,6 +86,8 @@ begin
   btnCancelar.Enabled  := true;
   btnConfirmar.Enabled := true;
   pnPrincipal.Enabled  := true;
+
+  edtNome.SetFocus;
 end;
 
 procedure TfrmCategoriasRegistrar.estadoInicial;
