@@ -26,6 +26,7 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormShow(Sender: TObject);
     procedure btnVoltarClick(Sender: TObject);
+    procedure btnCancelarClick(Sender: TObject);
   private
     Service: CategoriaService;
     Categoria: TuCategoria;
@@ -41,6 +42,12 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TfrmCategoriasRegistrar.btnCancelarClick(Sender: TObject);
+begin
+  estadoInicial;
+  limparCampos;
+end;
 
 procedure TfrmCategoriasRegistrar.btnVoltarClick(Sender: TObject);
 begin

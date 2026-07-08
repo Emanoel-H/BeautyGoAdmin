@@ -57,6 +57,7 @@ object frmCategoriasRegistrar: TfrmCategoriasRegistrar
       ImageName = 'cancel 72'
       ParentShowHint = False
       ShowHint = True
+      OnClick = btnCancelarClick
     end
     object btnDeletar: TToolButton
       Left = 134
