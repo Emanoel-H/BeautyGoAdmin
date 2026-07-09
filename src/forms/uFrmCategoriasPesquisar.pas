@@ -9,11 +9,12 @@ uses
 
 type
   TfrmCategoriasPesquisar = class(TForm)
-    ToolBar1: TToolBar;
-    btnBack: TToolButton;
+    tbCategoriasPesquisar: TToolBar;
+    btnVoltar: TToolButton;
     btnSearch: TToolButton;
     btnConfirm: TToolButton;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure btnVoltarClick(Sender: TObject);
   private
     Categoria: TuCategoria;
     Service: CategoriaService;
@@ -27,6 +28,11 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TfrmCategoriasPesquisar.btnVoltarClick(Sender: TObject);
+begin
+  Close;
+end;
 
 procedure TfrmCategoriasPesquisar.FormClose(Sender: TObject;
   var Action: TCloseAction);

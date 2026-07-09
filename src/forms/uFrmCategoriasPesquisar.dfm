@@ -15,14 +15,14 @@ object frmCategoriasPesquisar: TfrmCategoriasPesquisar
   Position = poScreenCenter
   OnClose = FormClose
   TextHeight = 15
-  object ToolBar1: TToolBar
+  object tbCategoriasPesquisar: TToolBar
     Left = 0
     Top = 0
     Width = 628
     Height = 56
     ButtonHeight = 62
     ButtonWidth = 75
-    Caption = 'ToolBar1'
+    Caption = 'tbCategoriasPesquisar'
     Color = 6765239
     Font.Charset = DEFAULT_CHARSET
     Font.Color = 6765239
@@ -34,15 +34,16 @@ object frmCategoriasPesquisar: TfrmCategoriasPesquisar
     ParentFont = False
     TabOrder = 0
     ExplicitWidth = 438
-    object btnBack: TToolButton
+    object btnVoltar: TToolButton
       Left = 0
       Top = 0
       Hint = 'Back'
-      Caption = 'btnBack'
+      Caption = 'btnVoltar'
       ImageIndex = 6
       ImageName = 'back'
       ParentShowHint = False
       ShowHint = True
+      OnClick = btnVoltarClick
     end
     object btnSearch: TToolButton
       Left = 75
