@@ -60,7 +60,7 @@ begin
 
     sSQL := 'SELECT                       '+
             'id,                          '+
-            'code,                        '+
+            'code as codigo,              '+
             'nome,                        '+
             'descricao                    '+
             'FROM categorias_servico      '+
