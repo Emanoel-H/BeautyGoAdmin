@@ -14,6 +14,7 @@ object frmCategoriasPesquisar: TfrmCategoriasPesquisar
   Font.Style = []
   Position = poScreenCenter
   OnClose = FormClose
+  OnCreate = FormCreate
   TextHeight = 15
   object tbCategoriasPesquisar: TToolBar
     Left = 0

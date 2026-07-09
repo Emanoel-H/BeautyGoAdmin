@@ -15,6 +15,7 @@ type
     btnConfirm: TToolButton;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnVoltarClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     Categoria: TuCategoria;
     Service: CategoriaService;
@@ -44,6 +45,12 @@ begin
     Action                 := caFree;
     frmCategoriasPesquisar := nil;
   end;
+end;
+
+procedure TfrmCategoriasPesquisar.FormCreate(Sender: TObject);
+begin
+  Categoria := TuCategoria.Create;
+  Service   := CategoriaService.Create(dmConexao.FDConnection);
 end;
 
 end.
