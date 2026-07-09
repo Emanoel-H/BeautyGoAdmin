@@ -15,4 +15,54 @@ object frmCategoriasPesquisar: TfrmCategoriasPesquisar
   Position = poScreenCenter
   OnClose = FormClose
   TextHeight = 15
+  object ToolBar1: TToolBar
+    Left = 0
+    Top = 0
+    Width = 628
+    Height = 56
+    ButtonHeight = 62
+    ButtonWidth = 75
+    Caption = 'ToolBar1'
+    Color = 6765239
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = 6765239
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    Images = dmConexao.VirtualImageList1
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 0
+    ExplicitWidth = 438
+    object btnBack: TToolButton
+      Left = 0
+      Top = 0
+      Hint = 'Back'
+      Caption = 'btnBack'
+      ImageIndex = 6
+      ImageName = 'back'
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object btnSearch: TToolButton
+      Left = 75
+      Top = 0
+      Hint = 'Search Products'
+      Caption = 'btnSearch'
+      ImageIndex = 24
+      ImageName = 'search 72'
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object btnConfirm: TToolButton
+      Left = 150
+      Top = 0
+      Hint = 'Confirm'
+      Caption = 'btnConfirm'
+      ImageIndex = 11
+      ImageName = 'checkmark 72'
+      ParentShowHint = False
+      ShowHint = True
+    end
+  end
 end

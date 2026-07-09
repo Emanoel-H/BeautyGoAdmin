@@ -4,10 +4,15 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uDmConexao, uCategoriaService, uCategoria;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uDmConexao, uCategoriaService, uCategoria,
+  Vcl.ComCtrls, Vcl.ToolWin;
 
 type
   TfrmCategoriasPesquisar = class(TForm)
+    ToolBar1: TToolBar;
+    btnBack: TToolButton;
+    btnSearch: TToolButton;
+    btnConfirm: TToolButton;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     Categoria: TuCategoria;
