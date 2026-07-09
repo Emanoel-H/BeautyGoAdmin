@@ -11,8 +11,8 @@ type
   TfrmCategoriasPesquisar = class(TForm)
     tbCategoriasPesquisar: TToolBar;
     btnVoltar: TToolButton;
-    btnSearch: TToolButton;
-    btnConfirm: TToolButton;
+    btnPesquisar: TToolButton;
+    btnConfirmar: TToolButton;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnVoltarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);

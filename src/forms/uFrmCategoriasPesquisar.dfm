@@ -46,21 +46,21 @@ object frmCategoriasPesquisar: TfrmCategoriasPesquisar
       ShowHint = True
       OnClick = btnVoltarClick
     end
-    object btnSearch: TToolButton
+    object btnPesquisar: TToolButton
       Left = 75
       Top = 0
       Hint = 'Search Products'
-      Caption = 'btnSearch'
+      Caption = 'btnPesquisar'
       ImageIndex = 24
       ImageName = 'search 72'
       ParentShowHint = False
       ShowHint = True
     end
-    object btnConfirm: TToolButton
+    object btnConfirmar: TToolButton
       Left = 150
       Top = 0
       Hint = 'Confirm'
-      Caption = 'btnConfirm'
+      Caption = 'btnConfirmar'
       ImageIndex = 11
       ImageName = 'checkmark 72'
       ParentShowHint = False
