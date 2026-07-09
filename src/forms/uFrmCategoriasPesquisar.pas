@@ -5,7 +5,10 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uDmConexao, uCategoriaService, uCategoria,
-  Vcl.ComCtrls, Vcl.ToolWin;
+  Vcl.ComCtrls, Vcl.ToolWin, Data.DB, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Grids,
+  Vcl.DBGrids, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
 
 type
   TfrmCategoriasPesquisar = class(TForm)
@@ -13,6 +16,18 @@ type
     btnVoltar: TToolButton;
     btnPesquisar: TToolButton;
     btnConfirmar: TToolButton;
+    dbgCategorias: TDBGrid;
+    pnRodape: TPanel;
+    pnRegistros: TPanel;
+    lblRegistros: TLabel;
+    lblQtdeRegistros: TLabel;
+    pnMenu: TPanel;
+    lblCodigo: TLabel;
+    lblNome: TLabel;
+    edtCode: TEdit;
+    edtNome: TEdit;
+    fdqCategorias: TFDQuery;
+    dsCategorias: TDataSource;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnVoltarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
