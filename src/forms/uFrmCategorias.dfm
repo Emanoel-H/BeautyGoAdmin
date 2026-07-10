@@ -35,11 +35,11 @@ object frmCategoriasRegistrar: TfrmCategoriasRegistrar
     ParentColor = False
     ParentFont = False
     TabOrder = 0
-    ExplicitWidth = 616
+    ExplicitWidth = 478
     object btnVoltar: TToolButton
       Left = 0
       Top = 0
-      Hint = 'Back'
+      Hint = 'Voltar'
       Caption = 'btnVoltar'
       ImageIndex = 6
       ImageName = 'back'
@@ -50,7 +50,7 @@ object frmCategoriasRegistrar: TfrmCategoriasRegistrar
     object btnCancelar: TToolButton
       Left = 67
       Top = 0
-      Hint = 'Cancel'
+      Hint = 'Cancelar'
       Caption = 'cancel 72'
       Enabled = False
       ImageIndex = 20
@@ -62,7 +62,7 @@ object frmCategoriasRegistrar: TfrmCategoriasRegistrar
     object btnDeletar: TToolButton
       Left = 134
       Top = 0
-      Hint = 'Delete Product'
+      Hint = 'Deletar'
       Caption = 'recycle'
       ImageIndex = 10
       ImageName = 'recycle'
@@ -73,7 +73,7 @@ object frmCategoriasRegistrar: TfrmCategoriasRegistrar
     object btnAtualizar: TToolButton
       Left = 201
       Top = 0
-      Hint = 'Edit Product'
+      Hint = 'Editar'
       Caption = 'btnAtualizar'
       ImageIndex = 22
       ImageName = 'asterisk 72'
@@ -84,7 +84,7 @@ object frmCategoriasRegistrar: TfrmCategoriasRegistrar
     object btnInserir: TToolButton
       Left = 268
       Top = 0
-      Hint = 'Add Product'
+      Hint = 'Inserir'
       Caption = 'btnInserir'
       ImageIndex = 19
       ImageName = 'plus 72'
@@ -95,7 +95,7 @@ object frmCategoriasRegistrar: TfrmCategoriasRegistrar
     object btnPesquisar: TToolButton
       Left = 335
       Top = 0
-      Hint = 'Search Products'
+      Hint = 'Pesquisar'
       Caption = 'btnPesquisar'
       ImageIndex = 24
       ImageName = 'search 72'
@@ -105,7 +105,7 @@ object frmCategoriasRegistrar: TfrmCategoriasRegistrar
     object btnConfirmar: TToolButton
       Left = 402
       Top = 0
-      Hint = 'Confirm'
+      Hint = 'Confirmar'
       Caption = 'btnConfirmar'
       Enabled = False
       ImageIndex = 11
@@ -125,8 +125,8 @@ object frmCategoriasRegistrar: TfrmCategoriasRegistrar
     Enabled = False
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 616
-    ExplicitHeight = 368
+    ExplicitWidth = 478
+    ExplicitHeight = 195
     object lblName: TLabel
       Left = 14
       Top = 14
