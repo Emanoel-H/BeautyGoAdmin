@@ -24,7 +24,7 @@ type
     pnMenu: TPanel;
     lblCodigo: TLabel;
     lblNome: TLabel;
-    edtCode: TEdit;
+    edtCodigo: TEdit;
     edtNome: TEdit;
     fdqCategorias: TFDQuery;
     dsCategorias: TDataSource;
@@ -32,6 +32,9 @@ type
     procedure btnVoltarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure edtCodigoKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+    procedure edtCodigoKeyPress(Sender: TObject; var Key: Char);
   private
     Categoria: TuCategoria;
     Service: CategoriaService;
@@ -49,6 +52,15 @@ implementation
 procedure TfrmCategoriasPesquisar.btnVoltarClick(Sender: TObject);
 begin
   Close;
+end;
+
+procedure TfrmCategoriasPesquisar.edtCodigoKeyPress(Sender: TObject;
+  var Key: Char);
+begin
+  if not (Key in ['0'..'9', #8, #13]) then
+  begin
+    Key := #0;
+  end;
 end;
 
 procedure TfrmCategoriasPesquisar.FormClose(Sender: TObject;

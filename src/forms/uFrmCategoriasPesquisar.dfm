@@ -236,7 +236,7 @@ object frmCategoriasPesquisar: TfrmCategoriasPesquisar
       ParentColor = False
       ParentFont = False
     end
-    object edtCode: TEdit
+    object edtCodigo: TEdit
       Left = 6
       Top = 25
       Width = 60
@@ -252,6 +252,7 @@ object frmCategoriasPesquisar: TfrmCategoriasPesquisar
       MaxLength = 10
       ParentFont = False
       TabOrder = 0
+      OnKeyPress = edtCodigoKeyPress
     end
     object edtNome: TEdit
       Left = 88
