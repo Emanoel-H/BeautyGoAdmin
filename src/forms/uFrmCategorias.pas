@@ -87,7 +87,7 @@ procedure TfrmCategoriasRegistrar.btnPesquisarClick(Sender: TObject);
 begin
   if frmCategoriasPesquisar = nil then
   begin
-    frmCategoriasPesquisar := FrmCategoriasPesquisar.Create(Self);
+    frmCategoriasPesquisar := TFrmCategoriasPesquisar.Create(Self);
     frmCategoriasPesquisar.ShowModal;
     estadoPesquisar;
   end;

@@ -3,14 +3,14 @@ object dmConexao: TdmConexao
   Width = 1000
   PixelsPerInch = 120
   object FDPhysPgDriverLink1: TFDPhysPgDriverLink
-    VendorLib = 'C:\Users\henri\Desktop\Delphi Mastery\Win32\Debug\libpq 3.dll'
+    VendorLib = 'C:\Users\henri\Desktop\BeautyGoAdmin\bin\Win32\Debug\libpq 3.dll'
     Left = 480
     Top = 360
   end
   object FDConnection: TFDConnection
     Params.Strings = (
       'DriverID=PG'
-      'Database=db_ace_DelphiMastery')
+      'Port=5432')
     LoginPrompt = False
     BeforeConnect = FDConnectionBeforeConnect
     Left = 624

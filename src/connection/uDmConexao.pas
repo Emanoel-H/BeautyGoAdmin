@@ -47,9 +47,9 @@ begin
 
   Ini := TIniFile.Create(sPath);
   try
-    FDConnection.Params.Values['Server'] := Ini.ReadString('Database', 'Server', 'localhost');
-    FDConnection.Params.Values['Port'] := Ini.ReadString('Database', 'Port', '5432');
-    FDConnection.Params.Values['UserName'] := Ini.ReadString('Database', 'User', '');
+    FDConnection.Params.Values['Server']   := Ini.ReadString('Database', 'Server', 'localhost');
+    FDConnection.Params.Values['Port']     := Ini.ReadString('Database', 'Port', '5432');
+    FDConnection.Params.Values['User_Name'] := Ini.ReadString('Database', 'User', '');
     FDConnection.Params.Values['Password'] := Ini.ReadString('Database', 'Password', '');
     FDConnection.Params.Values['Database'] := Ini.ReadString('Database', 'Database', '');
   finally

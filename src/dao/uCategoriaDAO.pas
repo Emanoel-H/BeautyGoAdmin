@@ -174,7 +174,7 @@ begin
             'id,                     '+
             'code as codigo,         '+
             'nome,                   '+
-            'descricao               '+
+            'descricao::VARCHAR(200) '+
             'FROM categorias_servico '+
             'WHERE 1=1               ';
 
