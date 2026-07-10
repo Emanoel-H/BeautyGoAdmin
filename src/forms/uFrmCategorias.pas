@@ -67,6 +67,7 @@ begin
   Categoria.Descricao := trim(mmDescricao.Text);
 
   Service.Salvar(Categoria);
+  estadoInicial;
 end;
 
 procedure TfrmCategoriasRegistrar.btnDeletarClick(Sender: TObject);
