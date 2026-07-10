@@ -9,6 +9,7 @@ uses
 type
   TfrmMain = class(TForm)
     pcMain: TPageControl;
+    Categorias: TTabSheet;
   private
     { Private declarations }
   public

@@ -12,12 +12,17 @@ object frmMain: TfrmMain
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poScreenCenter
   TextHeight = 15
   object pcMain: TPageControl
     Left = 8
     Top = 8
     Width = 249
     Height = 417
+    ActivePage = Categorias
     TabOrder = 0
+    object Categorias: TTabSheet
+      Caption = 'Categorias'
+    end
   end
 end
