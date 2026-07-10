@@ -35,7 +35,6 @@ object frmCategoriasPesquisar: TfrmCategoriasPesquisar
     ParentColor = False
     ParentFont = False
     TabOrder = 0
-    ExplicitWidth = 622
     object btnVoltar: TToolButton
       Left = 0
       Top = 0
@@ -126,7 +125,7 @@ object frmCategoriasPesquisar: TfrmCategoriasPesquisar
         Title.Font.Name = 'Segoe UI'
         Title.Font.Style = [fsBold]
         Title.Font.Quality = fqClearType
-        Width = 375
+        Width = 150
         Visible = True
       end
       item
@@ -139,6 +138,7 @@ object frmCategoriasPesquisar: TfrmCategoriasPesquisar
         Title.Font.Name = 'Segoe UI'
         Title.Font.Style = [fsBold]
         Title.Font.Quality = fqClearType
+        Width = 385
         Visible = True
       end>
   end

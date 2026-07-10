@@ -102,7 +102,7 @@ begin
   try
     fSet.Connection := FConexao;
 
-    sSQL := 'DELETE categorias_servico WHERE id = '''+AEntidade.Id.ToString+''' ';
+    sSQL := 'DELETE FROM categorias_servico WHERE id = '''+AEntidade.Id.ToString+''' ';
 
     fSet.Close;
     fSet.SQL.Clear;
