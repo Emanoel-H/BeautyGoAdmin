@@ -50,7 +50,7 @@ object frmCategoriasPesquisar: TfrmCategoriasPesquisar
     object btnPesquisar: TToolButton
       Left = 75
       Top = 0
-      Hint = 'Pesquisar Categorias'
+      Hint = 'Pesquisar'
       Caption = 'btnPesquisar'
       ImageIndex = 24
       ImageName = 'search 72'
@@ -67,6 +67,7 @@ object frmCategoriasPesquisar: TfrmCategoriasPesquisar
       ImageName = 'checkmark 72'
       ParentShowHint = False
       ShowHint = True
+      OnClick = btnConfirmarClick
     end
   end
   object dbgCategorias: TDBGrid

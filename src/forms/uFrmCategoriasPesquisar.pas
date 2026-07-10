@@ -39,6 +39,7 @@ type
       DataCol: Integer; Column: TColumn; State: TGridDrawState);
     procedure dbgCategoriasDblClick(Sender: TObject);
     procedure btnPesquisarClick(Sender: TObject);
+    procedure btnConfirmarClick(Sender: TObject);
   private
     Categoria: TuCategoria;
     Service: CategoriaService;
@@ -51,7 +52,23 @@ var
 
 implementation
 
+uses
+  uFrmCategorias;
 {$R *.dfm}
+
+procedure TfrmCategoriasPesquisar.btnConfirmarClick(Sender: TObject);
+begin
+  if (frmCategoriasRegistrar <> nil) and not (fdqCategorias.IsEmpty) then
+  begin
+    Categoria.Id        := dbgCategorias.DataSource.DataSet.FieldByName('id').AsInteger;
+    Categoria.Codigo    := dbgCategorias.DataSource.DataSet.FieldByName('codigo').AsString;
+    Categoria.Nome      := dbgCategorias.DataSource.DataSet.FieldByName('nome').AsString;
+    Categoria.Descricao := dbgCategorias.DataSource.DataSet.FieldByName('descricao').AsString;
+
+    frmCategoriasRegistrar.recebeCategoria(Categoria);
+    Close;
+  end;
+end;
 
 procedure TfrmCategoriasPesquisar.btnPesquisarClick(Sender: TObject);
 begin
