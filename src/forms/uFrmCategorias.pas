@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.ToolWin, Vcl.StdCtrls,
-  Vcl.ExtCtrls, uDmConexao, uCategoriaService, uCategoria;
+  Vcl.ExtCtrls, uDmConexao, uCategoriaService, uCategoria, uFrmCategoriasPesquisar;
 
 type
   TfrmCategoriasRegistrar = class(TForm)
@@ -31,14 +31,15 @@ type
     procedure btnAtualizarClick(Sender: TObject);
     procedure btnInserirClick(Sender: TObject);
     procedure btnConfirmarClick(Sender: TObject);
+    procedure btnPesquisarClick(Sender: TObject);
   private
     Service: CategoriaService;
     Categoria: TuCategoria;
     procedure estadoInicial;
     procedure estadoEdicao;
+    procedure estadoPesquisar;
     procedure limparCampos;
   public
-    bInserir: boolean;
     procedure recebeCategoria(ACategoria: TuCategoria);
   end;
 
@@ -73,13 +74,23 @@ begin
   if MessageBox(Handle, PChar('Tem certeza que deseja excluir essa categoria?'), PChar('Atenção!'), MB_YESNO + MB_ICONQUESTION) = IDYES then
   begin
     Service.Excluir(Categoria);
-    estadoInicial;  
+    estadoInicial;
   end;
 end;
 
 procedure TfrmCategoriasRegistrar.btnInserirClick(Sender: TObject);
 begin
   estadoEdicao;
+end;
+
+procedure TfrmCategoriasRegistrar.btnPesquisarClick(Sender: TObject);
+begin
+  if frmCategoriasPesquisar = nil then
+  begin
+    frmCategoriasPesquisar := FrmCategoriasPesquisar.Create(Self);
+    frmCategoriasPesquisar.ShowModal;
+    estadoPesquisar;
+  end;
 end;
 
 procedure TfrmCategoriasRegistrar.btnVoltarClick(Sender: TObject);
@@ -109,8 +120,17 @@ begin
   btnCancelar.Enabled  := false;
   btnConfirmar.Enabled := false;
   pnPrincipal.Enabled  := false;
+end;
 
-  bInserir := false;
+procedure TfrmCategoriasRegistrar.estadoPesquisar;
+begin
+  btnAtualizar.Enabled := true;
+  btnInserir.Enabled   := false;
+  btnDeletar.Enabled   := true;
+  btnPesquisar.Enabled := false;
+  btnCancelar.Enabled  := true;
+  btnConfirmar.Enabled := false;
+  pnPrincipal.Enabled  := false;
 end;
 
 procedure TfrmCategoriasRegistrar.FormClose(Sender: TObject;
