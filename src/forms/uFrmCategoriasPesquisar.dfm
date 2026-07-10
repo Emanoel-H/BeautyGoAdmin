@@ -39,7 +39,7 @@ object frmCategoriasPesquisar: TfrmCategoriasPesquisar
     object btnVoltar: TToolButton
       Left = 0
       Top = 0
-      Hint = 'Back'
+      Hint = 'Voltar'
       Caption = 'btnVoltar'
       ImageIndex = 6
       ImageName = 'back'
@@ -50,17 +50,18 @@ object frmCategoriasPesquisar: TfrmCategoriasPesquisar
     object btnPesquisar: TToolButton
       Left = 75
       Top = 0
-      Hint = 'Search Products'
+      Hint = 'Pesquisar Categorias'
       Caption = 'btnPesquisar'
       ImageIndex = 24
       ImageName = 'search 72'
       ParentShowHint = False
       ShowHint = True
+      OnClick = btnPesquisarClick
     end
     object btnConfirmar: TToolButton
       Left = 150
       Top = 0
-      Hint = 'Confirm'
+      Hint = 'Confirmar'
       Caption = 'btnConfirmar'
       ImageIndex = 11
       ImageName = 'checkmark 72'
@@ -92,6 +93,7 @@ object frmCategoriasPesquisar: TfrmCategoriasPesquisar
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
     OnDrawColumnCell = dbgCategoriasDrawColumnCell
+    OnDblClick = dbgCategoriasDblClick
     Columns = <
       item
         Expanded = False
@@ -251,6 +253,7 @@ object frmCategoriasPesquisar: TfrmCategoriasPesquisar
       Font.Quality = fqClearType
       ImeName = 'edtValue1'
       MaxLength = 10
+      NumbersOnly = True
       ParentFont = False
       TabOrder = 0
       OnKeyPress = edtCodigoKeyPress

@@ -37,6 +37,8 @@ type
     procedure edtCodigoKeyPress(Sender: TObject; var Key: Char);
     procedure dbgCategoriasDrawColumnCell(Sender: TObject; const Rect: TRect;
       DataCol: Integer; Column: TColumn; State: TGridDrawState);
+    procedure dbgCategoriasDblClick(Sender: TObject);
+    procedure btnPesquisarClick(Sender: TObject);
   private
     Categoria: TuCategoria;
     Service: CategoriaService;
@@ -51,9 +53,24 @@ implementation
 
 {$R *.dfm}
 
+procedure TfrmCategoriasPesquisar.btnPesquisarClick(Sender: TObject);
+begin
+  Categoria.Nome   := edtNome.Text;
+  Categoria.Codigo := edtCodigo.Text;
+
+  fdqCategorias            := Service.Listar(Categoria);
+  dsCategorias.DataSet     := fdqCategorias;
+  lblQtdeRegistros.Caption := fdqCategorias.RecordCount.ToString;
+end;
+
 procedure TfrmCategoriasPesquisar.btnVoltarClick(Sender: TObject);
 begin
   Close;
+end;
+
+procedure TfrmCategoriasPesquisar.dbgCategoriasDblClick(Sender: TObject);
+begin
+  btnConfirmar.Click;
 end;
 
 procedure TfrmCategoriasPesquisar.dbgCategoriasDrawColumnCell(Sender: TObject;
