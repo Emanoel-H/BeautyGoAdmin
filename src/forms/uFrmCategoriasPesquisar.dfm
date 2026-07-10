@@ -131,7 +131,7 @@ object frmCategoriasPesquisar: TfrmCategoriasPesquisar
       item
         Expanded = False
         FieldName = 'descricao'
-        Title.Caption = 'Descricao'
+        Title.Caption = 'Descri'#231#227'o'
         Title.Font.Charset = DEFAULT_CHARSET
         Title.Font.Color = clWindowText
         Title.Font.Height = -12
@@ -275,6 +275,7 @@ object frmCategoriasPesquisar: TfrmCategoriasPesquisar
       MaxLength = 150
       ParentFont = False
       TabOrder = 1
+      OnKeyPress = edtNomeKeyPress
     end
   end
   object fdqCategorias: TFDQuery

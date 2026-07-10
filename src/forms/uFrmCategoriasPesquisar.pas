@@ -38,6 +38,7 @@ type
     procedure dbgCategoriasDblClick(Sender: TObject);
     procedure btnPesquisarClick(Sender: TObject);
     procedure btnConfirmarClick(Sender: TObject);
+    procedure edtNomeKeyPress(Sender: TObject; var Key: Char);
   private
     Categoria: TuCategoria;
     Service: CategoriaService;
@@ -111,6 +112,16 @@ begin
   begin
     Key := #0;
   end;
+
+  if Key = #13 then
+    btnPesquisar.Click;
+end;
+
+procedure TfrmCategoriasPesquisar.edtNomeKeyPress(Sender: TObject;
+  var Key: Char);
+begin
+  if Key = #13 then
+    btnPesquisar.Click;
 end;
 
 procedure TfrmCategoriasPesquisar.FormClose(Sender: TObject;

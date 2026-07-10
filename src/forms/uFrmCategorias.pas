@@ -76,11 +76,13 @@ begin
   begin
     Service.Excluir(Categoria);
     estadoInicial;
+    limparCampos;
   end;
 end;
 
 procedure TfrmCategoriasRegistrar.btnInserirClick(Sender: TObject);
 begin
+  limparCampos;
   estadoEdicao;
 end;
 
@@ -90,7 +92,9 @@ begin
   begin
     frmCategoriasPesquisar := TFrmCategoriasPesquisar.Create(Self);
     frmCategoriasPesquisar.ShowModal;
-    estadoPesquisar;
+
+    if Categoria.Id <> 0 then
+      estadoPesquisar;
   end;
 end;
 
@@ -159,6 +163,10 @@ end;
 
 procedure TfrmCategoriasRegistrar.limparCampos;
 begin
+  Categoria.Id        := 0;
+  Categoria.Nome      := '';
+  Categoria.Descricao := '';
+
   edtNome.Text := '';
   mmDescricao.Clear;
 end;
