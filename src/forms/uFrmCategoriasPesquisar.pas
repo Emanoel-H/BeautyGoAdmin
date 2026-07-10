@@ -32,8 +32,6 @@ type
     procedure btnVoltarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure edtCodigoKeyDown(Sender: TObject; var Key: Word;
-      Shift: TShiftState);
     procedure edtCodigoKeyPress(Sender: TObject; var Key: Char);
     procedure dbgCategoriasDrawColumnCell(Sender: TObject; const Rect: TRect;
       DataCol: Integer; Column: TColumn; State: TGridDrawState);
