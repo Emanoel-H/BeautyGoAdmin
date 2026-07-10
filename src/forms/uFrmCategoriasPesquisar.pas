@@ -31,6 +31,7 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnVoltarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     Categoria: TuCategoria;
     Service: CategoriaService;
@@ -66,6 +67,13 @@ procedure TfrmCategoriasPesquisar.FormCreate(Sender: TObject);
 begin
   Categoria := TuCategoria.Create;
   Service   := CategoriaService.Create(dmConexao.FDConnection);
+end;
+
+procedure TfrmCategoriasPesquisar.FormShow(Sender: TObject);
+begin
+  fdqCategorias            := Service.Listar(Categoria);
+  dsCategorias.DataSet     := fdqCategorias;
+  lblQtdeRegistros.Caption := fdqCategorias.RecordCount.ToString;
 end;
 
 end.

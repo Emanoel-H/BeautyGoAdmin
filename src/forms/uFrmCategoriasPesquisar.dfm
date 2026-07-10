@@ -15,6 +15,7 @@ object frmCategoriasPesquisar: TfrmCategoriasPesquisar
   Position = poScreenCenter
   OnClose = FormClose
   OnCreate = FormCreate
+  OnShow = FormShow
   TextHeight = 15
   object tbCategoriasPesquisar: TToolBar
     Left = 0
@@ -34,7 +35,7 @@ object frmCategoriasPesquisar: TfrmCategoriasPesquisar
     ParentColor = False
     ParentFont = False
     TabOrder = 0
-    ExplicitWidth = 438
+    ExplicitWidth = 622
     object btnVoltar: TToolButton
       Left = 0
       Top = 0
@@ -146,8 +147,8 @@ object frmCategoriasPesquisar: TfrmCategoriasPesquisar
     Color = clBlack
     ParentBackground = False
     TabOrder = 2
-    ExplicitTop = 374
-    ExplicitWidth = 438
+    ExplicitTop = 383
+    ExplicitWidth = 622
     object pnRegistros: TPanel
       Left = 1
       Top = 1
@@ -202,7 +203,7 @@ object frmCategoriasPesquisar: TfrmCategoriasPesquisar
     Color = clBlack
     ParentBackground = False
     TabOrder = 3
-    ExplicitWidth = 438
+    ExplicitWidth = 622
     object lblCodigo: TLabel
       Left = 6
       Top = 2
