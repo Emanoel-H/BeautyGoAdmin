@@ -67,6 +67,14 @@ procedure TfrmCategoriasPesquisar.FormCreate(Sender: TObject);
 begin
   Categoria := TuCategoria.Create;
   Service   := CategoriaService.Create(dmConexao.FDConnection);
+
+  dbgCategorias.Color           := clBlack;
+  dbgCategorias.FixedColor      := $00202020;
+  dbgCategorias.Font.Color      := clWhite;
+  dbgCategorias.TitleFont.Color := clWhite;
+  dbgCategorias.TitleFont.Style := [fsBold];
+  dbgCategorias.DrawingStyle    := gdsClassic;
+  dbgCategorias.ParentColor     := False;
 end;
 
 procedure TfrmCategoriasPesquisar.FormShow(Sender: TObject);
