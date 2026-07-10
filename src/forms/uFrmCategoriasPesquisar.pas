@@ -35,6 +35,8 @@ type
     procedure edtCodigoKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
     procedure edtCodigoKeyPress(Sender: TObject; var Key: Char);
+    procedure dbgCategoriasDrawColumnCell(Sender: TObject; const Rect: TRect;
+      DataCol: Integer; Column: TColumn; State: TGridDrawState);
   private
     Categoria: TuCategoria;
     Service: CategoriaService;
@@ -52,6 +54,22 @@ implementation
 procedure TfrmCategoriasPesquisar.btnVoltarClick(Sender: TObject);
 begin
   Close;
+end;
+
+procedure TfrmCategoriasPesquisar.dbgCategoriasDrawColumnCell(Sender: TObject;
+  const Rect: TRect; DataCol: Integer; Column: TColumn; State: TGridDrawState);
+begin
+  if gdSelected in State then
+  begin
+    dbgCategorias.Canvas.Brush.Color := clNavy;
+    dbgCategorias.Canvas.Font.Color := clWhite;
+  end
+
+    else if dbgCategorias.DataSource.DataSet.RecNo mod 2 = 0 then
+  begin
+    dbgCategorias.Canvas.Brush.Color := $00673AB7;
+  end;
+  dbgCategorias.DefaultDrawColumnCell(Rect, DataCol, Column, State);
 end;
 
 procedure TfrmCategoriasPesquisar.edtCodigoKeyPress(Sender: TObject;

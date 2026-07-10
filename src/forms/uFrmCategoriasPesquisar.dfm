@@ -91,6 +91,7 @@ object frmCategoriasPesquisar: TfrmCategoriasPesquisar
     TitleFont.Height = -12
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
+    OnDrawColumnCell = dbgCategoriasDrawColumnCell
     Columns = <
       item
         Expanded = False
