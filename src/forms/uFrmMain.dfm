@@ -19,7 +19,7 @@ object frmMain: TfrmMain
   object pcMain: TPageControl
     Left = 8
     Top = 8
-    Width = 249
+    Width = 612
     Height = 417
     ActivePage = Categorias
     TabOrder = 0

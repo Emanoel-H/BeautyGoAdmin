@@ -36,14 +36,12 @@ begin
 end;
 
 procedure TfrmMain.FormShow(Sender: TObject);
-var
-  FrmCategoria: TfrmCategoriasRegistrar;
 begin
-  FrmCategoria             := TfrmCategoriasRegistrar.Create(Self);
-  FrmCategoria.Parent      := Categorias;
-  FrmCategoria.Align       := alClient;
-  FrmCategoria.BorderStyle := bsNone;
-  FrmCategoria.Show;
+  frmCategoriasRegistrar             := TfrmCategoriasRegistrar.Create(Self);
+  frmCategoriasRegistrar.Parent      := Categorias;
+  frmCategoriasRegistrar.Align       := alClient;
+  frmCategoriasRegistrar.BorderStyle := bsNone;
+  frmCategoriasRegistrar.Show;
 end;
 
 end.
