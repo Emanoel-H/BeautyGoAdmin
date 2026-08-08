@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, uCategoria;
 
 type
   TfrmMain = class(TForm)
@@ -12,6 +12,7 @@ type
     Categorias: TTabSheet;
   private
     { Private declarations }
+    Categoria: TCategoria;
   public
     { Public declarations }
   end;
