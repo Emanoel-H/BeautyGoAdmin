@@ -66,8 +66,15 @@ begin
   Categoria.Nome      := trim(edtNome.Text);
   Categoria.Descricao := trim(mmDescricao.Text);
 
-  Service.Salvar(Categoria);
-  estadoInicial;
+  try
+    Service.Salvar(Categoria);
+    estadoInicial;
+  except
+    on E: Exception do
+    begin
+      Application.MessageBox(PChar(E.Message), 'Atenção!', MB_OK + MB_ICONWARNING)
+    end;
+  end;
 end;
 
 procedure TfrmCategoriasRegistrar.btnDeletarClick(Sender: TObject);
@@ -84,7 +91,6 @@ begin
         Application.MessageBox(PChar(E.Message), 'Atenção!', MB_OK + MB_ICONWARNING)
       end;
     end;
-
   end;
 end;
 
