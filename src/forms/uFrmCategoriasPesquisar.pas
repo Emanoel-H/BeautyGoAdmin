@@ -75,6 +75,10 @@ begin
   Categoria.Codigo := edtCodigo.Text;
 
   fdqCategorias            := Service.Listar(Categoria);
+
+  if fdqCategorias.IsEmpty then
+    Application.MessageBox('Não há registros na consulta!', 'Atenção!', MB_OK + MB_ICONWARNING);
+
   dsCategorias.DataSet     := fdqCategorias;
   lblQtdeRegistros.Caption := fdqCategorias.RecordCount.ToString;
 end;
@@ -153,6 +157,10 @@ end;
 procedure TfrmCategoriasPesquisar.FormShow(Sender: TObject);
 begin
   fdqCategorias            := Service.Listar(Categoria);
+
+  if fdqCategorias.IsEmpty then
+    Application.MessageBox('Não há registros na consulta!', 'Atenção!', MB_OK + MB_ICONWARNING);
+
   dsCategorias.DataSet     := fdqCategorias;
   lblQtdeRegistros.Caption := fdqCategorias.RecordCount.ToString;
 end;

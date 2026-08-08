@@ -167,7 +167,6 @@ var
   fGet: TFDQuery;
 begin
   fGet := TFDQuery.Create(nil);
-  try
     fGet.Connection := FConexao;
 
     sSQL := 'SELECT                  '+
@@ -191,14 +190,7 @@ begin
     fGet.SQL.Text := sSQL;
     fGet.Open;
 
-    if not fGet.IsEmpty then
-      Result := fGet;
-  except on E: Exception do
-    begin
-      fGet.Close;
-      fGet.Free;
-    end;
-  end;
+    Result := fGet;
 end;
 
 end.
