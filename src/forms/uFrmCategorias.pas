@@ -33,7 +33,7 @@ type
     procedure btnConfirmarClick(Sender: TObject);
     procedure btnPesquisarClick(Sender: TObject);
   private
-    Service: CategoriaService;
+    Service: TCategoriaService;
     Categoria: TCategoria;
     procedure estadoInicial;
     procedure estadoEdicao;
@@ -166,7 +166,7 @@ end;
 
 procedure TfrmCategoriasRegistrar.FormCreate(Sender: TObject);
 begin
-  Service   := CategoriaService.Create(dmConexao.FDConnection);
+  Service   := TCategoriaService.Create(dmConexao.FDConnection);
   Categoria := TCategoria.Create;
 end;
 
