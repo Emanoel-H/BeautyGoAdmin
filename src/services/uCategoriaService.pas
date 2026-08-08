@@ -6,14 +6,14 @@ uses
 type
   CategoriaService = class
     private
-      FDAO: Repositorio<TuCategoria>;
+      FDAO: Repositorio<TCategoria>;
     public
       constructor Create(AConexao: TFDConnection);
       destructor Destroy; override;
 
-      procedure Salvar(ACategoria: TuCategoria);
-      procedure Excluir(ACategoria: TuCategoria);
-      function Listar(ACategoria: TuCategoria): TFDQuery;
+      procedure Salvar(ACategoria: TCategoria);
+      procedure Excluir(ACategoria: TCategoria);
+      function Listar(ACategoria: TCategoria): TFDQuery;
   end;
 
 implementation
@@ -31,7 +31,7 @@ begin
   inherited;
 end;
 
-procedure CategoriaService.Excluir(ACategoria: TuCategoria);
+procedure CategoriaService.Excluir(ACategoria: TCategoria);
 begin
   if FDAO.Existe(ACategoria) then
     raise Exception.Create('Esta categoria possui serviços vinculados e não pode ser excluída.');
@@ -39,12 +39,12 @@ begin
   FDAO.Deletar(ACategoria);
 end;
 
-function CategoriaService.Listar(ACategoria: TuCategoria): TFDQuery;
+function CategoriaService.Listar(ACategoria: TCategoria): TFDQuery;
 begin
   Result := FDAO.Listar(ACategoria);
 end;
 
-procedure CategoriaService.Salvar(ACategoria: TuCategoria);
+procedure CategoriaService.Salvar(ACategoria: TCategoria);
 begin
   if ACategoria.Nome = '' then
     raise Exception.Create('A Categoria deve possuir um nome!');
