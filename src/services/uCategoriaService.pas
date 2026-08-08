@@ -47,10 +47,7 @@ end;
 procedure CategoriaService.Salvar(ACategoria: TuCategoria);
 begin
   if ACategoria.Nome = '' then
-  begin
-    Application.MessageBox('A Categoria deve possuir um nome!', 'Atenção', MB_OK + MB_ICONERROR);
-    Abort;
-  end;
+    raise Exception.Create('A Categoria deve possuir um nome!');
 
   if ACategoria.Id = 0 then
     FDAO.Inserir(ACategoria)
