@@ -5,7 +5,7 @@ uses
   System.SysUtils;
 
 type
-  TuCategoria = class
+  TCategoria = class
     private
       iId: Int64;
       sNome: string;
