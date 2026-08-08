@@ -34,10 +34,7 @@ end;
 procedure CategoriaService.Excluir(ACategoria: TuCategoria);
 begin
   if FDAO.Existe(ACategoria) then
-  begin
-    Application.MessageBox('Esta categoria possui serviços vinculados e não pode ser excluída.', 'Erro de exclusão', MB_OK + MB_ICONERROR);
-    Abort;
-  end;
+    raise Exception.Create('Esta categoria possui serviços vinculados e não pode ser excluída.');
 
   FDAO.Deletar(ACategoria);
 end;
