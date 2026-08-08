@@ -22,7 +22,7 @@ implementation
 
 constructor TCategoriaService.Create(AConexao: TFDConnection);
 begin
-  FDAO := CategoriaDAO.Create(AConexao);
+  FDAO := TCategoriaDAO.Create(AConexao);
 end;
 
 destructor TCategoriaService.Destroy;
