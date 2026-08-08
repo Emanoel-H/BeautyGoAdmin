@@ -6,7 +6,7 @@ uses
   FireDAC.Comp.Client, FireDAC.Comp.DataSet, FireDAC.Stan.Param, FireDAC.Phys.PG, DB,
   Classes;
 type
-  CategoriaDAO = class(TInterfacedObject, IRepositorio.Repositorio<TCategoria>)
+  TCategoriaDAO = class(TInterfacedObject, IRepositorio.Repositorio<TCategoria>)
   private
     FConexao: TFDConnection;
   public
@@ -22,9 +22,9 @@ type
 
 implementation
 
-{ CategoriaDAO }
+{ TCategoriaDAO }
 
-procedure CategoriaDAO.Atualizar(AEntidade: TCategoria);
+procedure TCategoriaDAO.Atualizar(AEntidade: TCategoria);
 var
   sSQL: string;
   fSet: TFDQuery;
@@ -48,7 +48,7 @@ begin
   end;
 end;
 
-function CategoriaDAO.BuscarPorCodigo(ACodigo: string): TCategoria;
+function TCategoriaDAO.BuscarPorCodigo(ACodigo: string): TCategoria;
 var
   sSQL: string;
   fGet: TFDQuery;
@@ -88,12 +88,12 @@ begin
   end;
 end;
 
-constructor CategoriaDAO.Create(AConexao: TFDConnection);
+constructor TCategoriaDAO.Create(AConexao: TFDConnection);
 begin
   FConexao := AConexao;
 end;
 
-procedure CategoriaDAO.Deletar(AEntidade: TCategoria);
+procedure TCategoriaDAO.Deletar(AEntidade: TCategoria);
 var
   sSQL: string;
   fSet: TFDQuery;
@@ -114,7 +114,7 @@ begin
   end;
 end;
 
-function CategoriaDAO.Existe(AEntidade: TCategoria): boolean;
+function TCategoriaDAO.Existe(AEntidade: TCategoria): boolean;
 var
   sSQL: string;
   fGet: TFDQuery;
@@ -138,7 +138,7 @@ begin
   end;
 end;
 
-procedure CategoriaDAO.Inserir(AEntidade: TCategoria);
+procedure TCategoriaDAO.Inserir(AEntidade: TCategoria);
 var
   sSQL: string;
   fSet: TFDQuery;
@@ -161,7 +161,7 @@ begin
 
 end;
 
-function CategoriaDAO.Listar(AEntidade: TCategoria): TFDQuery;
+function TCategoriaDAO.Listar(AEntidade: TCategoria): TFDQuery;
 var
   sSQL: string;
   fGet: TFDQuery;
