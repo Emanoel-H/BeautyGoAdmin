@@ -35,6 +35,7 @@ object frmCategoriasPesquisar: TfrmCategoriasPesquisar
     ParentColor = False
     ParentFont = False
     TabOrder = 0
+    ExplicitWidth = 622
     object btnVoltar: TToolButton
       Left = 0
       Top = 0

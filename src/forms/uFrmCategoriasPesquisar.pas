@@ -40,7 +40,7 @@ type
     procedure btnConfirmarClick(Sender: TObject);
     procedure edtNomeKeyPress(Sender: TObject; var Key: Char);
   private
-    Categoria: TuCategoria;
+    Categoria: TCategoria;
     Service: CategoriaService;
   public
     { Public declarations }
@@ -138,7 +138,7 @@ end;
 
 procedure TfrmCategoriasPesquisar.FormCreate(Sender: TObject);
 begin
-  Categoria := TuCategoria.Create;
+  Categoria := TCategoria.Create;
   Service   := CategoriaService.Create(dmConexao.FDConnection);
 
   dbgCategorias.Color           := clBlack;
