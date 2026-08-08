@@ -74,9 +74,17 @@ procedure TfrmCategoriasRegistrar.btnDeletarClick(Sender: TObject);
 begin
   if MessageBox(Handle, PChar('Tem certeza que deseja excluir essa categoria?'), PChar('Atenção!'), MB_YESNO + MB_ICONQUESTION) = IDYES then
   begin
-    Service.Excluir(Categoria);
-    estadoInicial;
-    limparCampos;
+    try
+      Service.Excluir(Categoria);
+      estadoInicial;
+      limparCampos;
+    except
+      on E: Exception do
+      begin
+        Application.MessageBox(PChar(E.Message), 'Atenção!', MB_OK + MB_ICONWARNING)
+      end;
+    end;
+
   end;
 end;
 
