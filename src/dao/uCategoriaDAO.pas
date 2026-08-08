@@ -33,14 +33,17 @@ begin
   try
     fSet.Connection := FConexao;
 
-    sSQL := 'UPDATE categorias_servico SET            '+
-            'nome = '''+AEntidade.Nome+''',           '+
-            'descricao = '''+AEntidade.Descricao+'''  '+
-            'WHERE id = '''+AEntidade.Id.ToString+''' ';
+    sSQL := 'UPDATE categorias_servico SET '+
+            'nome = :nome,                 '+
+            'descricao = :descricao        '+
+            'WHERE id = :id                ';
 
     fSet.Close;
     fSet.SQL.Clear;
     fSet.SQL.Text := sSQL;
+    fSet.ParamByName('nome').AsString      := AEntidade.Nome;
+    fSet.ParamByName('descricao').AsString := AEntidade.Descricao;
+    fSet.ParamByName('id').AsInteger       := AEntidade.Id;
     fSet.ExecSQL;
   finally
     fSet.Close;
@@ -58,17 +61,18 @@ begin
   try
     fGet.Connection := FConexao;
 
-    sSQL := 'SELECT                       '+
-            'id,                          '+
-            'code as codigo,              '+
-            'nome,                        '+
-            'descricao                    '+
-            'FROM categorias_servico      '+
-            'WHERE code = '''+ACodigo+''' ';
+    sSQL := 'SELECT                  '+
+            'id,                     '+
+            'code as codigo,         '+
+            'nome,                   '+
+            'descricao               '+
+            'FROM categorias_servico '+
+            'WHERE code = :codigo    ';
 
     fGet.Close;
     fGet.SQL.Clear;
     fGet.SQL.Text := sSQL;
+    fGet.ParamByName('codigo').AsString := ACodigo;
     fGet.Open;
 
     if not fGet.IsEmpty then
@@ -102,11 +106,12 @@ begin
   try
     fSet.Connection := FConexao;
 
-    sSQL := 'DELETE FROM categorias_servico WHERE id = '''+AEntidade.Id.ToString+''' ';
+    sSQL := 'DELETE FROM categorias_servico WHERE id = :id ';
 
     fSet.Close;
     fSet.SQL.Clear;
     fSet.SQL.Text := sSQL;
+    fSet.ParamByName('id').AsInteger := AEntidade.Id;
     fSet.ExecSQL;
   finally
     fSet.Close;
@@ -124,11 +129,12 @@ begin
     fGet.Connection := FConexao;
 
     sSQL :=
-    'SELECT id FROM servicos_oferecidos WHERE categoria_id = '''+AEntidade.Id.ToString+''' ';
+    'SELECT id FROM servicos_oferecidos WHERE categoria_id = :categoria_id ';
 
     fGet.Close;
     fGet.SQL.Clear;
     fGet.SQL.Text := sSQL;
+    fGet.ParamByName('categoria_id').AsInteger := AEntidade.Id;
     fGet.Open;
 
     Result := not (fGet.IsEmpty);
@@ -148,11 +154,13 @@ begin
     fSet.Connection := FConexao;
 
     sSQL := 'INSERT INTO categorias_servico(nome, descricao)'+
-            'VALUES('''+AEntidade.Nome+''', '''+AEntidade.Descricao+''')';
+            'VALUES(:nome, :descricao)';
 
     fSet.Close;
     fSet.SQL.Clear;
     fSet.SQL.Text := sSQL;
+    fSet.ParamByName('nome').AsString      := AEntidade.Nome;
+    fSet.ParamByName('descricao').AsString := AEntidade.Descricao;
     fSet.ExecSQL;
   finally
     fSet.Close;
@@ -166,31 +174,35 @@ var
   sSQL: string;
   fGet: TFDQuery;
 begin
-  fGet := TFDQuery.Create(nil);
-    fGet.Connection := FConexao;
+    fGet := TFDQuery.Create(nil);
+    try
+      fGet.Connection := FConexao;
 
-    sSQL := 'SELECT                  '+
-            'id,                     '+
-            'code as codigo,         '+
-            'nome,                   '+
-            'descricao::VARCHAR(200) '+
-            'FROM categorias_servico '+
-            'WHERE 1=1               ';
+      sSQL := 'SELECT                  '+
+              'id,                     '+
+              'code as codigo,         '+
+              'nome,                   '+
+              'descricao::VARCHAR(200) '+
+              'FROM categorias_servico '+
+              'WHERE 1=1               ';
 
-    if (AEntidade.Codigo <> '') then
-      sSQL := sSQL + 'AND code = '''+AEntidade.Codigo+''' ';
+      if (AEntidade.Codigo <> '') then
+        sSQL := sSQL + 'AND code = :codigo ';
 
-    if (AEntidade.Nome <> '') then
-      sSQL := sSQL + 'AND nome ILIKE ''%'+AEntidade.Nome+'%'' ';
+      if (AEntidade.Nome <> '') then
+        sSQL := sSQL + 'AND nome ILIKE :nome ';
 
-    sSQL := sSQL + 'ORDER BY nome DESC';
+      sSQL := sSQL + 'ORDER BY nome DESC';
 
-    fGet.Close;
-    fGet.SQL.Clear;
-    fGet.SQL.Text := sSQL;
-    fGet.Open;
-
-    Result := fGet;
+      fGet.Close;
+      fGet.SQL.Clear;
+      fGet.SQL.Text := sSQL;
+      fGet.ParamByName('nome').AsString   := '%' + AEntidade.Nome + '%';
+      fGet.ParamByName('codigo').AsString := AEntidade.Codigo;
+      fGet.Open;
+    finally
+      Result := fGet;
+    end;
 end;
 
 end.
