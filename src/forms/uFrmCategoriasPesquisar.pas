@@ -41,7 +41,7 @@ type
     procedure edtNomeKeyPress(Sender: TObject; var Key: Char);
   private
     Categoria: TCategoria;
-    Service: CategoriaService;
+    Service: TCategoriaService;
   public
     { Public declarations }
   end;
@@ -139,7 +139,7 @@ end;
 procedure TfrmCategoriasPesquisar.FormCreate(Sender: TObject);
 begin
   Categoria := TCategoria.Create;
-  Service   := CategoriaService.Create(dmConexao.FDConnection);
+  Service   := TCategoriaService.Create(dmConexao.FDConnection);
 
   dbgCategorias.Color           := clBlack;
   dbgCategorias.FixedColor      := $00202020;
