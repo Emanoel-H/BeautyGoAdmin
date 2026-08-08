@@ -155,6 +155,12 @@ end;
 procedure TfrmCategoriasRegistrar.FormClose(Sender: TObject;
   var Action: TCloseAction);
 begin
+  if Parent <> nil then
+  begin
+    Action := caNone;
+    Exit;
+  end;
+
   try
     Categoria.Free;
     Service.Free;
@@ -172,6 +178,7 @@ end;
 
 procedure TfrmCategoriasRegistrar.FormShow(Sender: TObject);
 begin
+  btnVoltar.Visible := Parent = nil;
   estadoInicial;
 end;
 
