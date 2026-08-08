@@ -6,25 +6,25 @@ uses
   FireDAC.Comp.Client, FireDAC.Comp.DataSet, FireDAC.Stan.Param, FireDAC.Phys.PG, DB,
   Classes;
 type
-  CategoriaDAO = class(TInterfacedObject, IRepositorio.Repositorio<TuCategoria>)
+  CategoriaDAO = class(TInterfacedObject, IRepositorio.Repositorio<TCategoria>)
   private
     FConexao: TFDConnection;
   public
     constructor Create(AConexao: TFDConnection);
 
-    procedure Inserir(AEntidade: TuCategoria);
-    procedure Atualizar(AEntidade: TuCategoria);
-    procedure Deletar(AEntidade: TuCategoria);
-    function BuscarPorCodigo(ACodigo: string): TuCategoria;
-    function Listar(AEntidade: TuCategoria): TFDQuery;
-    function Existe(AEntidade: TuCategoria): boolean;
+    procedure Inserir(AEntidade: TCategoria);
+    procedure Atualizar(AEntidade: TCategoria);
+    procedure Deletar(AEntidade: TCategoria);
+    function BuscarPorCodigo(ACodigo: string): TCategoria;
+    function Listar(AEntidade: TCategoria): TFDQuery;
+    function Existe(AEntidade: TCategoria): boolean;
   end;
 
 implementation
 
 { CategoriaDAO }
 
-procedure CategoriaDAO.Atualizar(AEntidade: TuCategoria);
+procedure CategoriaDAO.Atualizar(AEntidade: TCategoria);
 var
   sSQL: string;
   fSet: TFDQuery;
@@ -48,11 +48,11 @@ begin
   end;
 end;
 
-function CategoriaDAO.BuscarPorCodigo(ACodigo: string): TuCategoria;
+function CategoriaDAO.BuscarPorCodigo(ACodigo: string): TCategoria;
 var
   sSQL: string;
   fGet: TFDQuery;
-  Categoria: TuCategoria;
+  Categoria: TCategoria;
 begin
   fGet := TFDQuery.Create(nil);
   try
@@ -73,7 +73,7 @@ begin
 
     if not fGet.IsEmpty then
     begin
-      Categoria           := TuCategoria.Create;
+      Categoria           := TCategoria.Create;
       Categoria.Id        := fGet.FieldByName('id').AsInteger;
       Categoria.Nome      := fGet.FieldByName('nome').AsString;
       Categoria.Codigo    := fGet.FieldByName('codigo').AsString;
@@ -93,7 +93,7 @@ begin
   FConexao := AConexao;
 end;
 
-procedure CategoriaDAO.Deletar(AEntidade: TuCategoria);
+procedure CategoriaDAO.Deletar(AEntidade: TCategoria);
 var
   sSQL: string;
   fSet: TFDQuery;
@@ -114,7 +114,7 @@ begin
   end;
 end;
 
-function CategoriaDAO.Existe(AEntidade: TuCategoria): boolean;
+function CategoriaDAO.Existe(AEntidade: TCategoria): boolean;
 var
   sSQL: string;
   fGet: TFDQuery;
@@ -138,7 +138,7 @@ begin
   end;
 end;
 
-procedure CategoriaDAO.Inserir(AEntidade: TuCategoria);
+procedure CategoriaDAO.Inserir(AEntidade: TCategoria);
 var
   sSQL: string;
   fSet: TFDQuery;
@@ -161,7 +161,7 @@ begin
 
 end;
 
-function CategoriaDAO.Listar(AEntidade: TuCategoria): TFDQuery;
+function CategoriaDAO.Listar(AEntidade: TCategoria): TFDQuery;
 var
   sSQL: string;
   fGet: TFDQuery;
