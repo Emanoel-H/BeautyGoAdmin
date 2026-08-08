@@ -13,6 +13,8 @@ object frmMain: TfrmMain
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poScreenCenter
+  OnClose = FormClose
+  OnShow = FormShow
   TextHeight = 15
   object pcMain: TPageControl
     Left = 8

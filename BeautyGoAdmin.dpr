@@ -20,6 +20,6 @@ begin
   Application.MainFormOnTaskbar := True;
   TStyleManager.TrySetStyle('Windows11 Dark');
   Application.CreateForm(TdmConexao, dmConexao);
-  Application.CreateForm(TfrmCategoriasRegistrar, frmCategoriasRegistrar);
+  Application.CreateForm(TfrmMain, frmMain);
   Application.Run;
 end.
