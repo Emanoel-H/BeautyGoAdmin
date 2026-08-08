@@ -197,8 +197,13 @@ begin
       fGet.Close;
       fGet.SQL.Clear;
       fGet.SQL.Text := sSQL;
-      fGet.ParamByName('nome').AsString   := '%' + AEntidade.Nome + '%';
-      fGet.ParamByName('codigo').AsString := AEntidade.Codigo;
+
+      if (AEntidade.Nome <> '') then
+        fGet.ParamByName('nome').AsString   := '%' + AEntidade.Nome + '%';
+
+      if (AEntidade.Codigo <> '') then
+        fGet.ParamByName('codigo').AsString := AEntidade.Codigo;
+
       fGet.Open;
     finally
       Result := fGet;
