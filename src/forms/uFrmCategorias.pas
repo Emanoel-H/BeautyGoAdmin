@@ -34,13 +34,13 @@ type
     procedure btnPesquisarClick(Sender: TObject);
   private
     Service: CategoriaService;
-    Categoria: TuCategoria;
+    Categoria: TCategoria;
     procedure estadoInicial;
     procedure estadoEdicao;
     procedure estadoPesquisar;
     procedure limparCampos;
   public
-    procedure recebeCategoria(ACategoria: TuCategoria);
+    procedure recebeCategoria(ACategoria: TCategoria);
   end;
 
 var
@@ -167,7 +167,7 @@ end;
 procedure TfrmCategoriasRegistrar.FormCreate(Sender: TObject);
 begin
   Service   := CategoriaService.Create(dmConexao.FDConnection);
-  Categoria := TuCategoria.Create;
+  Categoria := TCategoria.Create;
 end;
 
 procedure TfrmCategoriasRegistrar.FormShow(Sender: TObject);
@@ -185,7 +185,7 @@ begin
   mmDescricao.Clear;
 end;
 
-procedure TfrmCategoriasRegistrar.recebeCategoria(ACategoria: TuCategoria);
+procedure TfrmCategoriasRegistrar.recebeCategoria(ACategoria: TCategoria);
 begin
   Categoria.Id        := ACategoria.Id;
   Categoria.Nome      := ACategoria.Nome;
