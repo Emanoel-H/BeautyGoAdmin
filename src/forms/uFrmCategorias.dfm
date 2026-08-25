@@ -35,6 +35,7 @@ object frmCategoriasRegistrar: TfrmCategoriasRegistrar
     ParentColor = False
     ParentFont = False
     TabOrder = 0
+    ExplicitWidth = 478
     object btnVoltar: TToolButton
       Left = 0
       Top = 0
