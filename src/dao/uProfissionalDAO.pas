@@ -19,6 +19,10 @@ type
     function Listar(AEntidade: TProfissional): TFDQuery;
     function Existe(AEntidade: TProfissional): boolean;
 
+    procedure InserirServico(AServico: TServicoOferecido);
+    procedure DeletarServico(AServicoId: Int64);
+    function ListarServicos(AProfissionalId: Int64): TFDQuery;
+
 
   end;
 
@@ -79,6 +83,11 @@ begin
 
 end;
 
+procedure TProfissionalDAO.DeletarServico(AServicoId: Int64);
+begin
+
+end;
+
 function TProfissionalDAO.Existe(AEntidade: TProfissional): boolean;
 begin
 
@@ -89,7 +98,17 @@ begin
 
 end;
 
+procedure TProfissionalDAO.InserirServico(AServico: TServicoOferecido);
+begin
+
+end;
+
 function TProfissionalDAO.Listar(AEntidade: TProfissional): TFDQuery;
+begin
+
+end;
+
+function TProfissionalDAO.ListarServicos(AProfissionalId: Int64): TFDQuery;
 begin
 
 end;
