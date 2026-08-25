@@ -69,8 +69,54 @@ begin
 end;
 
 function TProfissionalDAO.BuscarPorCodigo(ACodigo: string): TProfissional;
+var
+  sSQL: string;
+  fGet: TFDQuery;
+  Profissional: TProfissional;
 begin
+  fGet := TFDQuery.Create(nil);
+  try
+    fGet.Connection := FConexao;
 
+    sSQL := 'SELECT                                   '+
+            'id,                                      '+
+            'code as codigo,                          '+
+            'nome,                                    '+
+            'email,                                   '+
+            'telefone,                                '+
+            'senha,                                   '+
+            'raio_atendimento_km as raio,             '+
+            'ST_Y(localizacao::geometry) AS latitude, '+
+            'ST_X(localizacao::geometry) AS longitude '+
+            'FROM profissionais                       '+
+            'WHERE code = :codigo                     ';
+
+    fGet.Close;
+    fGet.SQL.Clear;
+    fGet.SQL.Text := sSQL;
+    fGet.ParamByName('codigo').AsString := ACodigo;
+    fGet.Open;
+
+    if not fGet.IsEmpty then
+    begin
+      Profissional                   := TProfissional.Create;
+      Profissional.Id                := fGet.FieldByName('id').AsInteger;
+      Profissional.Nome              := fGet.FieldByName('nome').AsString;
+      Profissional.Codigo            := fGet.FieldByName('codigo').AsString;
+      Profissional.Email             := fGet.FieldByName('email').AsString;
+      Profissional.Telefone          := fGet.FieldByName('telefone').AsString;
+      Profissional.Senha             := fGet.FieldByName('senha').AsString;
+      Profissional.RaioAtendimentoKm := fGet.FieldByName('raio').AsFloat;
+      Profissional.Latitude          := fGet.FieldByName('latitude').AsFloat;
+      Profissional.Longitude         := fGet.FieldByName('longitude').AsFloat;
+
+      Result := Profissional;
+    end;
+
+  finally
+    fGet.Close;
+    fGet.Free;
+  end;
 end;
 
 constructor TProfissionalDAO.Create(AConexao: TFDConnection);
