@@ -169,8 +169,28 @@ begin
 end;
 
 function TProfissionalDAO.Existe(AEntidade: TProfissional): boolean;
+var
+  sSQL: string;
+  fGet: TFDQuery;
 begin
+  fGet := TFDQuery.Create(nil);
+  try
+    fGet.Connection := FConexao;
 
+    sSQL :=
+    'SELECT id FROM servicos_oferecidos WHERE profissional_id = :profissional_id ';
+
+    fGet.Close;
+    fGet.SQL.Clear;
+    fGet.SQL.Text := sSQL;
+    fGet.ParamByName('profissional_id').AsInteger := AEntidade.Id;
+    fGet.Open;
+
+    Result := not (fGet.IsEmpty);
+  finally
+    fGet.Close;
+    fGet.Free;
+  end;
 end;
 
 procedure TProfissionalDAO.Inserir(AEntidade: TProfissional);
