@@ -11,7 +11,8 @@ uses
   uCategoriaDAO in 'src\dao\uCategoriaDAO.pas',
   uCategoriaService in 'src\services\uCategoriaService.pas',
   uFrmCategorias in 'src\forms\uFrmCategorias.pas' {frmCategoriasRegistrar},
-  uFrmCategoriasPesquisar in 'src\forms\uFrmCategoriasPesquisar.pas' {frmCategoriasPesquisar};
+  uFrmCategoriasPesquisar in 'src\forms\uFrmCategoriasPesquisar.pas' {frmCategoriasPesquisar},
+  uProfissional in 'src\model\uProfissional.pas';
 
 {$R *.res}
 

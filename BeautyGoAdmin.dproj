@@ -124,6 +124,7 @@
             <Form>frmCategoriasPesquisar</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="src\model\uProfissional.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
