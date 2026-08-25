@@ -126,6 +126,7 @@
         </DCCReference>
         <DCCReference Include="src\model\uProfissional.pas"/>
         <DCCReference Include="src\model\uServicoOferecido.pas"/>
+        <DCCReference Include="src\dao\uProfissionalDAO.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

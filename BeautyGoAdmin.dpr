@@ -13,7 +13,8 @@ uses
   uFrmCategorias in 'src\forms\uFrmCategorias.pas' {frmCategoriasRegistrar},
   uFrmCategoriasPesquisar in 'src\forms\uFrmCategoriasPesquisar.pas' {frmCategoriasPesquisar},
   uProfissional in 'src\model\uProfissional.pas',
-  uServicoOferecido in 'src\model\uServicoOferecido.pas';
+  uServicoOferecido in 'src\model\uServicoOferecido.pas',
+  uProfissionalDAO in 'src\dao\uProfissionalDAO.pas';
 
 {$R *.res}
 
