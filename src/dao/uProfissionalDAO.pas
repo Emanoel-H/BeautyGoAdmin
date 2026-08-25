@@ -147,8 +147,25 @@ begin
 end;
 
 procedure TProfissionalDAO.DeletarServico(AServicoId: Int64);
+var
+  sSQL: string;
+  fSet: TFDQuery;
 begin
+  fSet := TFDQuery.Create(nil);
+  try
+    fSet.Connection := FConexao;
 
+    sSQL := 'DELETE FROM servicos_oferecidos WHERE id = :id ';
+
+    fSet.Close;
+    fSet.SQL.Clear;
+    fSet.SQL.Text := sSQL;
+    fSet.ParamByName('id').AsInteger := AServicoId.Id;
+    fSet.ExecSQL;
+  finally
+    fSet.Close;
+    fSet.Free;
+  end;
 end;
 
 function TProfissionalDAO.Existe(AEntidade: TProfissional): boolean;
