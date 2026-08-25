@@ -19,6 +19,7 @@ type
     function Listar(AEntidade: TProfissional): TFDQuery;
     function Existe(AEntidade: TProfissional): boolean;
 
+
   end;
 
 implementation
@@ -26,8 +27,41 @@ implementation
 { TProfissionalDAO }
 
 procedure TProfissionalDAO.Atualizar(AEntidade: TProfissional);
+var
+  sSQL: string;
+  fSet: TFDQuery;
 begin
+  fSet := TFDQuery.Create(nil);
+  try
+    fSet.Connection := FConexao;
 
+    sSQL := 'UPDATE profissionais SET                           '+
+            'nome = :nome,                                      '+
+            'codigo = :codigo                                   '+
+            'email = :email                                     '+
+            'telefone = :telefone                               '+
+            'senha = :senha                                     '+
+            'raio_atendimento_km = :raio                        '+
+            'localizacao = ST_MakePoint(:lng, :lat)::geography) '+
+            'WHERE id = :id                                     ';
+
+    fSet.Close;
+    fSet.SQL.Clear;
+    fSet.SQL.Text := sSQL;
+    fSet.ParamByName('nome').AsString     := AEntidade.Nome;
+    fSet.ParamByName('codigo').AsString   := AEntidade.Codigo;
+    fSet.ParamByName('email').AsString    := AEntidade.Email;
+    fSet.ParamByName('telefone').AsString := AEntidade.Telefone;
+    fSet.ParamByName('senha').AsString    := AEntidade.Senha;
+    fSet.ParamByName('raio').AsFloat      := AEntidade.RaioAtendimentoKm;
+    fSet.ParamByName('lng').AsFloat       := AEntidade.Longitude;
+    fSet.ParamByName('lat').AsFloat       := AEntidade.Latitude;
+    fSet.ParamByName('id').AsInteger      := AEntidade.Id;
+    fSet.ExecSQL;
+  finally
+    fSet.Close;
+    fSet.Free;
+  end;
 end;
 
 function TProfissionalDAO.BuscarPorCodigo(ACodigo: string): TProfissional;
