@@ -2,7 +2,7 @@ unit uProfissionalDAO;
 
 interface
 uses
-  System.SysUtils, IRepositorio, uProfissional, System.Generics.Collections, uDmConexao,
+  System.SysUtils, IRepositorio, uProfissional, uServicoOferecido, System.Generics.Collections, uDmConexao,
   FireDAC.Comp.Client, FireDAC.Comp.DataSet, FireDAC.Stan.Param, FireDAC.Phys.PG, DB,
   Classes;
 type
