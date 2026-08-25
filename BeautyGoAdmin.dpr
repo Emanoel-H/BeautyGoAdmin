@@ -12,7 +12,8 @@ uses
   uCategoriaService in 'src\services\uCategoriaService.pas',
   uFrmCategorias in 'src\forms\uFrmCategorias.pas' {frmCategoriasRegistrar},
   uFrmCategoriasPesquisar in 'src\forms\uFrmCategoriasPesquisar.pas' {frmCategoriasPesquisar},
-  uProfissional in 'src\model\uProfissional.pas';
+  uProfissional in 'src\model\uProfissional.pas',
+  uServicoOferecido in 'src\model\uServicoOferecido.pas';
 
 {$R *.res}
 
