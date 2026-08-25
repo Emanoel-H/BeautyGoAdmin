@@ -121,7 +121,7 @@ end;
 
 constructor TProfissionalDAO.Create(AConexao: TFDConnection);
 begin
-
+  FConexao := AConexao;
 end;
 
 procedure TProfissionalDAO.Deletar(AEntidade: TProfissional);
