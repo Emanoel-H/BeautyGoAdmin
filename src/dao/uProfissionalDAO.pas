@@ -125,8 +125,25 @@ begin
 end;
 
 procedure TProfissionalDAO.Deletar(AEntidade: TProfissional);
+var
+  sSQL: string;
+  fSet: TFDQuery;
 begin
+  fSet := TFDQuery.Create(nil);
+  try
+    fSet.Connection := FConexao;
 
+    sSQL := 'DELETE FROM profissionais WHERE id = :id ';
+
+    fSet.Close;
+    fSet.SQL.Clear;
+    fSet.SQL.Text := sSQL;
+    fSet.ParamByName('id').AsInteger := AEntidade.Id;
+    fSet.ExecSQL;
+  finally
+    fSet.Close;
+    fSet.Free;
+  end;
 end;
 
 procedure TProfissionalDAO.DeletarServico(AServicoId: Int64);
