@@ -194,8 +194,33 @@ begin
 end;
 
 procedure TProfissionalDAO.Inserir(AEntidade: TProfissional);
+var
+  sSQL: string;
+  fSet: TFDQuery;
 begin
+  fSet := TFDQuery.Create(nil);
+  try
+    fSet.Connection := FConexao;
 
+    sSQL := 'INSERT INTO profissionais '+
+            '(nome, email, telefone, senha, raio_atendimento_km, localizacao)   '+
+            'VALUES(:nome, :email, :telefone, :senha, :raio, ST_MakePoint(:lng, :lat)::geography))';
+
+    fSet.Close;
+    fSet.SQL.Clear;
+    fSet.SQL.Text := sSQL;
+    fSet.ParamByName('nome').AsString     := AEntidade.Nome;
+    fSet.ParamByName('email').AsString    := AEntidade.Email;
+    fSet.ParamByName('telefone').AsString := AEntidade.Telefone;
+    fSet.ParamByName('senha').AsString    := AEntidade.Senha;
+    fSet.ParamByName('raio').AsFloat      := AEntidade.RaioAtendimentoKm;
+    fSet.ParamByName('lng').AsFloat       := AEntidade.Longitude;
+    fSet.ParamByName('lat').AsFloat       := AEntidade.Latitude;
+    fSet.ExecSQL;
+  finally
+    fSet.Close;
+    fSet.Free;
+  end;
 end;
 
 procedure TProfissionalDAO.InserirServico(AServico: TServicoOferecido);
