@@ -160,7 +160,7 @@ begin
     fSet.Close;
     fSet.SQL.Clear;
     fSet.SQL.Text := sSQL;
-    fSet.ParamByName('id').AsInteger := AServicoId.Id;
+    fSet.ParamByName('id').AsInteger := AServicoId;
     fSet.ExecSQL;
   finally
     fSet.Close;
