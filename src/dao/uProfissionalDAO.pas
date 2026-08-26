@@ -41,11 +41,11 @@ begin
 
     sSQL := 'UPDATE profissionais SET                           '+
             'nome = :nome,                                      '+
-            'codigo = :codigo                                   '+
-            'email = :email                                     '+
-            'telefone = :telefone                               '+
-            'senha = :senha                                     '+
-            'raio_atendimento_km = :raio                        '+
+            'codigo = :codigo,                                  '+
+            'email = :email,                                    '+
+            'telefone = :telefone,                              '+
+            'senha = :senha,                                    '+
+            'raio_atendimento_km = :raio,                       '+
             'localizacao = ST_MakePoint(:lng, :lat)::geography) '+
             'WHERE id = :id                                     ';
 
