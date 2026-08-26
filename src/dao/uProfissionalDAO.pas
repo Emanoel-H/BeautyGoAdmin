@@ -222,8 +222,29 @@ begin
 end;
 
 procedure TProfissionalDAO.InserirServico(AServico: TServicoOferecido);
+var
+  sSQL: string;
+  fSet: TFDQuery;
 begin
+  fSet := TFDQuery.Create(nil);
+  try
+    fSet.Connection := FConexao;
 
+    sSQL := 'INSERT INTO servicos_oferecidos                 '+
+            '(profissional_id, categoria_id, preco)          '+
+            'VALUES(:profissional_id, :categoria_id, :preco) ';
+
+    fSet.Close;
+    fSet.SQL.Clear;
+    fSet.SQL.Text := sSQL;
+    fSet.ParamByName('profissional_id').AsInteger := AServico.ProfissionalId;
+    fSet.ParamByName('categoria_id').AsInteger    := AServico.CategoriaId;
+    fSet.ParamByName('preco').AsCurrency          := AServico.dPreco;
+    fSet.ExecSQL;
+  finally
+    fSet.Close;
+    fSet.Free;
+  end;
 end;
 
 function TProfissionalDAO.Listar(AEntidade: TProfissional): TFDQuery;
