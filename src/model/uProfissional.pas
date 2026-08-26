@@ -9,6 +9,7 @@ type
     private
       iId: Int64;
       sNome: string;
+      sBio: string;
       sCodigo: string;
       sEmail: string;
       sTelefone: string;
@@ -19,6 +20,7 @@ type
     public
       property Id: Int64 read iId write iId;
       property Nome: string read sNome write sNome;
+      property Bio: string read sBio write sBio;
       property Codigo: string read sCodigo write sCodigo;
       property Email: string read sEmail write sEmail;
       property Telefone: string read sTelefone write sTelefone;
