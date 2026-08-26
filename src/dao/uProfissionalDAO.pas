@@ -4,7 +4,7 @@ interface
 uses
   System.SysUtils, IRepositorio, uProfissional, uServicoOferecido, System.Generics.Collections, uDmConexao,
   FireDAC.Comp.Client, FireDAC.Comp.DataSet, FireDAC.Stan.Param, FireDAC.Phys.PG, DB,
-  Classes;
+  Classes, System.RegularExpressions;
 type
   TProfissionalDAO = class(TInterfacedObject, IRepositorio.Repositorio<TProfissional>)
     private
@@ -248,8 +248,59 @@ begin
 end;
 
 function TProfissionalDAO.Listar(AEntidade: TProfissional): TFDQuery;
+var
+  sSQL: string;
+  fGet: TFDQuery;
 begin
+  fGet := TFDQuery.Create(nil);
+    try
+      fGet.Connection := FConexao;
 
+      sSQL := 'SELECT                  '+
+              'id,                     '+
+              'code as codigo,         '+
+              'nome,                   '+
+              'bio::VARCHAR(200),      '+
+              'email,                  '+
+              'telefone,               '+
+              'localizacao             '+
+              'FROM profissionais      '+
+              'WHERE 1=1               ';
+
+      if (AEntidade.Codigo <> '') then
+        sSQL := sSQL + 'AND code = :codigo ';
+
+      if (AEntidade.Nome <> '') then
+        sSQL := sSQL + 'AND nome ILIKE :nome ';
+
+      if (AEntidade.Email <> '') then
+        sSQL := sSQL + 'AND email ILIKE :email ';
+
+      if (AEntidade.Telefone <> '') then
+        sSQL := sSQL + 'AND telefone ILIKE :telefone ';
+
+      sSQL := sSQL + 'ORDER BY nome DESC';
+
+      fGet.Close;
+      fGet.SQL.Clear;
+      fGet.SQL.Text := sSQL;
+
+      if (AEntidade.Nome <> '') then
+        fGet.ParamByName('nome').AsString   := '%' + AEntidade.Nome + '%';
+
+      if (AEntidade.Codigo <> '') then
+        fGet.ParamByName('codigo').AsString := AEntidade.Codigo;
+
+      if (AEntidade.Codigo <> '') then
+        fGet.ParamByName('email').AsString := AEntidade.Email;
+
+      if (AEntidade.Codigo <> '') then
+        fGet.ParamByName('telefone').AsString := TRegEx.Replace(AEntidade.Telefone, '\D', '');
+
+      fGet.Open;
+    finally
+      Result := fGet;
+    end;
 end;
 
 function TProfissionalDAO.ListarServicos(AProfissionalId: Int64): TFDQuery;
