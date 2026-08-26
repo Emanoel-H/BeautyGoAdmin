@@ -41,7 +41,6 @@ begin
 
     sSQL := 'UPDATE profissionais SET                           '+
             'nome = :nome,                                      '+
-            'codigo = :codigo,                                  '+
             'email = :email,                                    '+
             'telefone = :telefone,                              '+
             'senha = :senha,                                    '+
@@ -53,7 +52,6 @@ begin
     fSet.SQL.Clear;
     fSet.SQL.Text := sSQL;
     fSet.ParamByName('nome').AsString     := AEntidade.Nome;
-    fSet.ParamByName('codigo').AsString   := AEntidade.Codigo;
     fSet.ParamByName('email').AsString    := AEntidade.Email;
     fSet.ParamByName('telefone').AsString := AEntidade.Telefone;
     fSet.ParamByName('senha').AsString    := AEntidade.Senha;
