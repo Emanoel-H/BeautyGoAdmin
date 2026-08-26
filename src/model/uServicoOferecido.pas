@@ -11,13 +11,13 @@ type
       iCategoriaId: Int64;
       iProfissionalId: Int64;
       sCodigo: string;
-      dPreco: Currency;
+      cPreco: Currency;
     public
       property Id: Int64 read iId write iId;
       property CategoriaId: Int64 read iCategoriaId write iCategoriaId;
       property ProfissionalId: Int64 read iProfissionalId write iProfissionalId;
       property Codigo: string read sCodigo write sCodigo;
-      property dPreco: Currency read dPreco write dPreco;
+      property dPreco: Currency read cPreco write cPreco;
   end;
 
 implementation
