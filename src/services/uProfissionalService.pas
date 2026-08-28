@@ -29,7 +29,7 @@ implementation
 
 constructor TProfissionalService.Create(AConexao: TFDConnection);
 begin
-
+  FDAO := TProfissionalDAO.Create(AConexao);
 end;
 
 destructor TProfissionalService.Destroy;
