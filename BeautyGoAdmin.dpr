@@ -14,7 +14,8 @@ uses
   uFrmCategoriasPesquisar in 'src\forms\uFrmCategoriasPesquisar.pas' {frmCategoriasPesquisar},
   uProfissional in 'src\model\uProfissional.pas',
   uServicoOferecido in 'src\model\uServicoOferecido.pas',
-  uProfissionalDAO in 'src\dao\uProfissionalDAO.pas';
+  uProfissionalDAO in 'src\dao\uProfissionalDAO.pas',
+  uProfissionalService in 'src\services\uProfissionalService.pas';
 
 {$R *.res}
 
