@@ -82,7 +82,6 @@ begin
             'nome,                                    '+
             'email,                                   '+
             'telefone,                                '+
-            'senha,                                   '+
             'raio_atendimento_km as raio,             '+
             'ST_Y(localizacao::geometry) AS latitude, '+
             'ST_X(localizacao::geometry) AS longitude '+
@@ -103,7 +102,6 @@ begin
       Profissional.Codigo            := fGet.FieldByName('codigo').AsString;
       Profissional.Email             := fGet.FieldByName('email').AsString;
       Profissional.Telefone          := fGet.FieldByName('telefone').AsString;
-      Profissional.Senha             := fGet.FieldByName('senha').AsString;
       Profissional.RaioAtendimentoKm := fGet.FieldByName('raio').AsFloat;
       Profissional.Latitude          := fGet.FieldByName('latitude').AsFloat;
       Profissional.Longitude         := fGet.FieldByName('longitude').AsFloat;
