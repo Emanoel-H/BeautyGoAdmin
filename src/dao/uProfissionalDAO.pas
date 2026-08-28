@@ -80,6 +80,7 @@ begin
             'id,                                      '+
             'code as codigo,                          '+
             'nome,                                    '+
+            'bio::VARCHAR(200),                       '+
             'email,                                   '+
             'telefone,                                '+
             'raio_atendimento_km as raio,             '+
@@ -99,6 +100,7 @@ begin
       Profissional                   := TProfissional.Create;
       Profissional.Id                := fGet.FieldByName('id').AsInteger;
       Profissional.Nome              := fGet.FieldByName('nome').AsString;
+      Profissional.Bio               := fGet.FieldByName('bio').AsString;
       Profissional.Codigo            := fGet.FieldByName('codigo').AsString;
       Profissional.Email             := fGet.FieldByName('email').AsString;
       Profissional.Telefone          := fGet.FieldByName('telefone').AsString;
