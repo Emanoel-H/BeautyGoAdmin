@@ -199,13 +199,14 @@ begin
     fSet.Connection := FConexao;
 
     sSQL := 'INSERT INTO profissionais                                                             '+
-            '(nome, email, telefone, senha, raio_atendimento_km, localizacao)                      '+
-            'VALUES(:nome, :email, :telefone, :senha, :raio, ST_MakePoint(:lng, :lat)::geography)) ';
+            '(nome, bio, email, telefone, senha, raio_atendimento_km, localizacao)                      '+
+            'VALUES(:nome, :bio, :email, :telefone, :senha, :raio, ST_MakePoint(:lng, :lat)::geography)) ';
 
     fSet.Close;
     fSet.SQL.Clear;
     fSet.SQL.Text := sSQL;
     fSet.ParamByName('nome').AsString     := AEntidade.Nome;
+    fSet.ParamByName('bio').AsString      := AEntidade.Bio;
     fSet.ParamByName('email').AsString    := AEntidade.Email;
     fSet.ParamByName('telefone').AsString := AEntidade.Telefone;
     fSet.ParamByName('senha').AsString    := AEntidade.Senha;
