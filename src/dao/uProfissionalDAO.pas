@@ -302,8 +302,35 @@ begin
 end;
 
 function TProfissionalDAO.ListarServicos(AProfissionalId: Int64): TFDQuery;
+var
+  sSQL: string;
+  fGet: TFDQuery;
 begin
+  fGet := TFDQuery.Create(nil);
+  try
+    fGet.Connection := FConexao;
 
+    sSQL := 'SELECT                                           '+
+            'servico.id,                                      '+
+            'servico.code as codigo,                          '+
+            'profissional.nome as profissional,               '+
+            'categoria.nome as categoria,                     '+
+            'servico.preco                                    '+
+            'FROM servicos_oferecidos as servico              '+
+            'LEFT JOIN profissionais as profissional          '+
+            'ON servico.profissional_id = profissional.id     '+
+            'LEFT JOIN categorias_servico as categoria        '+
+            'ON servico.categoria_id = categoria.id           '+
+            'WHERE servico.profissional_id = :profissional_id '+
+            'ORDER BY nome DESC                               ';
+
+    fGet.Close;
+    fGet.SQL.Clear;
+    fGet.SQL.Text := sSQL;
+    fGet.Open;
+  finally
+    Result := fGet;
+  end;
 end;
 
 end.
