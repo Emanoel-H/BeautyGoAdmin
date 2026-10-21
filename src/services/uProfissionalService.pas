@@ -8,7 +8,7 @@ type
   TProfissionalService = class
     private
       FDAO: Repositorio<TProfissional>;
-
+    public
       constructor Create(AConexao: TFDConnection);
       destructor Destroy; override;
 
@@ -19,8 +19,6 @@ type
       procedure Salvar(AServico: TServicoOferecido);
       procedure Excluir(AServico: TServicoOferecido);
       function Listar(AServico: TServicoOferecido): TFDQuery;
-
-    public
 
   end;
 implementation
