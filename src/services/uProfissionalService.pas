@@ -93,9 +93,9 @@ begin
     raise Exception.Create('O Serviço deve possuir uma categoria!');
 
   if AServico.Id = 0 then
-    ProfissionalDAO.InserirServico(AServico);
-//  else
-//    ProfissionalDAO.Atualizar(AProfissional);
+    ProfissionalDAO.InserirServico(AServico)
+  else
+    ProfissionalDAO.AtualizarServico(AServico);
 end;
 
 end.
