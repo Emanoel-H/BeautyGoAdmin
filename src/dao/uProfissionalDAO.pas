@@ -20,9 +20,9 @@ type
     function Existe(AEntidade: TProfissional): boolean;
 
     procedure InserirServico(AServico: TServicoOferecido);
+    procedure AtualizarServico(AServico: TServicoOferecido);
     procedure DeletarServico(AServicoId: Int64);
     function ListarServicos(AProfissionalId: Int64): TFDQuery;
-
 
   end;
 
@@ -61,6 +61,35 @@ begin
     fSet.ParamByName('lng').AsFloat       := AEntidade.Longitude;
     fSet.ParamByName('lat').AsFloat       := AEntidade.Latitude;
     fSet.ParamByName('id').AsInteger      := AEntidade.Id;
+    fSet.ExecSQL;
+  finally
+    fSet.Close;
+    fSet.Free;
+  end;
+end;
+
+procedure TProfissionalDAO.AtualizarServico(AServico: TServicoOferecido);
+var
+  sSQL: string;
+  fSet: TFDQuery;
+begin
+  fSet := TFDQuery.Create(nil);
+  try
+    fSet.Connection := FConexao;
+
+    sSQL := 'UPDATE servicos_oferecidos SET      '+
+            'profissional_id = :profissional_id, '+
+            'categoria_id = :categoria_id,       '+
+            'preco = :preco                      '+
+            'WHERE id = :id                      ';
+
+    fSet.Close;
+    fSet.SQL.Clear;
+    fSet.SQL.Text := sSQL;
+    fSet.ParamByName('profissional_id').AsInteger := AServico.ProfissionalId;
+    fSet.ParamByName('categoria_id').AsInteger    := AServico.CategoriaId;
+    fSet.ParamByName('preco').AsCurrency          := AServico.dPreco;
+    fSet.ParamByName('id').AsInteger              := AServico.Id;
     fSet.ExecSQL;
   finally
     fSet.Close;

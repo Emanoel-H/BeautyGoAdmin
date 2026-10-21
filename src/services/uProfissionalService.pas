@@ -86,7 +86,16 @@ end;
 
 procedure TProfissionalService.Salvar(AServico: TServicoOferecido);
 begin
+  if AServico.ProfissionalId = 0 then
+    raise Exception.Create('O Serviço deve possuir um profissional!');
 
+  if AServico.CategoriaId = 0 then
+    raise Exception.Create('O Serviço deve possuir uma categoria!');
+
+  if AServico.Id = 0 then
+    ProfissionalDAO.InserirServico(AServico);
+//  else
+//    ProfissionalDAO.Atualizar(AProfissional);
 end;
 
 end.
