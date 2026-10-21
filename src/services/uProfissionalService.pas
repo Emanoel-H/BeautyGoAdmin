@@ -61,7 +61,7 @@ end;
 
 function TProfissionalService.Listar(AProfissional: TProfissional): TFDQuery;
 begin
-
+  Result := FDAO.Listar(AProfissional);
 end;
 
 procedure TProfissionalService.Salvar(AProfissional: TProfissional);
