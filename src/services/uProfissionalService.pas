@@ -40,7 +40,10 @@ end;
 
 procedure TProfissionalService.Excluir(AProfissional: TProfissional);
 begin
+  if FDAO.Existe(AProfissional) then
+    raise Exception.Create('Este profissional possui serviços vinculados e não pode ser excluída.');
 
+  FDAO.Deletar(AProfissional);
 end;
 
 procedure TProfissionalService.Excluir(AServico: TServicoOferecido);
