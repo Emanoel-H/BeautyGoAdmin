@@ -81,6 +81,9 @@ begin
   if AProfissional.RaioAtendimentoKm <= 0 then
     raise Exception.Create('O raio de atendimento do Profissional deve ser maior que 0!');
 
+  if (AProfissional.Latitude = 0) and (AProfissional.Longitude = 0) then
+    raise Exception.Create('Informe a localização do Profissional!');
+
   if AProfissional.Id = 0 then
     FDAO.Inserir(AProfissional)
   else
