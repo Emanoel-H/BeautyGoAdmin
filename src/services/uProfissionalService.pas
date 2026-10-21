@@ -78,6 +78,9 @@ begin
   if AProfissional.Telefone = '' then
     raise Exception.Create('O Profissional deve possuir um telefone!');
 
+  if AProfissional.RaioAtendimentoKm <= 0 then
+    raise Exception.Create('O raio de atendimento do Profissional deve ser maior que 0!');
+
   if AProfissional.Id = 0 then
     FDAO.Inserir(AProfissional)
   else
