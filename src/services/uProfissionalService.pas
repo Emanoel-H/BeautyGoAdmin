@@ -8,6 +8,7 @@ type
   TProfissionalService = class
     private
       ProfissionalDAO: Repositorio<TProfissional>;
+      ServicosDAO: Repositorio<TServicoOferecido>;
 
       constructor Create(AConexao: TFDConnection);
       destructor Destroy; override;
