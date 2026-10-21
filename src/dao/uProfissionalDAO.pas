@@ -46,7 +46,7 @@ begin
             'telefone = :telefone,                              '+
             'senha = :senha,                                    '+
             'raio_atendimento_km = :raio,                       '+
-            'localizacao = ST_MakePoint(:lng, :lat)::geography) '+
+            'localizacao = ST_MakePoint(:lng, :lat)::geography  '+
             'WHERE id = :id                                     ';
 
     fSet.Close;
