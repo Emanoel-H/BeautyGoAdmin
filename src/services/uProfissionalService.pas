@@ -66,7 +66,22 @@ end;
 
 procedure TProfissionalService.Salvar(AProfissional: TProfissional);
 begin
+  if AProfissional.Nome = '' then
+    raise Exception.Create('O Profissional deve possuir um nome!');
 
+  if AProfissional.Email = '' then
+    raise Exception.Create('O Profissional deve possuir um email!');
+
+  if AProfissional.Senha = '' then
+    raise Exception.Create('O Profissional deve possuir uma senha!');
+
+  if AProfissional.Telefone = '' then
+    raise Exception.Create('O Profissional deve possuir um telefone!');
+
+  if AProfissional.Id = 0 then
+    FDAO.Inserir(AProfissional)
+  else
+    FDAO.Atualizar(AProfissional);
 end;
 
 procedure TProfissionalService.Salvar(AServico: TServicoOferecido);
