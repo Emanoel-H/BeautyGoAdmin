@@ -8,6 +8,7 @@ type
   TProfissionalService = class
     private
       FDAO: Repositorio<TProfissional>;
+      ProfissionalDAO: TProfissionalDAO;
     public
       constructor Create(AConexao: TFDConnection);
       destructor Destroy; override;
@@ -26,8 +27,12 @@ implementation
 { TProfissionalService }
 
 constructor TProfissionalService.Create(AConexao: TFDConnection);
+var
+  DAO: TProfissionalDAO;
 begin
-  FDAO := TProfissionalDAO.Create(AConexao);
+  DAO             := TProfissionalDAO.Create(AConexao);
+  FDAO            := DAO;
+  ProfissionalDAO := DAO;
 end;
 
 destructor TProfissionalService.Destroy;
