@@ -88,7 +88,7 @@ begin
     fSet.SQL.Text := sSQL;
     fSet.ParamByName('profissional_id').AsInteger := AServico.ProfissionalId;
     fSet.ParamByName('categoria_id').AsInteger    := AServico.CategoriaId;
-    fSet.ParamByName('preco').AsCurrency          := AServico.dPreco;
+    fSet.ParamByName('preco').AsCurrency          := AServico.cPreco;
     fSet.ParamByName('id').AsInteger              := AServico.Id;
     fSet.ExecSQL;
   finally
@@ -271,7 +271,7 @@ begin
     fSet.SQL.Text := sSQL;
     fSet.ParamByName('profissional_id').AsInteger := AServico.ProfissionalId;
     fSet.ParamByName('categoria_id').AsInteger    := AServico.CategoriaId;
-    fSet.ParamByName('preco').AsCurrency          := AServico.dPreco;
+    fSet.ParamByName('preco').AsCurrency          := AServico.cPreco;
     fSet.ExecSQL;
   finally
     fSet.Close;

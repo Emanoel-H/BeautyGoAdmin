@@ -17,7 +17,7 @@ type
       property CategoriaId: Int64 read iCategoriaId write iCategoriaId;
       property ProfissionalId: Int64 read iProfissionalId write iProfissionalId;
       property Codigo: string read sCodigo write sCodigo;
-      property dPreco: Currency read cPreco write cPreco;
+      property cPreco: Currency read cPreco write cPreco;
   end;
 
 implementation
