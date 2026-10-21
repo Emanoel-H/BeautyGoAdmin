@@ -15,8 +15,7 @@ uses
   uProfissional in 'src\model\uProfissional.pas',
   uServicoOferecido in 'src\model\uServicoOferecido.pas',
   uProfissionalDAO in 'src\dao\uProfissionalDAO.pas',
-  uProfissionalService in 'src\services\uProfissionalService.pas',
-  uServicosOferecidosService in 'src\services\uServicosOferecidosService.pas';
+  uProfissionalService in 'src\services\uProfissionalService.pas';
 
 {$R *.res}
 
