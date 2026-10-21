@@ -51,7 +51,7 @@ end;
 
 procedure TProfissionalService.Excluir(AServico: TServicoOferecido);
 begin
-
+  ProfissionalDAO.DeletarServico(AServico.Id);
 end;
 
 function TProfissionalService.Listar(AServico: TServicoOferecido): TFDQuery;
