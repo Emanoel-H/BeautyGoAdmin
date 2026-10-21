@@ -259,16 +259,17 @@ begin
     try
       fGet.Connection := FConexao;
 
-      sSQL := 'SELECT                  '+
-              'id,                     '+
-              'code as codigo,         '+
-              'nome,                   '+
-              'bio::VARCHAR(200),      '+
-              'email,                  '+
-              'telefone,               '+
-              'localizacao             '+
-              'FROM profissionais      '+
-              'WHERE 1=1               ';
+      sSQL := 'SELECT                                   '+
+              'id,                                      '+
+              'code as codigo,                          '+
+              'nome,                                    '+
+              'bio::VARCHAR(200),                       '+
+              'email,                                   '+
+              'telefone,                                '+
+              'ST_Y(localizacao::geometry) AS latitude, '+
+              'ST_X(localizacao::geometry) AS longitude '+
+              'FROM profissionais                       '+
+              'WHERE 1=1                                ';
 
       if (AEntidade.Codigo <> '') then
         sSQL := sSQL + 'AND code = :codigo ';
