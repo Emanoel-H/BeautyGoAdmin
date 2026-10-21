@@ -332,6 +332,7 @@ begin
     fGet.Close;
     fGet.SQL.Clear;
     fGet.SQL.Text := sSQL;
+    fGet.ParamByName('profissional_id').AsInteger := AProfissionalId;
     fGet.Open;
   finally
     Result := fGet;
