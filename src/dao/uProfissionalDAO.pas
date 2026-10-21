@@ -294,10 +294,10 @@ begin
       if (AEntidade.Codigo <> '') then
         fGet.ParamByName('codigo').AsString := AEntidade.Codigo;
 
-      if (AEntidade.Codigo <> '') then
+      if (AEntidade.Email <> '') then
         fGet.ParamByName('email').AsString := AEntidade.Email;
 
-      if (AEntidade.Codigo <> '') then
+      if (AEntidade.Telefone <> '') then
         fGet.ParamByName('telefone').AsString := TRegEx.Replace(AEntidade.Telefone, '\D', '');
 
       fGet.Open;
