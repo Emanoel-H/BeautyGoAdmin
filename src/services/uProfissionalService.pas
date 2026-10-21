@@ -7,7 +7,7 @@ uses
 type
   TProfissionalService = class
     private
-      FDAO: Repositorio<TProfissional>;
+      ProfissionalDAO: Repositorio<TProfissional>;
 
       constructor Create(AConexao: TFDConnection);
       destructor Destroy; override;
@@ -29,7 +29,7 @@ implementation
 
 constructor TProfissionalService.Create(AConexao: TFDConnection);
 begin
-  FDAO := TProfissionalDAO.Create(AConexao);
+  ProfissionalDAO := TProfissionalDAO.Create(AConexao);
 end;
 
 destructor TProfissionalService.Destroy;
@@ -40,10 +40,10 @@ end;
 
 procedure TProfissionalService.Excluir(AProfissional: TProfissional);
 begin
-  if FDAO.Existe(AProfissional) then
+  if ProfissionalDAO.Existe(AProfissional) then
     raise Exception.Create('Este profissional possui serviços vinculados e não pode ser excluída.');
 
-  FDAO.Deletar(AProfissional);
+  ProfissionalDAO.Deletar(AProfissional);
 end;
 
 procedure TProfissionalService.Excluir(AServico: TServicoOferecido);
