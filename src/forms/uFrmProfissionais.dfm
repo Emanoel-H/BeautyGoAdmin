@@ -168,6 +168,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
       Font.Style = []
       ImeName = 'edtTelefone'
       MaxLength = 11
+      NumbersOnly = True
       ParentFont = False
       TabOrder = 4
     end
