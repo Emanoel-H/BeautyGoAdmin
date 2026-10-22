@@ -36,6 +36,7 @@ type
     procedure btnVoltarClick(Sender: TObject);
     procedure btnCancelarClick(Sender: TObject);
     procedure btnAtualizarClick(Sender: TObject);
+    procedure btnDeletarClick(Sender: TObject);
   private
     { Private declarations }
     Profissional: TProfissional;
@@ -67,6 +68,23 @@ procedure TfrmProfissionaisRegistrar.btnCancelarClick(Sender: TObject);
 begin
   estadoInicial;
   limparCampos;
+end;
+
+procedure TfrmProfissionaisRegistrar.btnDeletarClick(Sender: TObject);
+begin
+  if MessageBox(Handle, PChar('Tem certeza que deseja excluir esse Profissional?'), PChar('Atenção!'), MB_YESNO + MB_ICONQUESTION) = IDYES then
+  begin
+    try
+      Service.Excluir(Profissional);
+      estadoInicial;
+      limparCampos;
+    except
+      on E: Exception do
+      begin
+        Application.MessageBox(PChar(E.Message), 'Atenção!', MB_OK + MB_ICONWARNING)
+      end;
+    end;
+  end;
 end;
 
 procedure TfrmProfissionaisRegistrar.btnVoltarClick(Sender: TObject);
