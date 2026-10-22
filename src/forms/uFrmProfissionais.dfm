@@ -70,7 +70,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
       ParentFont = False
       TabOrder = 0
     end
-    object mmDescricao: TMemo
+    object mmBio: TMemo
       Left = 14
       Top = 80
       Width = 339

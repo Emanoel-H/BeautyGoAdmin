@@ -13,7 +13,7 @@ type
     lblName: TLabel;
     lblBio: TLabel;
     edtNome: TEdit;
-    mmDescricao: TMemo;
+    mmBio: TMemo;
     tbCategorias: TToolBar;
     btnVoltar: TToolButton;
     btnCancelar: TToolButton;
