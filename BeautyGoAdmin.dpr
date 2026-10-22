@@ -16,7 +16,8 @@ uses
   uServicoOferecido in 'src\model\uServicoOferecido.pas',
   uProfissionalDAO in 'src\dao\uProfissionalDAO.pas',
   uProfissionalService in 'src\services\uProfissionalService.pas',
-  uFrmProfissionais in 'src\forms\uFrmProfissionais.pas' {frmProfissionaisRegistrar};
+  uFrmProfissionais in 'src\forms\uFrmProfissionais.pas' {frmProfissionaisRegistrar},
+  uFrmProfissionaisPesquisar in 'src\forms\uFrmProfissionaisPesquisar.pas' {frmProfissionaisPesquisar};
 
 {$R *.res}
 

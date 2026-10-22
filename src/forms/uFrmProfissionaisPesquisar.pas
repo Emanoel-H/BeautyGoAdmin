@@ -8,7 +8,7 @@ uses
   Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids;
 
 type
-  TForm1 = class(TForm)
+  TfrmProfissionaisPesquisar = class(TForm)
     dbgCategorias: TDBGrid;
     pnMenu: TPanel;
     lblCodigo: TLabel;
@@ -30,7 +30,7 @@ type
   end;
 
 var
-  Form1: TForm1;
+  frmProfissionaisPesquisar: TfrmProfissionaisPesquisar;
 
 implementation
 

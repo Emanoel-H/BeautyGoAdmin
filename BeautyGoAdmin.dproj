@@ -132,6 +132,10 @@
             <Form>frmProfissionaisRegistrar</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="src\forms\uFrmProfissionaisPesquisar.pas">
+            <Form>frmProfissionaisPesquisar</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

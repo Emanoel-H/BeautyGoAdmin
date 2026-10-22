@@ -1,7 +1,7 @@
-object Form1: TForm1
+object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
   Left = 0
   Top = 0
-  Caption = 'Form1'
+  Caption = 'Pesquisar Profissionais'
   ClientHeight = 442
   ClientWidth = 628
   Color = clBtnFace
@@ -110,9 +110,9 @@ object Form1: TForm1
     object lblNome: TLabel
       Left = 88
       Top = 2
-      Width = 63
+      Width = 77
       Height = 17
-      Caption = 'Categoria:'
+      Caption = 'Profissional:'
       Color = clWhite
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
