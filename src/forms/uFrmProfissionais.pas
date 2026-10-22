@@ -132,6 +132,7 @@ end;
 procedure TfrmProfissionaisRegistrar.FormShow(Sender: TObject);
 begin
   btnVoltar.Visible := Parent = nil;
+  estadoInicial;
 end;
 
 procedure TfrmProfissionaisRegistrar.limparCampos;
