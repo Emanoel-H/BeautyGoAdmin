@@ -312,18 +312,6 @@ object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
   end
   object fdqProfissionais: TFDQuery
     Connection = dmConexao.FDConnection
-    SQL.Strings = (
-      'SELECT                                  '
-      'id,                                     '
-      'code as codigo,                         '
-      'nome,                                   '
-      'bio::VARCHAR(200),                      '
-      'email,                                  '
-      'telefone,                               '
-      'raio_atendimento_km as raio,            '
-      'ST_Y(localizacao::geometry) AS latitude,'
-      'ST_X(localizacao::geometry) AS longitude'
-      'FROM profissionais                      ')
     Left = 240
     object fdqProfissionaisid: TLargeintField
       FieldName = 'id'
