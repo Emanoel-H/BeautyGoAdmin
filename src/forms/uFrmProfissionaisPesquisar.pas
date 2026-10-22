@@ -34,6 +34,8 @@ type
     procedure btnVoltarClick(Sender: TObject);
     procedure btnPesquisarClick(Sender: TObject);
     procedure btnConfirmarClick(Sender: TObject);
+    procedure dbgProfissionaisDrawColumnCell(Sender: TObject; const Rect: TRect;
+      DataCol: Integer; Column: TColumn; State: TGridDrawState);
   private
     { Private declarations }
     Profissional: TProfissional;
@@ -82,6 +84,26 @@ end;
 procedure TfrmProfissionaisPesquisar.btnVoltarClick(Sender: TObject);
 begin
   Close;
+end;
+
+procedure TfrmProfissionaisPesquisar.dbgProfissionaisDrawColumnCell(
+  Sender: TObject; const Rect: TRect; DataCol: Integer; Column: TColumn;
+  State: TGridDrawState);
+begin
+  if gdSelected in State then
+  begin
+    dbgProfissionais.Canvas.Brush.Color := clNavy;
+    dbgProfissionais.Canvas.Font.Color := clWhite;
+  end
+
+  else if dbgProfissionais.DataSource.DataSet.RecNo mod 2 = 0 then
+  begin
+    dbgProfissionais.Canvas.Brush.Color := $00673AB7;
+  end;
+  dbgProfissionais.DefaultDrawColumnCell(Rect, DataCol, Column, State);
+
+  if dbgProfissionais.Columns[6].Title.Caption = '' then
+    dbgProfissionais.DataSource.DataSet.FieldByName('telefone').AsString := '';
 end;
 
 procedure TfrmProfissionaisPesquisar.FormClose(Sender: TObject;

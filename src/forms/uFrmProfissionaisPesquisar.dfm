@@ -39,6 +39,7 @@ object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
     TitleFont.Height = -12
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
+    OnDrawColumnCell = dbgProfissionaisDrawColumnCell
     Columns = <
       item
         Expanded = False
