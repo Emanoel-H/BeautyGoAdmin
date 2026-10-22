@@ -38,6 +38,7 @@ type
     procedure btnAtualizarClick(Sender: TObject);
     procedure btnDeletarClick(Sender: TObject);
     procedure btnInserirClick(Sender: TObject);
+    procedure btnConfirmarClick(Sender: TObject);
   private
     { Private declarations }
     Profissional: TProfissional;
@@ -69,6 +70,24 @@ procedure TfrmProfissionaisRegistrar.btnCancelarClick(Sender: TObject);
 begin
   estadoInicial;
   limparCampos;
+end;
+
+procedure TfrmProfissionaisRegistrar.btnConfirmarClick(Sender: TObject);
+begin
+  Profissional.Nome     := trim(edtNome.Text);
+  Profissional.Bio      := trim(mmBio.Text);
+  Profissional.Email    := trim(edtEmail.Text);
+  Profissional.Telefone := trim(edtTelefone.Text);
+
+  try
+    Service.Salvar(Profissional);
+    estadoInicial;
+  except
+    on E: Exception do
+    begin
+      Application.MessageBox(PChar(E.Message), 'Atenção!', MB_OK + MB_ICONWARNING)
+    end;
+  end;
 end;
 
 procedure TfrmProfissionaisRegistrar.btnDeletarClick(Sender: TObject);

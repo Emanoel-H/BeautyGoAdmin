@@ -275,6 +275,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
       ImageName = 'checkmark 72'
       ParentShowHint = False
       ShowHint = True
+      OnClick = btnConfirmarClick
     end
   end
 end
