@@ -71,6 +71,38 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
       ParentColor = False
       ParentFont = False
     end
+    object lblSenha: TLabel
+      Left = 14
+      Top = 104
+      Width = 41
+      Height = 17
+      Caption = 'Senha:'
+      Color = clWhite
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      Font.Quality = fqClearType
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label1: TLabel
+      Left = 14
+      Top = 147
+      Width = 57
+      Height = 17
+      Caption = 'Telefone:'
+      Color = clWhite
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      Font.Quality = fqClearType
+      ParentColor = False
+      ParentFont = False
+    end
     object edtNome: TEdit
       Left = 14
       Top = 33
@@ -107,6 +139,37 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
       MaxLength = 150
       ParentFont = False
       TabOrder = 2
+    end
+    object edtSenha: TEdit
+      Left = 14
+      Top = 123
+      Width = 120
+      Height = 23
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -12
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ImeName = 'edtValue2'
+      MaxLength = 150
+      ParentFont = False
+      PasswordChar = '*'
+      TabOrder = 3
+    end
+    object edtTelefone: TEdit
+      Left = 14
+      Top = 166
+      Width = 139
+      Height = 23
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -12
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ImeName = 'edtTelefone'
+      MaxLength = 150
+      ParentFont = False
+      TabOrder = 4
     end
   end
   object tbCategorias: TToolBar

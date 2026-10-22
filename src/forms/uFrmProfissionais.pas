@@ -24,6 +24,10 @@ type
     btnConfirmar: TToolButton;
     lblEmail: TLabel;
     edtEmail: TEdit;
+    lblSenha: TLabel;
+    edtSenha: TEdit;
+    Label1: TLabel;
+    edtTelefone: TEdit;
   private
     { Private declarations }
   public
