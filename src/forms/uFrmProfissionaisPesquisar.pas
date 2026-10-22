@@ -32,6 +32,7 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormShow(Sender: TObject);
     procedure btnVoltarClick(Sender: TObject);
+    procedure btnPesquisarClick(Sender: TObject);
   private
     { Private declarations }
     Profissional: TProfissional;
@@ -46,6 +47,20 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TfrmProfissionaisPesquisar.btnPesquisarClick(Sender: TObject);
+begin
+  Profissional.Nome   := edtNome.Text;
+  Profissional.Codigo := edtCodigo.Text;
+
+  fdqProfissionais := Service.Listar(Profissional);
+
+  if fdqProfissionais.IsEmpty then
+    Application.MessageBox('Não há registros na consulta!', 'Atenção!', MB_OK + MB_ICONWARNING);
+
+  dsProfissionais.DataSet     := fdqProfissionais;
+  lblQtdeRegistros.Caption := fdqProfissionais.RecordCount.ToString;
+end;
 
 procedure TfrmProfissionaisPesquisar.btnVoltarClick(Sender: TObject);
 begin
