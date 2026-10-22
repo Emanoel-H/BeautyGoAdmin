@@ -114,9 +114,6 @@ begin
     dbgProfissionais.Canvas.Brush.Color := $00673AB7;
   end;
   dbgProfissionais.DefaultDrawColumnCell(Rect, DataCol, Column, State);
-
-  if dbgProfissionais.Columns[6].Title.Caption = 'Telefone' then
-    dbgProfissionais.DataSource.DataSet.FieldByName('telefone').AsString := FormatarTelefone(dbgProfissionais.DataSource.DataSet.FieldByName('telefone').AsString);
 end;
 
 procedure TfrmProfissionaisPesquisar.fdqProfissionaistelefoneGetText(

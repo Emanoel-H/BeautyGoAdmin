@@ -308,7 +308,6 @@ object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
     end
   end
   object fdqProfissionais: TFDQuery
-    Active = True
     Connection = dmConexao.FDConnection
     SQL.Strings = (
       'SELECT                                  '

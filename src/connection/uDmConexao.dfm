@@ -10,12 +10,7 @@ object dmConexao: TdmConexao
   object FDConnection: TFDConnection
     Params.Strings = (
       'DriverID=PG'
-      'Port=5432'
-      'Password=82551210Delphi.'
-      'User_Name=postgres'
-      'Database=db_beautygo_app'
-      'Server=localhost')
-    Connected = True
+      'Port=5432')
     LoginPrompt = False
     BeforeConnect = FDConnectionBeforeConnect
     Left = 624
