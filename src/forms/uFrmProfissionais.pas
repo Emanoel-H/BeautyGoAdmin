@@ -29,8 +29,11 @@ type
     Label1: TLabel;
     edtTelefone: TEdit;
     procedure edtTelefoneChange(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
+    Profissional: TProfissional;
+    Service: TProfissionalService;
     function FormatarTelefone(sTelefone: string): string;
   public
     { Public declarations }
@@ -58,6 +61,12 @@ begin
   sPattern := IfThen(sTelefone.Length = 11, '(\d{2})(\d{5})(\d{4})', '(\d{2})(\d{4})(\d{4})');
 
   Result := TRegEx.Replace(sTelefone, sPattern, '($1) $2-$3');
+end;
+
+procedure TfrmProfissionaisRegistrar.FormCreate(Sender: TObject);
+begin
+  Profissional := TProfissional.Create;
+  Service      := TProfissionalService.Create(dmConexao.FDConnection);
 end;
 
 end.

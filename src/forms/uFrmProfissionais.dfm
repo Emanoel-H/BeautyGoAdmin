@@ -13,6 +13,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poScreenCenter
+  OnCreate = FormCreate
   TextHeight = 15
   object pnPrincipal: TPanel
     Left = 0
