@@ -45,8 +45,12 @@ implementation
 { TfrmProfissionaisRegistrar }
 
 function TfrmProfissionaisRegistrar.FormatarTelefone(sTelefone: string): string;
+var
+  sPattern: string;
 begin
+  sPattern := IfThen(sTelefone.Length = 11, '(\d{2})(\d{5})(\d{4})', '(\d{2})(\d{4})(\d{4})');
 
+  Result := TRegEx.Replace(sTelefone, sPattern, '($1) $2-$3');
 end;
 
 end.
