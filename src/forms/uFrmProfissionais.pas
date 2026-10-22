@@ -37,6 +37,7 @@ type
     procedure btnCancelarClick(Sender: TObject);
     procedure btnAtualizarClick(Sender: TObject);
     procedure btnDeletarClick(Sender: TObject);
+    procedure btnInserirClick(Sender: TObject);
   private
     { Private declarations }
     Profissional: TProfissional;
@@ -85,6 +86,12 @@ begin
       end;
     end;
   end;
+end;
+
+procedure TfrmProfissionaisRegistrar.btnInserirClick(Sender: TObject);
+begin
+  limparCampos;
+  estadoEdicao;
 end;
 
 procedure TfrmProfissionaisRegistrar.btnVoltarClick(Sender: TObject);

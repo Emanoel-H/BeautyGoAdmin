@@ -253,6 +253,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
       ImageName = 'plus 72'
       ParentShowHint = False
       ShowHint = True
+      OnClick = btnInserirClick
     end
     object btnPesquisar: TToolButton
       Left = 335
