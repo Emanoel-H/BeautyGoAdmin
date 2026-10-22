@@ -171,6 +171,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
       NumbersOnly = True
       ParentFont = False
       TabOrder = 4
+      OnChange = edtTelefoneChange
     end
   end
   object tbCategorias: TToolBar

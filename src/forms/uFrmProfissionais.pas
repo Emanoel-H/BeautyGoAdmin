@@ -28,6 +28,7 @@ type
     edtSenha: TEdit;
     Label1: TLabel;
     edtTelefone: TEdit;
+    procedure edtTelefoneChange(Sender: TObject);
   private
     { Private declarations }
     function FormatarTelefone(sTelefone: string): string;
@@ -43,6 +44,12 @@ implementation
 {$R *.dfm}
 
 { TfrmProfissionaisRegistrar }
+
+procedure TfrmProfissionaisRegistrar.edtTelefoneChange(Sender: TObject);
+begin
+  if Length(edtTelefone.Text) >= 10 then
+    edtTelefone.Text := FormatarTelefone(edtTelefone.Text);
+end;
 
 function TfrmProfissionaisRegistrar.FormatarTelefone(sTelefone: string): string;
 var
