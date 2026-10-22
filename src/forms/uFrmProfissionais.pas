@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.ToolWin, Vcl.StdCtrls, System.Math,
-  Vcl.ExtCtrls, System.RegularExpressions;
+  Vcl.ExtCtrls, System.RegularExpressions, System.StrUtils;
 
 type
   TfrmProfissionaisRegistrar = class(TForm)
