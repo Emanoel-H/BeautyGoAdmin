@@ -68,7 +68,13 @@ end;
 
 procedure TfrmProfissionaisRegistrar.estadoInicial;
 begin
-
+  btnAtualizar.Enabled := false;
+  btnInserir.Enabled   := true;
+  btnDeletar.Enabled   := false;
+  btnPesquisar.Enabled := true;
+  btnCancelar.Enabled  := false;
+  btnConfirmar.Enabled := false;
+  pnPrincipal.Enabled  := false;
 end;
 
 procedure TfrmProfissionaisRegistrar.estadoPesquisar;
