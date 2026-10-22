@@ -5,7 +5,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
   BorderStyle = bsSingle
   Caption = 'Profissionais'
   ClientHeight = 568
-  ClientWidth = 496
+  ClientWidth = 557
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -20,7 +20,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
   object pnPrincipal: TPanel
     Left = 0
     Top = 56
-    Width = 496
+    Width = 557
     Height = 512
     Align = alClient
     Color = clBlack
@@ -183,7 +183,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
   object tbCategorias: TToolBar
     Left = 0
     Top = 0
-    Width = 496
+    Width = 557
     Height = 56
     ButtonHeight = 62
     ButtonWidth = 67
@@ -276,6 +276,17 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
       ParentShowHint = False
       ShowHint = True
       OnClick = btnConfirmarClick
+    end
+    object btnServicos: TToolButton
+      Left = 469
+      Top = 0
+      Hint = 'Servi'#231'os Oferecidos'
+      Caption = 'btnServicos'
+      Enabled = False
+      ImageIndex = 15
+      ImageName = 'app'
+      ParentShowHint = False
+      ShowHint = True
     end
   end
 end

@@ -29,6 +29,7 @@ type
     edtSenha: TEdit;
     Label1: TLabel;
     edtTelefone: TEdit;
+    btnServicos: TToolButton;
     procedure edtTelefoneChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
