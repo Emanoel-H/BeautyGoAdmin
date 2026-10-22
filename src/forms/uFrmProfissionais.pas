@@ -63,7 +63,15 @@ end;
 
 procedure TfrmProfissionaisRegistrar.estadoEdicao;
 begin
+  btnAtualizar.Enabled := false;
+  btnInserir.Enabled   := false;
+  btnDeletar.Enabled   := false;
+  btnPesquisar.Enabled := false;
+  btnCancelar.Enabled  := true;
+  btnConfirmar.Enabled := true;
+  pnPrincipal.Enabled  := true;
 
+  edtNome.SetFocus;
 end;
 
 procedure TfrmProfissionaisRegistrar.estadoInicial;
