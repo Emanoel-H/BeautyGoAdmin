@@ -35,6 +35,7 @@ type
     procedure FormShow(Sender: TObject);
     procedure btnVoltarClick(Sender: TObject);
     procedure btnCancelarClick(Sender: TObject);
+    procedure btnAtualizarClick(Sender: TObject);
   private
     { Private declarations }
     Profissional: TProfissional;
@@ -56,6 +57,11 @@ implementation
 {$R *.dfm}
 
 { TfrmProfissionaisRegistrar }
+
+procedure TfrmProfissionaisRegistrar.btnAtualizarClick(Sender: TObject);
+begin
+  estadoEdicao;
+end;
 
 procedure TfrmProfissionaisRegistrar.btnCancelarClick(Sender: TObject);
 begin

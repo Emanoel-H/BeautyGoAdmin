@@ -241,6 +241,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
       ImageName = 'asterisk 72'
       ParentShowHint = False
       ShowHint = True
+      OnClick = btnAtualizarClick
     end
     object btnInserir: TToolButton
       Left = 268
