@@ -27,8 +27,8 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
     Enabled = False
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 478
-    ExplicitHeight = 195
+    ExplicitWidth = 551
+    ExplicitHeight = 503
     object lblName: TLabel
       Left = 14
       Top = 14
@@ -198,7 +198,6 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
     ParentColor = False
     ParentFont = False
     TabOrder = 1
-    ExplicitWidth = 478
     object btnVoltar: TToolButton
       Left = 0
       Top = 0

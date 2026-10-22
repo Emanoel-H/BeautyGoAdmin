@@ -4,8 +4,8 @@ object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Pesquisar Profissionais'
-  ClientHeight = 442
-  ClientWidth = 628
+  ClientHeight = 643
+  ClientWidth = 955
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -13,12 +13,13 @@ object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poScreenCenter
+  OnCreate = FormCreate
   TextHeight = 15
-  object dbgCategorias: TDBGrid
+  object dbgProfissionais: TDBGrid
     Left = 0
     Top = 129
-    Width = 628
-    Height = 263
+    Width = 955
+    Height = 464
     Align = alClient
     Color = clBlack
     FixedColor = clBlack
@@ -59,7 +60,7 @@ object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
       item
         Expanded = False
         FieldName = 'nome'
-        Title.Caption = 'Categoria'
+        Title.Caption = 'Profissional'
         Title.Color = clWhite
         Title.Font.Charset = DEFAULT_CHARSET
         Title.Font.Color = clWindowText
@@ -67,13 +68,13 @@ object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
         Title.Font.Name = 'Segoe UI'
         Title.Font.Style = [fsBold]
         Title.Font.Quality = fqClearType
-        Width = 150
+        Width = 239
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'descricao'
-        Title.Caption = 'Descri'#231#227'o'
+        FieldName = 'bio'
+        Title.Caption = 'Bio'
         Title.Font.Charset = DEFAULT_CHARSET
         Title.Font.Color = clWindowText
         Title.Font.Height = -12
@@ -87,7 +88,7 @@ object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
   object pnMenu: TPanel
     Left = 0
     Top = 56
-    Width = 628
+    Width = 955
     Height = 73
     Align = alTop
     Color = clBlack
@@ -164,8 +165,8 @@ object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
   end
   object pnRodape: TPanel
     Left = 0
-    Top = 392
-    Width = 628
+    Top = 593
+    Width = 955
     Height = 50
     Align = alBottom
     Color = clBlack
@@ -221,7 +222,7 @@ object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
   object tbCategoriasPesquisar: TToolBar
     Left = 0
     Top = 0
-    Width = 628
+    Width = 955
     Height = 56
     ButtonHeight = 62
     ButtonWidth = 75
@@ -274,6 +275,6 @@ object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
   end
   object dsProfissionais: TDataSource
     DataSet = fdqProfissionais
-    Left = 320
+    Left = 328
   end
 end

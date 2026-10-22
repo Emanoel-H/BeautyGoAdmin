@@ -8,11 +8,11 @@ uses
   Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids, FireDAC.Stan.Intf,
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
-  FireDAC.Comp.DataSet, FireDAC.Comp.Client, uDmConexao;
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, uDmConexao, uProfissionalService, uProfissional;
 
 type
   TfrmProfissionaisPesquisar = class(TForm)
-    dbgCategorias: TDBGrid;
+    dbgProfissionais: TDBGrid;
     pnMenu: TPanel;
     lblCodigo: TLabel;
     lblNome: TLabel;
@@ -28,8 +28,11 @@ type
     btnConfirmar: TToolButton;
     fdqProfissionais: TFDQuery;
     dsProfissionais: TDataSource;
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
+    Profissional: TProfissional;
+    Service: TProfissionalService;
   public
     { Public declarations }
   end;
@@ -40,5 +43,11 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TfrmProfissionaisPesquisar.FormCreate(Sender: TObject);
+begin
+  Profissional := TProfissional.Create;
+  Service      := TProfissionalService.Create(dmConexao.FDConnection);
+end;
 
 end.
