@@ -34,6 +34,7 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormShow(Sender: TObject);
     procedure btnVoltarClick(Sender: TObject);
+    procedure btnCancelarClick(Sender: TObject);
   private
     { Private declarations }
     Profissional: TProfissional;
@@ -55,6 +56,12 @@ implementation
 {$R *.dfm}
 
 { TfrmProfissionaisRegistrar }
+
+procedure TfrmProfissionaisRegistrar.btnCancelarClick(Sender: TObject);
+begin
+  estadoInicial;
+  limparCampos;
+end;
 
 procedure TfrmProfissionaisRegistrar.btnVoltarClick(Sender: TObject);
 begin
