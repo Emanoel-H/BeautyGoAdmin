@@ -78,6 +78,9 @@ begin
   if AProfissional.Telefone = '' then
     raise Exception.Create('O Profissional deve possuir um telefone!');
 
+  if Length(AProfissional.Telefone) < 10 then
+    raise Exception.Create('O número de telefone deve conter no mínimo 10 dígitos!');
+
   if AProfissional.RaioAtendimentoKm <= 0 then
     raise Exception.Create('O raio de atendimento do Profissional deve ser maior que 0!');
 
