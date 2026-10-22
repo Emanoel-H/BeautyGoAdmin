@@ -30,6 +30,7 @@ type
     Label1: TLabel;
     edtTelefone: TEdit;
     btnServicos: TToolButton;
+    cbxMostrarSenha: TCheckBox;
     procedure edtTelefoneChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);

@@ -179,6 +179,14 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
       TabOrder = 4
       OnChange = edtTelefoneChange
     end
+    object cbxMostrarSenha: TCheckBox
+      Left = 152
+      Top = 126
+      Width = 97
+      Height = 17
+      Caption = 'Mostrar Senha'
+      TabOrder = 5
+    end
   end
   object tbCategorias: TToolBar
     Left = 0
