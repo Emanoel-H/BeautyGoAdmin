@@ -167,7 +167,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
       Font.Name = 'Segoe UI'
       Font.Style = []
       ImeName = 'edtTelefone'
-      MaxLength = 150
+      MaxLength = 11
       ParentFont = False
       TabOrder = 4
     end
