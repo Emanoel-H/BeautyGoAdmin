@@ -41,10 +41,26 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
     end
     object lblBio: TLabel
       Left = 14
-      Top = 60
+      Top = 269
       Width = 24
       Height = 17
       Caption = 'Bio:'
+      Color = clWhite
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      Font.Quality = fqClearType
+      ParentColor = False
+      ParentFont = False
+    end
+    object lblEmail: TLabel
+      Left = 14
+      Top = 59
+      Width = 38
+      Height = 17
+      Caption = 'Email:'
       Color = clWhite
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
@@ -72,10 +88,25 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
     end
     object mmBio: TMemo
       Left = 14
-      Top = 80
+      Top = 289
       Width = 339
       Height = 89
       TabOrder = 1
+    end
+    object edtEmail: TEdit
+      Left = 14
+      Top = 78
+      Width = 341
+      Height = 23
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -12
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ImeName = 'edtValue2'
+      MaxLength = 150
+      ParentFont = False
+      TabOrder = 2
     end
   end
   object tbCategorias: TToolBar

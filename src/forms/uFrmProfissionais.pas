@@ -22,6 +22,8 @@ type
     btnInserir: TToolButton;
     btnPesquisar: TToolButton;
     btnConfirmar: TToolButton;
+    lblEmail: TLabel;
+    edtEmail: TEdit;
   private
     { Private declarations }
   public
