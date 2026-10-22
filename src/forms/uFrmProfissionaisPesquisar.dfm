@@ -5,7 +5,7 @@ object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
   BorderStyle = bsSingle
   Caption = 'Pesquisar Profissionais'
   ClientHeight = 643
-  ClientWidth = 955
+  ClientWidth = 841
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -20,7 +20,7 @@ object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
   object dbgProfissionais: TDBGrid
     Left = 0
     Top = 129
-    Width = 955
+    Width = 841
     Height = 464
     Align = alClient
     Color = clBlack
@@ -83,14 +83,46 @@ object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
         Title.Font.Name = 'Segoe UI'
         Title.Font.Style = [fsBold]
         Title.Font.Quality = fqClearType
-        Width = 385
+        Width = 204
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'senha'
+        Title.Caption = 'Senha'
+        Visible = False
+      end
+      item
+        Expanded = False
+        FieldName = 'email'
+        Title.Caption = 'Email'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -12
+        Title.Font.Name = 'Segoe UI'
+        Title.Font.Style = [fsBold]
+        Title.Font.Quality = fqClearType
+        Width = 199
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'telefone'
+        Title.Caption = 'Telefone'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -12
+        Title.Font.Name = 'Segoe UI'
+        Title.Font.Style = [fsBold]
+        Title.Font.Quality = fqClearType
+        Width = 108
         Visible = True
       end>
   end
   object pnMenu: TPanel
     Left = 0
     Top = 56
-    Width = 955
+    Width = 841
     Height = 73
     Align = alTop
     Color = clBlack
@@ -168,7 +200,7 @@ object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
   object pnRodape: TPanel
     Left = 0
     Top = 593
-    Width = 955
+    Width = 841
     Height = 50
     Align = alBottom
     Color = clBlack
@@ -224,7 +256,7 @@ object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
   object tbCategoriasPesquisar: TToolBar
     Left = 0
     Top = 0
-    Width = 955
+    Width = 841
     Height = 56
     ButtonHeight = 62
     ButtonWidth = 75
