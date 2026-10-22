@@ -186,6 +186,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
       Height = 17
       Caption = 'Mostrar Senha'
       TabOrder = 5
+      OnClick = cbxMostrarSenhaClick
     end
   end
   object tbCategorias: TToolBar

@@ -41,6 +41,7 @@ type
     procedure btnDeletarClick(Sender: TObject);
     procedure btnInserirClick(Sender: TObject);
     procedure btnConfirmarClick(Sender: TObject);
+    procedure cbxMostrarSenhaClick(Sender: TObject);
   private
     { Private declarations }
     Profissional: TProfissional;
@@ -119,6 +120,14 @@ end;
 procedure TfrmProfissionaisRegistrar.btnVoltarClick(Sender: TObject);
 begin
   Close;
+end;
+
+procedure TfrmProfissionaisRegistrar.cbxMostrarSenhaClick(Sender: TObject);
+begin
+  if cbxMostrarSenha.Checked then
+    edtSenha.PasswordChar := #0
+  else
+    edtSenha.PasswordChar := '*';
 end;
 
 procedure TfrmProfissionaisRegistrar.edtTelefoneChange(Sender: TObject);
