@@ -113,6 +113,7 @@ begin
             'nome,                                    '+
             'bio::VARCHAR(200),                       '+
             'email,                                   '+
+            'senha,                                   '+
             'telefone,                                '+
             'raio_atendimento_km as raio,             '+
             'ST_Y(localizacao::geometry) AS latitude, '+

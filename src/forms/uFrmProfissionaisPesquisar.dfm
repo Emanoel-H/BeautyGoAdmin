@@ -313,56 +313,6 @@ object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
   object fdqProfissionais: TFDQuery
     Connection = dmConexao.FDConnection
     Left = 240
-    object fdqProfissionaisid: TLargeintField
-      FieldName = 'id'
-      Origin = 'id'
-      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-    end
-    object fdqProfissionaiscodigo: TWideStringField
-      FieldName = 'codigo'
-      Origin = 'codigo'
-      Size = 10
-    end
-    object fdqProfissionaisnome: TWideStringField
-      FieldName = 'nome'
-      Origin = 'nome'
-      Size = 100
-    end
-    object fdqProfissionaisbio: TWideStringField
-      AutoGenerateValue = arDefault
-      FieldName = 'bio'
-      Origin = 'bio'
-      ReadOnly = True
-      Size = 200
-    end
-    object fdqProfissionaisemail: TWideStringField
-      FieldName = 'email'
-      Origin = 'email'
-      Size = 200
-    end
-    object fdqProfissionaistelefone: TWideStringField
-      FieldName = 'telefone'
-      Origin = 'telefone'
-      OnGetText = fdqProfissionaistelefoneGetText
-    end
-    object fdqProfissionaisraio: TBCDField
-      FieldName = 'raio'
-      Origin = 'raio'
-      Precision = 5
-      Size = 2
-    end
-    object fdqProfissionaislatitude: TFloatField
-      AutoGenerateValue = arDefault
-      FieldName = 'latitude'
-      Origin = 'latitude'
-      ReadOnly = True
-    end
-    object fdqProfissionaislongitude: TFloatField
-      AutoGenerateValue = arDefault
-      FieldName = 'longitude'
-      Origin = 'longitude'
-      ReadOnly = True
-    end
   end
   object dsProfissionais: TDataSource
     DataSet = fdqProfissionais

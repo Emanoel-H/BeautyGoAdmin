@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.ComCtrls, Vcl.ToolWin,
   Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids, FireDAC.Stan.Intf,
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
-  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, uFrmProfissionais,
+  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
   FireDAC.Comp.DataSet, FireDAC.Comp.Client, uDmConexao, uProfissionalService, uProfissional,
   System.RegularExpressions, System.StrUtils;
 
@@ -29,15 +29,6 @@ type
     btnConfirmar: TToolButton;
     fdqProfissionais: TFDQuery;
     dsProfissionais: TDataSource;
-    fdqProfissionaisid: TLargeintField;
-    fdqProfissionaiscodigo: TWideStringField;
-    fdqProfissionaisnome: TWideStringField;
-    fdqProfissionaisbio: TWideStringField;
-    fdqProfissionaisemail: TWideStringField;
-    fdqProfissionaistelefone: TWideStringField;
-    fdqProfissionaisraio: TBCDField;
-    fdqProfissionaislatitude: TFloatField;
-    fdqProfissionaislongitude: TFloatField;
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormShow(Sender: TObject);
@@ -46,8 +37,6 @@ type
     procedure btnConfirmarClick(Sender: TObject);
     procedure dbgProfissionaisDrawColumnCell(Sender: TObject; const Rect: TRect;
       DataCol: Integer; Column: TColumn; State: TGridDrawState);
-    procedure fdqProfissionaistelefoneGetText(Sender: TField; var Text: string;
-      DisplayText: Boolean);
     procedure edtCodigoKeyPress(Sender: TObject; var Key: Char);
     procedure edtNomeKeyPress(Sender: TObject; var Key: Char);
     procedure dbgProfissionaisDblClick(Sender: TObject);
@@ -65,6 +54,8 @@ var
 
 implementation
 
+uses
+  uFrmProfissionais;
 {$R *.dfm}
 
 procedure TfrmProfissionaisPesquisar.btnConfirmarClick(Sender: TObject);
@@ -110,17 +101,23 @@ end;
 procedure TfrmProfissionaisPesquisar.dbgProfissionaisDrawColumnCell(
   Sender: TObject; const Rect: TRect; DataCol: Integer; Column: TColumn;
   State: TGridDrawState);
+var
+  sTexto: string;
 begin
   if gdSelected in State then
   begin
     dbgProfissionais.Canvas.Brush.Color := clNavy;
-    dbgProfissionais.Canvas.Font.Color := clWhite;
+    dbgProfissionais.Canvas.Font.Color  := clWhite;
   end
-
   else if dbgProfissionais.DataSource.DataSet.RecNo mod 2 = 0 then
-  begin
     dbgProfissionais.Canvas.Brush.Color := $00673AB7;
+
+  if Column.FieldName = 'telefone' then
+  begin
+    sTexto := FormatarTelefone(Column.Field.AsString);
+    dbgProfissionais.Canvas.TextRect(Rect, Rect.Left + 2, Rect.Top + 2, sTexto);
   end;
+
   dbgProfissionais.DefaultDrawColumnCell(Rect, DataCol, Column, State);
 end;
 
@@ -138,14 +135,14 @@ begin
     btnPesquisar.Click;
 end;
 
-procedure TfrmProfissionaisPesquisar.fdqProfissionaistelefoneGetText(
-  Sender: TField; var Text: string; DisplayText: Boolean);
-begin
-  if not Sender.IsNull then
-    Text := FormatarTelefone(Sender.AsString)
-  else
-    Text := '';
-end;
+//procedure TfrmProfissionaisPesquisar.fdqProfissionaistelefoneGetText(
+//  Sender: TField; var Text: string; DisplayText: Boolean);
+//begin
+//  if not Sender.IsNull then
+//    Text := FormatarTelefone(Sender.AsString)
+//  else
+//    Text := '';
+//end;
 
 function TfrmProfissionaisPesquisar.FormatarTelefone(sTelefone: string): string;
 var

@@ -13,13 +13,13 @@ type
       constructor Create(AConexao: TFDConnection);
       destructor Destroy; override;
 
-      procedure Salvar(AProfissional: TProfissional);
-      procedure Excluir(AProfissional: TProfissional);
-      function Listar(AProfissional: TProfissional): TFDQuery;
+      procedure Salvar(AProfissional: TProfissional); overload;
+      procedure Excluir(AProfissional: TProfissional); overload;
+      function Listar(AProfissional: TProfissional): TFDQuery; overload;
 
-      procedure Salvar(AServico: TServicoOferecido);
-      procedure Excluir(AServico: TServicoOferecido);
-      function Listar(AServico: TServicoOferecido): TFDQuery;
+      procedure Salvar(AServico: TServicoOferecido); overload;
+      procedure Excluir(AServico: TServicoOferecido); overload;
+      function Listar(AServico: TServicoOferecido): TFDQuery; overload;
 
   end;
 implementation
