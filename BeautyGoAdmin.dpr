@@ -26,6 +26,5 @@ begin
   TStyleManager.TrySetStyle('Windows11 Dark');
   Application.CreateForm(TdmConexao, dmConexao);
   Application.CreateForm(TfrmMain, frmMain);
-  Application.CreateForm(TfrmProfissionaisRegistrar, frmProfissionaisRegistrar);
   Application.Run;
 end.

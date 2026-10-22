@@ -4,10 +4,24 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.ToolWin, Vcl.StdCtrls,
+  Vcl.ExtCtrls;
 
 type
   TfrmProfissionaisRegistrar = class(TForm)
+    pnPrincipal: TPanel;
+    lblName: TLabel;
+    lblBio: TLabel;
+    edtNome: TEdit;
+    mmDescricao: TMemo;
+    tbCategorias: TToolBar;
+    btnVoltar: TToolButton;
+    btnCancelar: TToolButton;
+    btnDeletar: TToolButton;
+    btnAtualizar: TToolButton;
+    btnInserir: TToolButton;
+    btnPesquisar: TToolButton;
+    btnConfirmar: TToolButton;
   private
     { Private declarations }
   public
