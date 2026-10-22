@@ -32,6 +32,7 @@ type
     procedure edtTelefoneChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
     Profissional: TProfissional;
@@ -87,6 +88,11 @@ procedure TfrmProfissionaisRegistrar.FormCreate(Sender: TObject);
 begin
   Profissional := TProfissional.Create;
   Service      := TProfissionalService.Create(dmConexao.FDConnection);
+end;
+
+procedure TfrmProfissionaisRegistrar.FormShow(Sender: TObject);
+begin
+  btnVoltar.Visible := Parent = nil;
 end;
 
 end.

@@ -15,6 +15,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
   Position = poScreenCenter
   OnClose = FormClose
   OnCreate = FormCreate
+  OnShow = FormShow
   TextHeight = 15
   object pnPrincipal: TPanel
     Left = 0
