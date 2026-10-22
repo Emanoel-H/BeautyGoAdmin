@@ -179,6 +179,7 @@ object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
       NumbersOnly = True
       ParentFont = False
       TabOrder = 0
+      OnKeyPress = edtCodigoKeyPress
     end
     object edtNome: TEdit
       Left = 88

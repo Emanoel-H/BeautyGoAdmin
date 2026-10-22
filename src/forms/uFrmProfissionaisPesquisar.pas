@@ -48,6 +48,7 @@ type
       DataCol: Integer; Column: TColumn; State: TGridDrawState);
     procedure fdqProfissionaistelefoneGetText(Sender: TField; var Text: string;
       DisplayText: Boolean);
+    procedure edtCodigoKeyPress(Sender: TObject; var Key: Char);
   private
     { Private declarations }
     Profissional: TProfissional;
@@ -114,6 +115,13 @@ begin
     dbgProfissionais.Canvas.Brush.Color := $00673AB7;
   end;
   dbgProfissionais.DefaultDrawColumnCell(Rect, DataCol, Column, State);
+end;
+
+procedure TfrmProfissionaisPesquisar.edtCodigoKeyPress(Sender: TObject;
+  var Key: Char);
+begin
+  if Key = #13 then
+    btnPesquisar.Click;
 end;
 
 procedure TfrmProfissionaisPesquisar.fdqProfissionaistelefoneGetText(
