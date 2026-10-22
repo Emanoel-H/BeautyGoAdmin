@@ -166,6 +166,14 @@ procedure TfrmProfissionaisPesquisar.FormCreate(Sender: TObject);
 begin
   Profissional := TProfissional.Create;
   Service      := TProfissionalService.Create(dmConexao.FDConnection);
+
+  dbgProfissionais.Color           := clBlack;
+  dbgProfissionais.FixedColor      := $00202020;
+  dbgProfissionais.Font.Color      := clWhite;
+  dbgProfissionais.TitleFont.Color := clWhite;
+  dbgProfissionais.TitleFont.Style := [fsBold];
+  dbgProfissionais.DrawingStyle    := gdsClassic;
+  dbgProfissionais.ParentColor     := False;
 end;
 
 procedure TfrmProfissionaisPesquisar.FormShow(Sender: TObject);
