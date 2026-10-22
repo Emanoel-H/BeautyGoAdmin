@@ -208,6 +208,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
       ImageName = 'back'
       ParentShowHint = False
       ShowHint = True
+      OnClick = btnVoltarClick
     end
     object btnCancelar: TToolButton
       Left = 67
