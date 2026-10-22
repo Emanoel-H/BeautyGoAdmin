@@ -49,6 +49,7 @@ type
     procedure fdqProfissionaistelefoneGetText(Sender: TField; var Text: string;
       DisplayText: Boolean);
     procedure edtCodigoKeyPress(Sender: TObject; var Key: Char);
+    procedure edtNomeKeyPress(Sender: TObject; var Key: Char);
   private
     { Private declarations }
     Profissional: TProfissional;
@@ -118,6 +119,13 @@ begin
 end;
 
 procedure TfrmProfissionaisPesquisar.edtCodigoKeyPress(Sender: TObject;
+  var Key: Char);
+begin
+  if Key = #13 then
+    btnPesquisar.Click;
+end;
+
+procedure TfrmProfissionaisPesquisar.edtNomeKeyPress(Sender: TObject;
   var Key: Char);
 begin
   if Key = #13 then

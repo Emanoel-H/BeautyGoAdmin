@@ -197,6 +197,7 @@ object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
       MaxLength = 150
       ParentFont = False
       TabOrder = 1
+      OnKeyPress = edtNomeKeyPress
     end
   end
   object pnRodape: TPanel
