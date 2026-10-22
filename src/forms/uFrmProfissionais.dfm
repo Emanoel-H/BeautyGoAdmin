@@ -1,21 +1,24 @@
 object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
   Caption = 'Profissionais'
-  ClientHeight = 442
-  ClientWidth = 628
+  ClientHeight = 568
+  ClientWidth = 496
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poScreenCenter
   TextHeight = 15
   object pnPrincipal: TPanel
     Left = 0
     Top = 56
-    Width = 628
-    Height = 386
+    Width = 496
+    Height = 512
     Align = alClient
     Color = clBlack
     Enabled = False
@@ -41,7 +44,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
     end
     object lblBio: TLabel
       Left = 14
-      Top = 269
+      Top = 189
       Width = 24
       Height = 17
       Caption = 'Bio:'
@@ -120,7 +123,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
     end
     object mmBio: TMemo
       Left = 14
-      Top = 289
+      Top = 209
       Width = 339
       Height = 89
       TabOrder = 1
@@ -177,7 +180,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
   object tbCategorias: TToolBar
     Left = 0
     Top = 0
-    Width = 628
+    Width = 496
     Height = 56
     ButtonHeight = 62
     ButtonWidth = 67
