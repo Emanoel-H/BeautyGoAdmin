@@ -1,6 +1,8 @@
 object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
   Caption = 'Pesquisar Profissionais'
   ClientHeight = 442
   ClientWidth = 628
@@ -10,6 +12,7 @@ object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poScreenCenter
   TextHeight = 15
   object dbgCategorias: TDBGrid
     Left = 0
