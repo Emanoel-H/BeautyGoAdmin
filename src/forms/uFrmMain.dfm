@@ -21,10 +21,14 @@ object frmMain: TfrmMain
     Top = 8
     Width = 612
     Height = 417
-    ActivePage = Categorias
+    ActivePage = Profissionais
     TabOrder = 0
     object Categorias: TTabSheet
       Caption = 'Categorias'
+    end
+    object Profissionais: TTabSheet
+      Caption = 'Profissionais'
+      ImageIndex = 1
     end
   end
 end

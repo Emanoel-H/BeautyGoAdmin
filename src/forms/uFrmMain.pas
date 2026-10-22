@@ -4,12 +4,13 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, uFrmCategorias;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, uFrmCategorias, uFrmProfissionais;
 
 type
   TfrmMain = class(TForm)
     pcMain: TPageControl;
     Categorias: TTabSheet;
+    Profissionais: TTabSheet;
     procedure FormShow(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
@@ -42,6 +43,12 @@ begin
   frmCategoriasRegistrar.Align       := alClient;
   frmCategoriasRegistrar.BorderStyle := bsNone;
   frmCategoriasRegistrar.Show;
+
+  frmProfissionaisRegistrar             := TfrmProfissionaisRegistrar.Create(Self);
+  frmProfissionaisRegistrar.Parent      := Profissionais;
+  frmProfissionaisRegistrar.Align       := alClient;
+  frmProfissionaisRegistrar.BorderStyle := bsNone;
+  frmProfissionaisRegistrar.Show;
 end;
 
 end.
