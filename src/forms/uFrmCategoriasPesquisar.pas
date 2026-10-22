@@ -60,7 +60,6 @@ begin
   if (frmCategoriasRegistrar <> nil) and not (fdqCategorias.IsEmpty) then
   begin
     Categoria.Id        := dbgCategorias.DataSource.DataSet.FieldByName('id').AsInteger;
-    Categoria.Codigo    := dbgCategorias.DataSource.DataSet.FieldByName('codigo').AsString;
     Categoria.Nome      := dbgCategorias.DataSource.DataSet.FieldByName('nome').AsString;
     Categoria.Descricao := dbgCategorias.DataSource.DataSet.FieldByName('descricao').AsString;
 
