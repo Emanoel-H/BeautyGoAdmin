@@ -50,6 +50,7 @@ type
     procedure limparCampos;
   public
     { Public declarations }
+    procedure recebeProfissional(AProfissional: TProfissional);
   end;
 
 var
@@ -217,6 +218,23 @@ begin
   edtTelefone.Text := '';
 
   mmBio.Clear;
+end;
+
+procedure TfrmProfissionaisRegistrar.recebeProfissional(
+  AProfissional: TProfissional);
+begin
+  Profissional.Id       := AProfissional.Id;
+  Profissional.Nome     := AProfissional.Nome;
+  Profissional.Bio      := AProfissional.Bio;
+  Profissional.Email    := AProfissional.Email;
+  Profissional.Telefone := AProfissional.Telefone;
+  Profissional.Senha    := AProfissional.Senha;
+
+  edtNome.Text     := Profissional.Nome;
+  edtEmail.Text    := Profissional.Email;
+  edtSenha.Text    := Profissional.Senha;
+  edtTelefone.Text := Profissional.Telefone;
+  mmBio.Text       := Profissional.Bio;
 end;
 
 end.
