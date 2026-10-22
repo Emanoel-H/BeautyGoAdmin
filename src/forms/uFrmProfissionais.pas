@@ -31,6 +31,7 @@ type
     edtTelefone: TEdit;
     procedure edtTelefoneChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
     Profissional: TProfissional;
@@ -62,6 +63,24 @@ begin
   sPattern := IfThen(sTelefone.Length = 11, '(\d{2})(\d{5})(\d{4})', '(\d{2})(\d{4})(\d{4})');
 
   Result := TRegEx.Replace(sTelefone, sPattern, '($1) $2-$3');
+end;
+
+procedure TfrmProfissionaisRegistrar.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+  if Parent <> nil then
+  begin
+    Action := caNone;
+    Exit;
+  end;
+
+  try
+    Profissional.Free;
+    Service.Free;
+  finally
+    Action                    := caFree;
+    frmProfissionaisRegistrar := nil;
+  end;
 end;
 
 procedure TfrmProfissionaisRegistrar.FormCreate(Sender: TObject);
