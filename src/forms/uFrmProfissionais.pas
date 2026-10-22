@@ -38,6 +38,10 @@ type
     Profissional: TProfissional;
     Service: TProfissionalService;
     function FormatarTelefone(sTelefone: string): string;
+    procedure estadoInicial;
+    procedure estadoEdicao;
+    procedure estadoPesquisar;
+    procedure limparCampos;
   public
     { Public declarations }
   end;
@@ -55,6 +59,21 @@ procedure TfrmProfissionaisRegistrar.edtTelefoneChange(Sender: TObject);
 begin
   if Length(edtTelefone.Text) >= 10 then
     edtTelefone.Text := FormatarTelefone(edtTelefone.Text);
+end;
+
+procedure TfrmProfissionaisRegistrar.estadoEdicao;
+begin
+
+end;
+
+procedure TfrmProfissionaisRegistrar.estadoInicial;
+begin
+
+end;
+
+procedure TfrmProfissionaisRegistrar.estadoPesquisar;
+begin
+
 end;
 
 function TfrmProfissionaisRegistrar.FormatarTelefone(sTelefone: string): string;
@@ -93,6 +112,11 @@ end;
 procedure TfrmProfissionaisRegistrar.FormShow(Sender: TObject);
 begin
   btnVoltar.Visible := Parent = nil;
+end;
+
+procedure TfrmProfissionaisRegistrar.limparCampos;
+begin
+
 end;
 
 end.
