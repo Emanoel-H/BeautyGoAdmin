@@ -31,6 +31,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormShow(Sender: TObject);
+    procedure btnVoltarClick(Sender: TObject);
   private
     { Private declarations }
     Profissional: TProfissional;
@@ -45,6 +46,11 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TfrmProfissionaisPesquisar.btnVoltarClick(Sender: TObject);
+begin
+  Close;
+end;
 
 procedure TfrmProfissionaisPesquisar.FormClose(Sender: TObject;
   var Action: TCloseAction);
