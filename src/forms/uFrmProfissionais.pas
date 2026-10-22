@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.ToolWin, Vcl.StdCtrls, System.Math,
   Vcl.ExtCtrls, System.RegularExpressions, System.StrUtils, uProfissional, uProfissionalService,
-  uDmConexao;
+  uDmConexao, uFrmProfissionaisPesquisar;
 
 type
   TfrmProfissionaisRegistrar = class(TForm)
@@ -42,6 +42,7 @@ type
     procedure btnInserirClick(Sender: TObject);
     procedure btnConfirmarClick(Sender: TObject);
     procedure cbxMostrarSenhaClick(Sender: TObject);
+    procedure btnPesquisarClick(Sender: TObject);
   private
     { Private declarations }
     Profissional: TProfissional;
@@ -115,6 +116,18 @@ procedure TfrmProfissionaisRegistrar.btnInserirClick(Sender: TObject);
 begin
   limparCampos;
   estadoEdicao;
+end;
+
+procedure TfrmProfissionaisRegistrar.btnPesquisarClick(Sender: TObject);
+begin
+  if frmProfissionaisPesquisar = nil then
+  begin
+    frmProfissionaisPesquisar := TFrmProfissionaisPesquisar.Create(Self);
+    frmProfissionaisPesquisar.ShowModal;
+
+    if Profissional.Id <> 0 then
+      estadoPesquisar;
+  end;
 end;
 
 procedure TfrmProfissionaisRegistrar.btnVoltarClick(Sender: TObject);

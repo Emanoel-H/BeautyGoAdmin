@@ -272,6 +272,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
       ImageName = 'search 72'
       ParentShowHint = False
       ShowHint = True
+      OnClick = btnPesquisarClick
     end
     object btnConfirmar: TToolButton
       Left = 402
