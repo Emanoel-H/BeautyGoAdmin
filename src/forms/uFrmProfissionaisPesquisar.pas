@@ -53,12 +53,12 @@ begin
   Profissional.Nome   := edtNome.Text;
   Profissional.Codigo := edtCodigo.Text;
 
-  fdqProfissionais := Service.Listar(Profissional);
+  fdqProfissionais    := Service.Listar(Profissional);
 
   if fdqProfissionais.IsEmpty then
     Application.MessageBox('Não há registros na consulta!', 'Atenção!', MB_OK + MB_ICONWARNING);
 
-  dsProfissionais.DataSet     := fdqProfissionais;
+  dsProfissionais.DataSet  := fdqProfissionais;
   lblQtdeRegistros.Caption := fdqProfissionais.RecordCount.ToString;
 end;
 
