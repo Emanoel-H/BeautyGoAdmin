@@ -253,14 +253,14 @@ object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
       end
     end
   end
-  object tbCategoriasPesquisar: TToolBar
+  object tbPesquisar: TToolBar
     Left = 0
     Top = 0
     Width = 841
     Height = 56
     ButtonHeight = 62
     ButtonWidth = 75
-    Caption = 'tbCategoriasPesquisar'
+    Caption = 'tbPesquisar'
     Color = 6765239
     Font.Charset = DEFAULT_CHARSET
     Font.Color = 6765239

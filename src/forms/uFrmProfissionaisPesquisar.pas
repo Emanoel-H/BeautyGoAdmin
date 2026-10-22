@@ -22,7 +22,7 @@ type
     pnRegistros: TPanel;
     lblRegistros: TLabel;
     lblQtdeRegistros: TLabel;
-    tbCategoriasPesquisar: TToolBar;
+    tbPesquisar: TToolBar;
     btnVoltar: TToolButton;
     btnPesquisar: TToolButton;
     btnConfirmar: TToolButton;
