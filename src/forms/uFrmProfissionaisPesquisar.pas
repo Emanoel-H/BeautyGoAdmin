@@ -29,6 +29,7 @@ type
     fdqProfissionais: TFDQuery;
     dsProfissionais: TDataSource;
     procedure FormCreate(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
     Profissional: TProfissional;
@@ -43,6 +44,18 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TfrmProfissionaisPesquisar.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+  try
+    Profissional.Free;
+    Service.Free;
+  finally
+    Action                    := caFree;
+    frmProfissionaisPesquisar := nil;
+  end;
+end;
 
 procedure TfrmProfissionaisPesquisar.FormCreate(Sender: TObject);
 begin

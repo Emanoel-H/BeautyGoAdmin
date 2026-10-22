@@ -13,6 +13,7 @@ object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poScreenCenter
+  OnClose = FormClose
   OnCreate = FormCreate
   TextHeight = 15
   object dbgProfissionais: TDBGrid
