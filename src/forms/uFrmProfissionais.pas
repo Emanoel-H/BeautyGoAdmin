@@ -136,7 +136,23 @@ end;
 
 procedure TfrmProfissionaisRegistrar.limparCampos;
 begin
+  Profissional.Id                := 0;
+  Profissional.Nome              := '';
+  Profissional.Bio               := '';
+  Profissional.Telefone          := '';
+  Profissional.Email             := '';
+  Profissional.Senha             := '';
+  Profissional.Codigo            := '';
+  Profissional.RaioAtendimentoKm := 0;
+  Profissional.Latitude          := 0;
+  Profissional.Longitude         := 0;
 
+  edtNome.Text     := '';
+  edtEmail.Text    := '';
+  edtSenha.Text    := '';
+  edtTelefone.Text := '';
+
+  mmBio.Clear;
 end;
 
 end.
