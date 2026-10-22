@@ -29,6 +29,15 @@ type
     btnConfirmar: TToolButton;
     fdqProfissionais: TFDQuery;
     dsProfissionais: TDataSource;
+    fdqProfissionaisid: TLargeintField;
+    fdqProfissionaiscodigo: TWideStringField;
+    fdqProfissionaisnome: TWideStringField;
+    fdqProfissionaisbio: TWideStringField;
+    fdqProfissionaisemail: TWideStringField;
+    fdqProfissionaistelefone: TWideStringField;
+    fdqProfissionaisraio: TBCDField;
+    fdqProfissionaislatitude: TFloatField;
+    fdqProfissionaislongitude: TFloatField;
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormShow(Sender: TObject);
@@ -37,6 +46,8 @@ type
     procedure btnConfirmarClick(Sender: TObject);
     procedure dbgProfissionaisDrawColumnCell(Sender: TObject; const Rect: TRect;
       DataCol: Integer; Column: TColumn; State: TGridDrawState);
+    procedure fdqProfissionaistelefoneGetText(Sender: TField; var Text: string;
+      DisplayText: Boolean);
   private
     { Private declarations }
     Profissional: TProfissional;
@@ -104,8 +115,17 @@ begin
   end;
   dbgProfissionais.DefaultDrawColumnCell(Rect, DataCol, Column, State);
 
-  if dbgProfissionais.Columns[6].Title.Caption = '' then
-    dbgProfissionais.DataSource.DataSet.FieldByName('telefone').AsString := '';
+  if dbgProfissionais.Columns[6].Title.Caption = 'Telefone' then
+    dbgProfissionais.DataSource.DataSet.FieldByName('telefone').AsString := FormatarTelefone(dbgProfissionais.DataSource.DataSet.FieldByName('telefone').AsString);
+end;
+
+procedure TfrmProfissionaisPesquisar.fdqProfissionaistelefoneGetText(
+  Sender: TField; var Text: string; DisplayText: Boolean);
+begin
+  if not Sender.IsNull then
+    Text := FormatarTelefone(Sender.AsString)
+  else
+    Text := '';
 end;
 
 function TfrmProfissionaisPesquisar.FormatarTelefone(sTelefone: string): string;

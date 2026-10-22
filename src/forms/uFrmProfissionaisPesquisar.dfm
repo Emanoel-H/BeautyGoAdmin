@@ -308,8 +308,71 @@ object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
     end
   end
   object fdqProfissionais: TFDQuery
+    Active = True
     Connection = dmConexao.FDConnection
+    SQL.Strings = (
+      'SELECT                                  '
+      'id,                                     '
+      'code as codigo,                         '
+      'nome,                                   '
+      'bio::VARCHAR(200),                      '
+      'email,                                  '
+      'telefone,                               '
+      'raio_atendimento_km as raio,            '
+      'ST_Y(localizacao::geometry) AS latitude,'
+      'ST_X(localizacao::geometry) AS longitude'
+      'FROM profissionais                      ')
     Left = 240
+    object fdqProfissionaisid: TLargeintField
+      FieldName = 'id'
+      Origin = 'id'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+    end
+    object fdqProfissionaiscodigo: TWideStringField
+      FieldName = 'codigo'
+      Origin = 'codigo'
+      Size = 10
+    end
+    object fdqProfissionaisnome: TWideStringField
+      FieldName = 'nome'
+      Origin = 'nome'
+      Size = 100
+    end
+    object fdqProfissionaisbio: TWideStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'bio'
+      Origin = 'bio'
+      ReadOnly = True
+      Size = 200
+    end
+    object fdqProfissionaisemail: TWideStringField
+      FieldName = 'email'
+      Origin = 'email'
+      Size = 200
+    end
+    object fdqProfissionaistelefone: TWideStringField
+      FieldName = 'telefone'
+      Origin = 'telefone'
+      OnGetText = fdqProfissionaistelefoneGetText
+    end
+    object fdqProfissionaisraio: TBCDField
+      FieldName = 'raio'
+      Origin = 'raio'
+      Precision = 5
+      Size = 2
+    end
+    object fdqProfissionaislatitude: TFloatField
+      AutoGenerateValue = arDefault
+      FieldName = 'latitude'
+      Origin = 'latitude'
+      ReadOnly = True
+    end
+    object fdqProfissionaislongitude: TFloatField
+      AutoGenerateValue = arDefault
+      FieldName = 'longitude'
+      Origin = 'longitude'
+      ReadOnly = True
+    end
   end
   object dsProfissionais: TDataSource
     DataSet = fdqProfissionais
