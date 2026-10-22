@@ -8,7 +8,8 @@ uses
   Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids, FireDAC.Stan.Intf,
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, uFrmProfissionais,
-  FireDAC.Comp.DataSet, FireDAC.Comp.Client, uDmConexao, uProfissionalService, uProfissional;
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, uDmConexao, uProfissionalService, uProfissional,
+  System.RegularExpressions, System.StrUtils;
 
 type
   TfrmProfissionaisPesquisar = class(TForm)
@@ -40,6 +41,7 @@ type
     { Private declarations }
     Profissional: TProfissional;
     Service: TProfissionalService;
+    function FormatarTelefone(sTelefone: string): string;
   public
     { Public declarations }
   end;
@@ -104,6 +106,15 @@ begin
 
   if dbgProfissionais.Columns[6].Title.Caption = '' then
     dbgProfissionais.DataSource.DataSet.FieldByName('telefone').AsString := '';
+end;
+
+function TfrmProfissionaisPesquisar.FormatarTelefone(sTelefone: string): string;
+var
+  sPattern: string;
+begin
+  sPattern := IfThen(sTelefone.Length = 11, '(\d{2})(\d{5})(\d{4})', '(\d{2})(\d{4})(\d{4})');
+
+  Result := TRegEx.Replace(sTelefone, sPattern, '($1) $2-$3');
 end;
 
 procedure TfrmProfissionaisPesquisar.FormClose(Sender: TObject;
