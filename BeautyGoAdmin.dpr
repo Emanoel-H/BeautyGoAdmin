@@ -15,7 +15,8 @@ uses
   uProfissional in 'src\model\uProfissional.pas',
   uServicoOferecido in 'src\model\uServicoOferecido.pas',
   uProfissionalDAO in 'src\dao\uProfissionalDAO.pas',
-  uProfissionalService in 'src\services\uProfissionalService.pas';
+  uProfissionalService in 'src\services\uProfissionalService.pas',
+  uFrmProfissionais in 'src\forms\uFrmProfissionais.pas' {frmProfissionaisRegistrar};
 
 {$R *.res}
 
@@ -25,5 +26,6 @@ begin
   TStyleManager.TrySetStyle('Windows11 Dark');
   Application.CreateForm(TdmConexao, dmConexao);
   Application.CreateForm(TfrmMain, frmMain);
+  Application.CreateForm(TfrmProfissionaisRegistrar, frmProfissionaisRegistrar);
   Application.Run;
 end.

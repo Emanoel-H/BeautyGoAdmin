@@ -128,6 +128,10 @@
         <DCCReference Include="src\model\uServicoOferecido.pas"/>
         <DCCReference Include="src\dao\uProfissionalDAO.pas"/>
         <DCCReference Include="src\services\uProfissionalService.pas"/>
+        <DCCReference Include="src\forms\uFrmProfissionais.pas">
+            <Form>frmProfissionaisRegistrar</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
