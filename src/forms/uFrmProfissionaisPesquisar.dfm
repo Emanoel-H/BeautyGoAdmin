@@ -40,6 +40,7 @@ object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
     OnDrawColumnCell = dbgProfissionaisDrawColumnCell
+    OnDblClick = dbgProfissionaisDblClick
     Columns = <
       item
         Expanded = False

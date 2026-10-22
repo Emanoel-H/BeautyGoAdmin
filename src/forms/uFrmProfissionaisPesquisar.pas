@@ -50,6 +50,7 @@ type
       DisplayText: Boolean);
     procedure edtCodigoKeyPress(Sender: TObject; var Key: Char);
     procedure edtNomeKeyPress(Sender: TObject; var Key: Char);
+    procedure dbgProfissionaisDblClick(Sender: TObject);
   private
     { Private declarations }
     Profissional: TProfissional;
@@ -99,6 +100,11 @@ end;
 procedure TfrmProfissionaisPesquisar.btnVoltarClick(Sender: TObject);
 begin
   Close;
+end;
+
+procedure TfrmProfissionaisPesquisar.dbgProfissionaisDblClick(Sender: TObject);
+begin
+  btnConfirmar.Click;
 end;
 
 procedure TfrmProfissionaisPesquisar.dbgProfissionaisDrawColumnCell(
