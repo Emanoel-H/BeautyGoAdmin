@@ -79,7 +79,13 @@ end;
 
 procedure TfrmProfissionaisRegistrar.estadoPesquisar;
 begin
-
+  btnAtualizar.Enabled := true;
+  btnInserir.Enabled   := false;
+  btnDeletar.Enabled   := true;
+  btnPesquisar.Enabled := false;
+  btnCancelar.Enabled  := true;
+  btnConfirmar.Enabled := false;
+  pnPrincipal.Enabled  := false;
 end;
 
 function TfrmProfissionaisRegistrar.FormatarTelefone(sTelefone: string): string;
