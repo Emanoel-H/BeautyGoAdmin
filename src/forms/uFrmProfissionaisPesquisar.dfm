@@ -15,6 +15,7 @@ object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
   Position = poScreenCenter
   OnClose = FormClose
   OnCreate = FormCreate
+  OnShow = FormShow
   TextHeight = 15
   object dbgProfissionais: TDBGrid
     Left = 0

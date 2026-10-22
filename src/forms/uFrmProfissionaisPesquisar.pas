@@ -30,6 +30,7 @@ type
     dsProfissionais: TDataSource;
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
     Profissional: TProfissional;
@@ -61,6 +62,17 @@ procedure TfrmProfissionaisPesquisar.FormCreate(Sender: TObject);
 begin
   Profissional := TProfissional.Create;
   Service      := TProfissionalService.Create(dmConexao.FDConnection);
+end;
+
+procedure TfrmProfissionaisPesquisar.FormShow(Sender: TObject);
+begin
+  fdqProfissionais := Service.Listar(Profissional);
+
+  if fdqProfissionais.IsEmpty then
+    Application.MessageBox('Não há registros na consulta!', 'Atenção!', MB_OK + MB_ICONWARNING);
+
+  dsProfissionais.DataSet  := fdqProfissionais;
+  lblQtdeRegistros.Caption := fdqProfissionais.RecordCount.ToString;
 end;
 
 end.
