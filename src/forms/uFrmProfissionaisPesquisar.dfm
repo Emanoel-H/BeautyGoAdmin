@@ -303,6 +303,7 @@ object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
       ImageName = 'checkmark 72'
       ParentShowHint = False
       ShowHint = True
+      OnClick = btnConfirmarClick
     end
   end
   object fdqProfissionais: TFDQuery

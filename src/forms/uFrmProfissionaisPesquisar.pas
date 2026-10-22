@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.ComCtrls, Vcl.ToolWin,
   Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids, FireDAC.Stan.Intf,
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
-  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
+  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, uFrmProfissionais,
   FireDAC.Comp.DataSet, FireDAC.Comp.Client, uDmConexao, uProfissionalService, uProfissional;
 
 type
@@ -33,6 +33,7 @@ type
     procedure FormShow(Sender: TObject);
     procedure btnVoltarClick(Sender: TObject);
     procedure btnPesquisarClick(Sender: TObject);
+    procedure btnConfirmarClick(Sender: TObject);
   private
     { Private declarations }
     Profissional: TProfissional;
@@ -47,6 +48,22 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TfrmProfissionaisPesquisar.btnConfirmarClick(Sender: TObject);
+begin
+  if (frmProfissionaisRegistrar <> nil) and not (fdqProfissionais.IsEmpty) then
+  begin
+    Profissional.Id       := dbgProfissionais.DataSource.DataSet.FieldByName('id').AsInteger;
+    Profissional.Nome     := dbgProfissionais.DataSource.DataSet.FieldByName('nome').AsString;
+    Profissional.Bio      := dbgProfissionais.DataSource.DataSet.FieldByName('bio').AsString;
+    Profissional.Email    := dbgProfissionais.DataSource.DataSet.FieldByName('email').AsString;
+    Profissional.Senha    := dbgProfissionais.DataSource.DataSet.FieldByName('senha').AsString;
+    Profissional.Telefone := dbgProfissionais.DataSource.DataSet.FieldByName('telefone').AsString;
+
+    frmProfissionaisRegistrar.recebeProfissional(Profissional);
+    Close;
+  end;
+end;
 
 procedure TfrmProfissionaisPesquisar.btnPesquisarClick(Sender: TObject);
 begin
