@@ -268,4 +268,12 @@ object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
       ShowHint = True
     end
   end
+  object fdqProfissionais: TFDQuery
+    Connection = dmConexao.FDConnection
+    Left = 240
+  end
+  object dsProfissionais: TDataSource
+    DataSet = fdqProfissionais
+    Left = 320
+  end
 end
