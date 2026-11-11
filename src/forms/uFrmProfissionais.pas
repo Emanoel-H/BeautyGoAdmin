@@ -62,7 +62,7 @@ type
     procedure estadoEdicao;
     procedure estadoPesquisar;
     procedure limparCampos;
-    procedure getEndereco(sLat, sLng: string);
+    procedure setEndereco(sLat, sLng: string);
   public
     { Public declarations }
     procedure recebeProfissional(AProfissional: TProfissional);
@@ -289,7 +289,7 @@ begin
   estadoInicial;
 end;
 
-procedure TfrmProfissionaisRegistrar.getEndereco(sLat, sLng: string);
+procedure TfrmProfissionaisRegistrar.setEndereco(sLat, sLng: string);
 var
   Http: THttpClient;
   Response: IHTTPResponse;
@@ -375,7 +375,7 @@ begin
   mmBio.Text        := Profissional.Bio;
   edtLongitude.Text := FloatToStr(Profissional.Longitude).Replace('.', FormatSettings.DecimalSeparator);
   edtLatitude.Text  := FloatToStr(Profissional.Latitude).Replace('.', FormatSettings.DecimalSeparator);
-  getEndereco(FloatToStr(Profissional.Latitude), FloatToStr(Profissional.Longitude));
+  setEndereco(FloatToStr(Profissional.Latitude), FloatToStr(Profissional.Longitude));
 end;
 
 end.
