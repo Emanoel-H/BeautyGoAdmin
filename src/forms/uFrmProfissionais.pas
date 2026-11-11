@@ -301,10 +301,14 @@ begin
   Profissional.Latitude          := 0;
   Profissional.Longitude         := 0;
 
-  edtNome.Text     := '';
-  edtEmail.Text    := '';
-  edtSenha.Text    := '';
-  edtTelefone.Text := '';
+  edtNome.Text            := '';
+  edtEmail.Text           := '';
+  edtSenha.Text           := '';
+  edtTelefone.Text        := '';
+  edtEndereco.Text        := '';
+  edtLatitude.Text        := '';
+  edtLongitude.Text       := '';
+  nbRaioAtendimento.Value := 0;
 
   mmBio.Clear;
 end;
