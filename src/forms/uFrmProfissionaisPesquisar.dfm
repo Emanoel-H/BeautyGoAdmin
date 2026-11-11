@@ -119,6 +119,18 @@ object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
         Title.Font.Quality = fqClearType
         Width = 108
         Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'latitude'
+        Title.Caption = 'Latitude'
+        Visible = False
+      end
+      item
+        Expanded = False
+        FieldName = 'longitude'
+        Title.Caption = 'Longitude'
+        Visible = False
       end>
   end
   object pnMenu: TPanel
@@ -130,7 +142,7 @@ object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
     Color = clBlack
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 622
+    ExplicitWidth = 835
     object lblCodigo: TLabel
       Left = 6
       Top = 2
@@ -210,8 +222,8 @@ object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
     Color = clBlack
     ParentBackground = False
     TabOrder = 2
-    ExplicitTop = 383
-    ExplicitWidth = 622
+    ExplicitTop = 584
+    ExplicitWidth = 835
     object pnRegistros: TPanel
       Left = 1
       Top = 1
@@ -275,7 +287,7 @@ object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
     ParentColor = False
     ParentFont = False
     TabOrder = 3
-    ExplicitWidth = 622
+    ExplicitWidth = 835
     object btnVoltar: TToolButton
       Left = 0
       Top = 0
