@@ -375,6 +375,7 @@ begin
   mmBio.Text        := Profissional.Bio;
   edtLongitude.Text := FloatToStr(Profissional.Longitude).Replace('.', FormatSettings.DecimalSeparator);
   edtLatitude.Text  := FloatToStr(Profissional.Latitude).Replace('.', FormatSettings.DecimalSeparator);
+  getEndereco(FloatToStr(Profissional.Latitude), FloatToStr(Profissional.Longitude));
 end;
 
 end.
