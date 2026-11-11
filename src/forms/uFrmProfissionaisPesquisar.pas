@@ -62,12 +62,14 @@ procedure TfrmProfissionaisPesquisar.btnConfirmarClick(Sender: TObject);
 begin
   if (frmProfissionaisRegistrar <> nil) and not (fdqProfissionais.IsEmpty) then
   begin
-    Profissional.Id       := dbgProfissionais.DataSource.DataSet.FieldByName('id').AsInteger;
-    Profissional.Nome     := dbgProfissionais.DataSource.DataSet.FieldByName('nome').AsString;
-    Profissional.Bio      := dbgProfissionais.DataSource.DataSet.FieldByName('bio').AsString;
-    Profissional.Email    := dbgProfissionais.DataSource.DataSet.FieldByName('email').AsString;
-    Profissional.Senha    := dbgProfissionais.DataSource.DataSet.FieldByName('senha').AsString;
-    Profissional.Telefone := dbgProfissionais.DataSource.DataSet.FieldByName('telefone').AsString;
+    Profissional.Id        := dbgProfissionais.DataSource.DataSet.FieldByName('id').AsInteger;
+    Profissional.Nome      := dbgProfissionais.DataSource.DataSet.FieldByName('nome').AsString;
+    Profissional.Bio       := dbgProfissionais.DataSource.DataSet.FieldByName('bio').AsString;
+    Profissional.Email     := dbgProfissionais.DataSource.DataSet.FieldByName('email').AsString;
+    Profissional.Senha     := dbgProfissionais.DataSource.DataSet.FieldByName('senha').AsString;
+    Profissional.Telefone  := dbgProfissionais.DataSource.DataSet.FieldByName('telefone').AsString;
+    Profissional.Latitude  := dbgProfissionais.DataSource.DataSet.FieldByName('latitude').AsFloat;
+    Profissional.Longitude := dbgProfissionais.DataSource.DataSet.FieldByName('longitude').AsFloat;
 
     frmProfissionaisRegistrar.recebeProfissional(Profissional);
     Close;
@@ -111,13 +113,11 @@ begin
   end
   else if dbgProfissionais.DataSource.DataSet.RecNo mod 2 = 0 then
     dbgProfissionais.Canvas.Brush.Color := $00673AB7;
-
   if Column.FieldName = 'telefone' then
   begin
     sTexto := FormatarTelefone(Column.Field.AsString);
     dbgProfissionais.Canvas.TextRect(Rect, Rect.Left + 2, Rect.Top + 2, sTexto);
   end;
-
   dbgProfissionais.DefaultDrawColumnCell(Rect, DataCol, Column, State);
 end;
 
