@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.ToolWin, Vcl.StdCtrls, System.Math,
   Vcl.ExtCtrls, System.RegularExpressions, System.StrUtils, uProfissional, uProfissionalService,
-  uDmConexao;
+  uDmConexao, Vcl.NumberBox;
 
 type
   TfrmProfissionaisRegistrar = class(TForm)
@@ -31,6 +31,15 @@ type
     edtTelefone: TEdit;
     btnServicos: TToolButton;
     cbxMostrarSenha: TCheckBox;
+    edtEndereco: TEdit;
+    Label2: TLabel;
+    btnLocalizar: TButton;
+    edtLatitude: TEdit;
+    lblLatitude: TLabel;
+    Label3: TLabel;
+    edtLongitude: TEdit;
+    nbRaioAtendimento: TNumberBox;
+    lblRaioAtendimento: TLabel;
     procedure edtTelefoneChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);

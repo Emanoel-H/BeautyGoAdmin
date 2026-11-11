@@ -109,6 +109,70 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
       ParentColor = False
       ParentFont = False
     end
+    object Label2: TLabel
+      Left = 14
+      Top = 307
+      Width = 60
+      Height = 17
+      Caption = 'Endere'#231'o:'
+      Color = clWhite
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      Font.Quality = fqClearType
+      ParentColor = False
+      ParentFont = False
+    end
+    object lblLatitude: TLabel
+      Left = 14
+      Top = 354
+      Width = 55
+      Height = 17
+      Caption = 'Latitude:'
+      Color = clWhite
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      Font.Quality = fqClearType
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label3: TLabel
+      Left = 182
+      Top = 354
+      Width = 67
+      Height = 17
+      Caption = 'Longitude:'
+      Color = clWhite
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      Font.Quality = fqClearType
+      ParentColor = False
+      ParentFont = False
+    end
+    object lblRaioAtendimento: TLabel
+      Left = 14
+      Top = 403
+      Width = 169
+      Height = 17
+      Caption = 'Raio de Atendimento (KM):'
+      Color = clWhite
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      Font.Quality = fqClearType
+      ParentColor = False
+      ParentFont = False
+    end
     object edtNome: TEdit
       Left = 14
       Top = 33
@@ -188,6 +252,74 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
       TabOrder = 5
       OnClick = cbxMostrarSenhaClick
     end
+    object edtEndereco: TEdit
+      Left = 14
+      Top = 326
+      Width = 139
+      Height = 23
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -12
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ImeName = 'edtTelefone'
+      MaxLength = 11
+      NumbersOnly = True
+      ParentFont = False
+      TabOrder = 6
+      OnChange = edtTelefoneChange
+    end
+    object btnLocalizar: TButton
+      Left = 168
+      Top = 326
+      Width = 65
+      Height = 24
+      Caption = 'Localizar'
+      TabOrder = 7
+    end
+    object edtLatitude: TEdit
+      Left = 14
+      Top = 377
+      Width = 139
+      Height = 23
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -12
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ImeName = 'edtTelefone'
+      MaxLength = 11
+      NumbersOnly = True
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 8
+      OnChange = edtTelefoneChange
+    end
+    object edtLongitude: TEdit
+      Left = 182
+      Top = 377
+      Width = 139
+      Height = 23
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -12
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ImeName = 'edtTelefone'
+      MaxLength = 11
+      NumbersOnly = True
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 9
+      OnChange = edtTelefoneChange
+    end
+    object nbRaioAtendimento: TNumberBox
+      Left = 14
+      Top = 426
+      Width = 121
+      Height = 23
+      TabOrder = 10
+    end
   end
   object tbCategorias: TToolBar
     Left = 0
@@ -207,6 +339,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
     ParentColor = False
     ParentFont = False
     TabOrder = 1
+    ExplicitWidth = 551
     object btnVoltar: TToolButton
       Left = 0
       Top = 0
