@@ -138,6 +138,13 @@ var
   JSON: TJSONArray;
   sURL, sLat, sLng: string;
 begin
+  if Trim(edtEndereco.Text) = '' then
+  begin
+    Application.MessageBox('Digite um endereço para localizar.', 'Atenção!', MB_OK + MB_ICONWARNING);
+    Exit;
+  end;
+
+
 
 end;
 
