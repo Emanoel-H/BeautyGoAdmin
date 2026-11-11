@@ -62,6 +62,7 @@ type
     procedure estadoEdicao;
     procedure estadoPesquisar;
     procedure limparCampos;
+    procedure getEndereco(sLat, sLng: string);
   public
     { Public declarations }
     procedure recebeProfissional(AProfissional: TProfissional);
@@ -286,6 +287,48 @@ procedure TfrmProfissionaisRegistrar.FormShow(Sender: TObject);
 begin
   btnVoltar.Visible := Parent = nil;
   estadoInicial;
+end;
+
+procedure TfrmProfissionaisRegistrar.getEndereco(sLat, sLng: string);
+var
+  Http: THttpClient;
+  Response: IHTTPResponse;
+  JSON: TJSONArray;
+  sURL, sEndereco: string;
+begin
+  Http := THTTPClient.Create;
+  try
+    Http.CustomHeaders['User-Agent'] := 'BeautyGoAdmin/1.0';
+
+    sUrl := 'http://nominatim.openstreetmap.org/reverse?&format=json'+
+            '&lat='+TNetEncoding.URL.Encode(Trim(sLat))+
+            '&lon='+TNetEncoding.URL.Encode(Trim(sLng))+
+            '&zoom=21&addressdetails=1';
+
+    Response := Http.Get(sURL);
+    if Response.StatusCode = 200 then
+    begin
+      JSON := TJSONObject.ParseJSONValue(Response.ContentAsString()) as TJSONArray;
+      try
+        if (JSON <> nil) and (JSON.Count > 0) then
+        begin
+          sEndereco := JSON.Items[0].GetValue<string>('display_name');
+
+          edtEndereco.Text := sEndereco;
+        end
+        else
+          Application.MessageBox('Endereço não encontrado conforme as coordenadas.', 'Atenção', MB_OK + MB_ICONWARNING);
+      finally
+        JSON.Free;
+      end;
+    end;
+  except
+    on E: Exception do
+    begin
+      Application.MessageBox(PChar('Erro ao buscar endereço: ' + E.Message), 'Atenção!', MB_OK + MB_ICONWARNING);
+      Http.Free;
+    end;
+  end;
 end;
 
 procedure TfrmProfissionaisRegistrar.limparCampos;
