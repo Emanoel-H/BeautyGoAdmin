@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.ToolWin, Vcl.StdCtrls, System.Math,
   Vcl.ExtCtrls, System.RegularExpressions, System.StrUtils, uProfissional, uProfissionalService,
-  uDmConexao, Vcl.NumberBox, System.Net.HttpClient, System.JSON;
+  uDmConexao, Vcl.NumberBox, System.Net.HttpClient, System.JSON, System.NetEncoding;
 
 type
   TfrmProfissionaisRegistrar = class(TForm)
@@ -144,8 +144,43 @@ begin
     Exit;
   end;
 
+  Http := THTTPClient.Create;
+  try
+    Http.CustomHeaders['User-Agent'] := 'BeautyGoAdmin/1.0';
 
+    sUrl := 'https://nominatim.openstreetmap.org/search?q=' +
+            TNetEncoding.URL.Encode(Trim(edtEndereco.Text)) +
+            '&format=json&limit=1';
 
+    Response := Http.Get(sURL);
+    if Response.StatusCode = 200 then
+    begin
+      JSON := TJSONObject.ParseJSONValue(Response.ContentAsString()) as TJSONArray;
+      try
+        if (JSON <> nil) and (JSON.Count > 0) then
+        begin
+          sLat := JSON.Items[0].GetValue<string>('lat');
+          sLng := JSON.Items[0].GetValue<string>('lon');
+
+          edtLatitude.Text  := sLat;
+          edtLongitude.Text := sLng;
+
+          Profissional.Latitude  := StrToFloat(sLat.Replace('.', FormatSettings.DecimalSeparator));
+          Profissional.Longitude := StrToFloat(sLng.Replace('.', FormatSettings.DecimalSeparator));
+        end
+        else
+          Application.MessageBox('Endereço não encontrado. Tente ser mais específico.', 'Atenção', MB_OK + MB_ICONWARNING);
+      finally
+        JSON.Free;
+      end;
+    end;
+  except
+    on E: Exception do
+    begin
+      Application.MessageBox(PChar('Erro ao buscar localização: ' + E.Message), 'Atenção!', MB_OK + MB_ICONWARNING);
+      Http.Free;
+    end;
+  end;
 end;
 
 procedure TfrmProfissionaisRegistrar.btnPesquisarClick(Sender: TObject);
