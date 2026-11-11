@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.ToolWin, Vcl.StdCtrls, System.Math,
   Vcl.ExtCtrls, System.RegularExpressions, System.StrUtils, uProfissional, uProfissionalService,
-  uDmConexao, Vcl.NumberBox;
+  uDmConexao, Vcl.NumberBox, System.Net.HttpClient, System.JSON;
 
 type
   TfrmProfissionaisRegistrar = class(TForm)
