@@ -316,18 +316,22 @@ end;
 procedure TfrmProfissionaisRegistrar.recebeProfissional(
   AProfissional: TProfissional);
 begin
-  Profissional.Id       := AProfissional.Id;
-  Profissional.Nome     := AProfissional.Nome;
-  Profissional.Bio      := AProfissional.Bio;
-  Profissional.Email    := AProfissional.Email;
-  Profissional.Telefone := AProfissional.Telefone;
-  Profissional.Senha    := AProfissional.Senha;
+  Profissional.Id        := AProfissional.Id;
+  Profissional.Nome      := AProfissional.Nome;
+  Profissional.Bio       := AProfissional.Bio;
+  Profissional.Email     := AProfissional.Email;
+  Profissional.Telefone  := AProfissional.Telefone;
+  Profissional.Senha     := AProfissional.Senha;
+  Profissional.Latitude  := AProfissional.Latitude;
+  Profissional.Longitude := AProfissional.Longitude;
 
-  edtNome.Text     := Profissional.Nome;
-  edtEmail.Text    := Profissional.Email;
-  edtSenha.Text    := Profissional.Senha;
-  edtTelefone.Text := Profissional.Telefone;
-  mmBio.Text       := Profissional.Bio;
+  edtNome.Text      := Profissional.Nome;
+  edtEmail.Text     := Profissional.Email;
+  edtSenha.Text     := Profissional.Senha;
+  edtTelefone.Text  := Profissional.Telefone;
+  mmBio.Text        := Profissional.Bio;
+  edtLongitude.Text := FloatToStr(Profissional.Longitude).Replace('.', FormatSettings.DecimalSeparator);
+  edtLatitude.Text  := FloatToStr(Profissional.Latitude).Replace('.', FormatSettings.DecimalSeparator);
 end;
 
 end.
