@@ -23,6 +23,7 @@ object frmMain: TfrmMain
     Height = 417
     ActivePage = Profissionais
     TabOrder = 0
+    OnChange = pcMainChange
     object Categorias: TTabSheet
       Caption = 'Categorias'
     end

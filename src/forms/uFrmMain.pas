@@ -13,6 +13,7 @@ type
     Profissionais: TTabSheet;
     procedure FormShow(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure pcMainChange(Sender: TObject);
   private
     { Private declarations }
   public
@@ -48,7 +49,28 @@ begin
   frmProfissionaisRegistrar.Parent      := Profissionais;
   frmProfissionaisRegistrar.Align       := alClient;
   frmProfissionaisRegistrar.BorderStyle := bsNone;
+
+  if pcMain.TabIndex = 1 then
+  begin
+    frmMain.Height := 740;
+    pcMain.Height  := 680;
+  end;
+
   frmProfissionaisRegistrar.Show;
+end;
+
+procedure TfrmMain.pcMainChange(Sender: TObject);
+begin
+  if pcMain.TabIndex = 1 then
+  begin
+    frmMain.Height := 740;
+    pcMain.Height  := 680;
+  end
+  else
+  begin
+    frmMain.Height := 592;
+    pcMain.Height  := 532;
+  end;
 end;
 
 end.
