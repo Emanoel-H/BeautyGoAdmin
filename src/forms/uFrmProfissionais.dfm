@@ -4,8 +4,8 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Profissionais'
-  ClientHeight = 568
-  ClientWidth = 557
+  ClientHeight = 524
+  ClientWidth = 597
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -20,8 +20,8 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
   object pnPrincipal: TPanel
     Left = 0
     Top = 56
-    Width = 557
-    Height = 512
+    Width = 597
+    Height = 468
     Align = alClient
     Color = clBlack
     Enabled = False
@@ -255,7 +255,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
     object edtEndereco: TEdit
       Left = 14
       Top = 326
-      Width = 139
+      Width = 443
       Height = 23
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
@@ -270,7 +270,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
       OnChange = edtTelefoneChange
     end
     object btnLocalizar: TButton
-      Left = 168
+      Left = 469
       Top = 326
       Width = 65
       Height = 24
@@ -325,7 +325,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
   object tbCategorias: TToolBar
     Left = 0
     Top = 0
-    Width = 557
+    Width = 597
     Height = 56
     ButtonHeight = 62
     ButtonWidth = 67
