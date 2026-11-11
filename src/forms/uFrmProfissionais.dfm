@@ -276,6 +276,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
       Height = 24
       Caption = 'Localizar'
       TabOrder = 7
+      OnClick = btnLocalizarClick
     end
     object edtLatitude: TEdit
       Left = 14

@@ -52,6 +52,7 @@ type
     procedure btnConfirmarClick(Sender: TObject);
     procedure cbxMostrarSenhaClick(Sender: TObject);
     procedure btnPesquisarClick(Sender: TObject);
+    procedure btnLocalizarClick(Sender: TObject);
   private
     { Private declarations }
     Profissional: TProfissional;
@@ -128,6 +129,16 @@ procedure TfrmProfissionaisRegistrar.btnInserirClick(Sender: TObject);
 begin
   limparCampos;
   estadoEdicao;
+end;
+
+procedure TfrmProfissionaisRegistrar.btnLocalizarClick(Sender: TObject);
+var
+  Http: THttpClient;
+  Response: IHTTPResponse;
+  JSON: TJSONArray;
+  sURL, sLat, sLng: string;
+begin
+
 end;
 
 procedure TfrmProfissionaisRegistrar.btnPesquisarClick(Sender: TObject);
