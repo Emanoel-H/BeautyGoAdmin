@@ -367,22 +367,25 @@ end;
 procedure TfrmProfissionaisRegistrar.recebeProfissional(
   AProfissional: TProfissional);
 begin
-  Profissional.Id        := AProfissional.Id;
-  Profissional.Nome      := AProfissional.Nome;
-  Profissional.Bio       := AProfissional.Bio;
-  Profissional.Email     := AProfissional.Email;
-  Profissional.Telefone  := AProfissional.Telefone;
-  Profissional.Senha     := AProfissional.Senha;
-  Profissional.Latitude  := AProfissional.Latitude;
-  Profissional.Longitude := AProfissional.Longitude;
+  Profissional.Id                := AProfissional.Id;
+  Profissional.Nome              := AProfissional.Nome;
+  Profissional.Bio               := AProfissional.Bio;
+  Profissional.Email             := AProfissional.Email;
+  Profissional.Telefone          := AProfissional.Telefone;
+  Profissional.Senha             := AProfissional.Senha;
+  Profissional.Latitude          := AProfissional.Latitude;
+  Profissional.Longitude         := AProfissional.Longitude;
+  Profissional.RaioAtendimentoKm := AProfissional.RaioAtendimentoKm;
 
-  edtNome.Text      := Profissional.Nome;
-  edtEmail.Text     := Profissional.Email;
-  edtSenha.Text     := Profissional.Senha;
-  edtTelefone.Text  := Profissional.Telefone;
-  mmBio.Text        := Profissional.Bio;
-  edtLongitude.Text := FloatToStr(Profissional.Longitude).Replace('.', FormatSettings.DecimalSeparator);
-  edtLatitude.Text  := FloatToStr(Profissional.Latitude).Replace('.', FormatSettings.DecimalSeparator);
+  edtNome.Text                 := Profissional.Nome;
+  edtEmail.Text                := Profissional.Email;
+  edtSenha.Text                := Profissional.Senha;
+  edtTelefone.Text             := Profissional.Telefone;
+  mmBio.Text                   := Profissional.Bio;
+  edtLongitude.Text            := FloatToStr(Profissional.Longitude).Replace('.', FormatSettings.DecimalSeparator);
+  edtLatitude.Text             := FloatToStr(Profissional.Latitude).Replace('.', FormatSettings.DecimalSeparator);
+  nbRaioAtendimento.ValueFloat := Profissional.RaioAtendimentoKm;
+
   setEndereco(Profissional.Latitude, Profissional.Longitude);
 end;
 
