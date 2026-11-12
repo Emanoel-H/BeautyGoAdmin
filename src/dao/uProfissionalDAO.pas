@@ -361,7 +361,7 @@ begin
             'LEFT JOIN categorias_servico as categoria        '+
             'ON servico.categoria_id = categoria.id           '+
             'WHERE servico.profissional_id = :profissional_id '+
-            'ORDER BY nome DESC                               ';
+            'ORDER BY servico.code DESC                       ';
 
     fGet.Close;
     fGet.SQL.Clear;
