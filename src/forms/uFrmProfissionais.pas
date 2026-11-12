@@ -99,6 +99,7 @@ begin
   Profissional.Telefone          := trim(edtTelefone.Text);
   Profissional.Senha             := trim(edtSenha.Text);
   Profissional.RaioAtendimentoKm := nbRaioAtendimento.ValueFloat;
+  Profissional.Endereco          := trim(edtEndereco.Text);
 
   try
     Service.Salvar(Profissional);
