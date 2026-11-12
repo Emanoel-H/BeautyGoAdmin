@@ -4,8 +4,8 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Profissionais'
-  ClientHeight = 515
-  ClientWidth = 591
+  ClientHeight = 524
+  ClientWidth = 597
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -20,13 +20,15 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
   object pnPrincipal: TPanel
     Left = 0
     Top = 56
-    Width = 591
-    Height = 459
+    Width = 597
+    Height = 468
     Align = alClient
     Color = clBlack
     Enabled = False
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 591
+    ExplicitHeight = 459
     object lblName: TLabel
       Left = 14
       Top = 14
@@ -323,7 +325,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
   object tbCategorias: TToolBar
     Left = 0
     Top = 0
-    Width = 591
+    Width = 597
     Height = 56
     ButtonHeight = 62
     ButtonWidth = 67
@@ -338,6 +340,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
     ParentColor = False
     ParentFont = False
     TabOrder = 1
+    ExplicitWidth = 591
     object btnVoltar: TToolButton
       Left = 0
       Top = 0

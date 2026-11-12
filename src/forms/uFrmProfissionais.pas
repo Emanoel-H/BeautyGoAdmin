@@ -93,10 +93,12 @@ end;
 
 procedure TfrmProfissionaisRegistrar.btnConfirmarClick(Sender: TObject);
 begin
-  Profissional.Nome     := trim(edtNome.Text);
-  Profissional.Bio      := trim(mmBio.Text);
-  Profissional.Email    := trim(edtEmail.Text);
-  Profissional.Telefone := trim(edtTelefone.Text);
+  Profissional.Nome              := trim(edtNome.Text);
+  Profissional.Bio               := trim(mmBio.Text);
+  Profissional.Email             := trim(edtEmail.Text);
+  Profissional.Telefone          := trim(edtTelefone.Text);
+  Profissional.Senha             := trim(edtSenha.Text);
+  Profissional.RaioAtendimentoKm := nbRaioAtendimento.ValueFloat;
 
   try
     Service.Salvar(Profissional);
