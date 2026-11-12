@@ -155,26 +155,26 @@ begin
               '&format=json&limit=1';
 
       Response := Http.Get(sURL);
-      if Response.StatusCode = 200 then
-      begin
-        JSON := TJSONObject.ParseJSONValue(Response.ContentAsString()) as TJSONArray;
-        try
-          if (JSON <> nil) and (JSON.Count > 0) then
-          begin
-            sLat := JSON.Items[0].GetValue<string>('lat');
-            sLng := JSON.Items[0].GetValue<string>('lon');
+      if Response.StatusCode <> 200 then
+        Exit;
 
-            edtLatitude.Text  := sLat;
-            edtLongitude.Text := sLng;
+      JSON := TJSONObject.ParseJSONValue(Response.ContentAsString()) as TJSONArray;
+      try
+        if (JSON <> nil) and (JSON.Count > 0) then
+        begin
+          sLat := JSON.Items[0].GetValue<string>('lat');
+          sLng := JSON.Items[0].GetValue<string>('lon');
 
-            Profissional.Latitude  := StrToFloat(sLat.Replace('.', FormatSettings.DecimalSeparator));
-            Profissional.Longitude := StrToFloat(sLng.Replace('.', FormatSettings.DecimalSeparator));
-          end
-          else
-            Application.MessageBox('Endereço não encontrado. Tente ser mais específico.', 'Atenção', MB_OK + MB_ICONWARNING);
-        finally
-          JSON.Free;
-        end;
+          edtLatitude.Text  := sLat;
+          edtLongitude.Text := sLng;
+
+          Profissional.Latitude  := StrToFloat(sLat.Replace('.', FormatSettings.DecimalSeparator));
+          Profissional.Longitude := StrToFloat(sLng.Replace('.', FormatSettings.DecimalSeparator));
+        end
+        else
+          Application.MessageBox('Endereço não encontrado. Tente ser mais específico.', 'Atenção', MB_OK + MB_ICONWARNING);
+      finally
+        JSON.Free;
       end;
     except
       on E: Exception do
