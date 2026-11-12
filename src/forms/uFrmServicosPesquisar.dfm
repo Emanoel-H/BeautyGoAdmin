@@ -3,7 +3,7 @@ object frmServicosPesquisar: TfrmServicosPesquisar
   Top = 0
   Caption = 'Servi'#231'os'
   ClientHeight = 636
-  ClientWidth = 599
+  ClientWidth = 610
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,7 +14,7 @@ object frmServicosPesquisar: TfrmServicosPesquisar
   object dbgServicos: TDBGrid
     Left = 0
     Top = 129
-    Width = 599
+    Width = 610
     Height = 457
     Align = alClient
     Color = clBlack
@@ -91,7 +91,7 @@ object frmServicosPesquisar: TfrmServicosPesquisar
   object pnMenu: TPanel
     Left = 0
     Top = 56
-    Width = 599
+    Width = 610
     Height = 73
     Align = alTop
     Color = clBlack
@@ -117,7 +117,7 @@ object frmServicosPesquisar: TfrmServicosPesquisar
     object edtCodigo: TEdit
       Left = 6
       Top = 25
-      Width = 60
+      Width = 69
       Height = 23
       Color = clWhite
       Font.Charset = DEFAULT_CHARSET
@@ -136,7 +136,7 @@ object frmServicosPesquisar: TfrmServicosPesquisar
   object pnRodape: TPanel
     Left = 0
     Top = 586
-    Width = 599
+    Width = 610
     Height = 50
     Align = alBottom
     Color = clBlack
@@ -192,7 +192,7 @@ object frmServicosPesquisar: TfrmServicosPesquisar
   object tbPesquisar: TToolBar
     Left = 0
     Top = 0
-    Width = 599
+    Width = 610
     Height = 56
     ButtonHeight = 62
     ButtonWidth = 75
