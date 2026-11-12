@@ -9,7 +9,7 @@ uses
 
 type
   TfrmServicosPesquisar = class(TForm)
-    dbgProfissionais: TDBGrid;
+    dbgServicos: TDBGrid;
     pnMenu: TPanel;
     lblCodigo: TLabel;
     edtCodigo: TEdit;

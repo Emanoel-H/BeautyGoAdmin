@@ -11,7 +11,7 @@ object frmServicosPesquisar: TfrmServicosPesquisar
   Font.Name = 'Segoe UI'
   Font.Style = []
   TextHeight = 15
-  object dbgProfissionais: TDBGrid
+  object dbgServicos: TDBGrid
     Left = 0
     Top = 129
     Width = 599
