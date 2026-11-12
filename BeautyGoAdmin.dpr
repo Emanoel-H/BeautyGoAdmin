@@ -17,7 +17,8 @@ uses
   uProfissionalDAO in 'src\dao\uProfissionalDAO.pas',
   uProfissionalService in 'src\services\uProfissionalService.pas',
   uFrmProfissionais in 'src\forms\uFrmProfissionais.pas' {frmProfissionaisRegistrar},
-  uFrmProfissionaisPesquisar in 'src\forms\uFrmProfissionaisPesquisar.pas' {frmProfissionaisPesquisar};
+  uFrmProfissionaisPesquisar in 'src\forms\uFrmProfissionaisPesquisar.pas' {frmProfissionaisPesquisar},
+  uFrmServicosPesquisar in 'src\forms\uFrmServicosPesquisar.pas' {frmServicosPesquisar};
 
 {$R *.res}
 
