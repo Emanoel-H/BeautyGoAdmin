@@ -116,8 +116,9 @@ begin
     dbgProfissionais.Canvas.Brush.Color := $00673AB7;
   if Column.FieldName = 'telefone' then
   begin
-    sTexto := FormatarTelefone(Column.Field.AsString);
-    dbgProfissionais.Canvas.TextRect(Rect, Rect.Left + 2, Rect.Top + 2, sTexto);
+    dbgProfissionais.Canvas.FillRect(Rect);
+    dbgProfissionais.Canvas.TextRect(Rect, Rect.Left + 2, Rect.Top + 2, FormatarTelefone(Column.Field.AsString));
+    Exit;
   end;
   dbgProfissionais.DefaultDrawColumnCell(Rect, DataCol, Column, State);
 end;
