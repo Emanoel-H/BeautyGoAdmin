@@ -309,21 +309,22 @@ begin
               '&lon='+FloatToStr(dLng, TFormatSettings.Invariant);
 
       Response := Http.Get(sURL);
-      if Response.StatusCode = 200 then
-      begin
-        JSON := TJSONObject.ParseJSONValue(Response.ContentAsString()) as TJSONArray;
-        try
-          if (JSON <> nil) and (JSON.Count > 0) then
-          begin
-            sEndereco := JSON.Items[0].GetValue<string>('display_name');
 
-            edtEndereco.Text := sEndereco;
-          end
-          else
-            Application.MessageBox('Endereço não encontrado conforme as coordenadas.', 'Atenção', MB_OK + MB_ICONWARNING);
-        finally
-          JSON.Free;
-        end;
+      if Response.StatusCode <> 200 then
+        Exit;
+
+      JSON := TJSONObject.ParseJSONValue(Response.ContentAsString()) as TJSONArray;
+      try
+        if (JSON <> nil) and (JSON.Count > 0) then
+        begin
+          sEndereco := JSON.Items[0].GetValue<string>('display_name');
+
+          edtEndereco.Text := sEndereco;
+        end
+        else
+          Application.MessageBox('Endereço não encontrado conforme as coordenadas.', 'Atenção', MB_OK + MB_ICONWARNING);
+      finally
+        JSON.Free;
       end;
     except
       on E: Exception do
