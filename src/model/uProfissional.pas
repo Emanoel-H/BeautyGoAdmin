@@ -17,6 +17,7 @@ type
       dRaioAtendimentoKm: Double;
       dLatitude: Double;
       dLongitude: Double;
+      sEndereco: string;
     public
       property Id: Int64 read iId write iId;
       property Nome: string read sNome write sNome;
@@ -28,6 +29,7 @@ type
       property RaioAtendimentoKm: Double read dRaioAtendimentoKm write dRaioAtendimentoKm;
       property Latitude: Double read dLatitude write dLatitude;
       property Longitude: Double read dLongitude write dLongitude;
+      property Endereco: string read sEndereco write sEndereco;
   end;
 
 implementation
