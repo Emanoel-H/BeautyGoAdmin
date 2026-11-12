@@ -131,6 +131,12 @@ object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
         FieldName = 'longitude'
         Title.Caption = 'Longitude'
         Visible = False
+      end
+      item
+        Expanded = False
+        FieldName = 'raio'
+        Title.Caption = 'Raio'
+        Visible = False
       end>
   end
   object pnMenu: TPanel
