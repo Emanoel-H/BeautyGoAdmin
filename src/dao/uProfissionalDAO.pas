@@ -46,7 +46,8 @@ begin
             'telefone = :telefone,                              '+
             'senha = crypt(:senha, gen_salt(''bf'')),           '+
             'raio_atendimento_km = :raio,                       '+
-            'localizacao = ST_MakePoint(:lng, :lat)::geography  '+
+            'localizacao = ST_MakePoint(:lng, :lat)::geography, '+
+            'endereco = :endereco                               '+
             'WHERE id = :id                                     ';
 
     fSet.Close;
@@ -60,6 +61,7 @@ begin
     fSet.ParamByName('raio').AsFloat      := AEntidade.RaioAtendimentoKm;
     fSet.ParamByName('lng').AsFloat       := AEntidade.Longitude;
     fSet.ParamByName('lat').AsFloat       := AEntidade.Latitude;
+    fSet.ParamByName('endereco').AsString := AEntidade.Endereco;
     fSet.ParamByName('id').AsInteger      := AEntidade.Id;
     fSet.ExecSQL;
   finally
