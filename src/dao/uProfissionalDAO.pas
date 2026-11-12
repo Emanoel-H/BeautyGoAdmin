@@ -44,7 +44,7 @@ begin
             'bio = :bio,                                        '+
             'email = :email,                                    '+
             'telefone = :telefone,                              '+
-            'senha = :senha,                                    '+
+            'senha = crypt(:senha, gen_salt(''bf'')),           '+
             'raio_atendimento_km = :raio,                       '+
             'localizacao = ST_MakePoint(:lng, :lat)::geography  '+
             'WHERE id = :id                                     ';
