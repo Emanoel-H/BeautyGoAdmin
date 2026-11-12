@@ -232,10 +232,10 @@ begin
   try
     fSet.Connection := FConexao;
 
-    sSQL := 'INSERT INTO profissionais                                               '+
-            '(nome, bio, email, telefone, senha, raio_atendimento_km, localizacao)   '+
-            'VALUES(:nome, :bio, :email, :telefone, crypt(:senha, gen_salt(''bf'')), '+
-            ':raio, ST_MakePoint(:lng, :lat)::geography)                             ';
+    sSQL := 'INSERT INTO profissionais                                                       '+
+            '(nome, bio, email, telefone, senha, raio_atendimento_km, localizacao, endereco) '+
+            'VALUES(:nome, :bio, :email, :telefone, crypt(:senha, gen_salt(''bf'')),         '+
+            ':raio, ST_MakePoint(:lng, :lat)::geography, :endereco)                          ';
 
     fSet.Close;
     fSet.SQL.Clear;
@@ -248,6 +248,7 @@ begin
     fSet.ParamByName('raio').AsFloat      := AEntidade.RaioAtendimentoKm;
     fSet.ParamByName('lng').AsFloat       := AEntidade.Longitude;
     fSet.ParamByName('lat').AsFloat       := AEntidade.Latitude;
+    fSet.ParamByName('endereco').AsString := AEntidade.Endereco;
     fSet.ExecSQL;
   finally
     fSet.Close;
