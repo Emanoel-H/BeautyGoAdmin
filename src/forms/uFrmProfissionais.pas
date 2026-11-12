@@ -62,7 +62,7 @@ type
     procedure estadoEdicao;
     procedure estadoPesquisar;
     procedure limparCampos;
-    procedure setEndereco(sLat, sLng: string);
+    procedure setEndereco(dLat, dLng: double);
   public
     { Public declarations }
     procedure recebeProfissional(AProfissional: TProfissional);
@@ -289,7 +289,7 @@ begin
   estadoInicial;
 end;
 
-procedure TfrmProfissionaisRegistrar.setEndereco(sLat, sLng: string);
+procedure TfrmProfissionaisRegistrar.setEndereco(dLat, dLng: double);
 var
   Http: THttpClient;
   Response: IHTTPResponse;
@@ -301,8 +301,8 @@ begin
     Http.CustomHeaders['User-Agent'] := 'BeautyGoAdmin/1.0';
 
     sUrl := 'http://nominatim.openstreetmap.org/reverse?&format=json'+
-            '&lat='+TNetEncoding.URL.Encode(Trim(sLat))+
-            '&lon='+TNetEncoding.URL.Encode(Trim(sLng))+
+            '&lat='+FloatToStr(dLat, TFormatSettings.Invariant)+
+            '&lon='+FloatToStr(dLng, TFormatSettings.Invariant)+
             '&zoom=21&addressdetails=1';
 
     Response := Http.Get(sURL);
@@ -375,7 +375,7 @@ begin
   mmBio.Text        := Profissional.Bio;
   edtLongitude.Text := FloatToStr(Profissional.Longitude).Replace('.', FormatSettings.DecimalSeparator);
   edtLatitude.Text  := FloatToStr(Profissional.Latitude).Replace('.', FormatSettings.DecimalSeparator);
-  setEndereco(FloatToStr(Profissional.Latitude), FloatToStr(Profissional.Longitude));
+  setEndereco(Profissional.Latitude, Profissional.Longitude);
 end;
 
 end.
