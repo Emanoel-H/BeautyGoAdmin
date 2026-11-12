@@ -298,36 +298,38 @@ var
 begin
   Http := THTTPClient.Create;
   try
-    Http.CustomHeaders['User-Agent'] := 'BeautyGoAdmin/1.0';
+    try
+      Http.CustomHeaders['User-Agent'] := 'BeautyGoAdmin/1.0';
 
-    sUrl := 'http://nominatim.openstreetmap.org/reverse?&format=json'+
-            '&lat='+FloatToStr(dLat, TFormatSettings.Invariant)+
-            '&lon='+FloatToStr(dLng, TFormatSettings.Invariant)+
-            '&zoom=21&addressdetails=1';
+      sUrl := 'http://nominatim.openstreetmap.org/reverse?&format=json'+
+              '&lat='+FloatToStr(dLat, TFormatSettings.Invariant)+
+              '&lon='+FloatToStr(dLng, TFormatSettings.Invariant);
 
-    Response := Http.Get(sURL);
-    if Response.StatusCode = 200 then
-    begin
-      JSON := TJSONObject.ParseJSONValue(Response.ContentAsString()) as TJSONArray;
-      try
-        if (JSON <> nil) and (JSON.Count > 0) then
-        begin
-          sEndereco := JSON.Items[0].GetValue<string>('display_name');
+      Response := Http.Get(sURL);
+      if Response.StatusCode = 200 then
+      begin
+        JSON := TJSONObject.ParseJSONValue(Response.ContentAsString()) as TJSONArray;
+        try
+          if (JSON <> nil) and (JSON.Count > 0) then
+          begin
+            sEndereco := JSON.Items[0].GetValue<string>('display_name');
 
-          edtEndereco.Text := sEndereco;
-        end
-        else
-          Application.MessageBox('Endereço não encontrado conforme as coordenadas.', 'Atenção', MB_OK + MB_ICONWARNING);
-      finally
-        JSON.Free;
+            edtEndereco.Text := sEndereco;
+          end
+          else
+            Application.MessageBox('Endereço não encontrado conforme as coordenadas.', 'Atenção', MB_OK + MB_ICONWARNING);
+        finally
+          JSON.Free;
+        end;
+      end;
+    except
+      on E: Exception do
+      begin
+        Application.MessageBox(PChar('Erro ao buscar endereço: ' + E.Message), 'Atenção!', MB_OK + MB_ICONWARNING);
       end;
     end;
-  except
-    on E: Exception do
-    begin
-      Application.MessageBox(PChar('Erro ao buscar endereço: ' + E.Message), 'Atenção!', MB_OK + MB_ICONWARNING);
-      Http.Free;
-    end;
+  finally
+    Http.Free;
   end;
 end;
 
