@@ -62,14 +62,15 @@ procedure TfrmProfissionaisPesquisar.btnConfirmarClick(Sender: TObject);
 begin
   if (frmProfissionaisRegistrar <> nil) and not (fdqProfissionais.IsEmpty) then
   begin
-    Profissional.Id        := dbgProfissionais.DataSource.DataSet.FieldByName('id').AsInteger;
-    Profissional.Nome      := dbgProfissionais.DataSource.DataSet.FieldByName('nome').AsString;
-    Profissional.Bio       := dbgProfissionais.DataSource.DataSet.FieldByName('bio').AsString;
-    Profissional.Email     := dbgProfissionais.DataSource.DataSet.FieldByName('email').AsString;
-    Profissional.Senha     := dbgProfissionais.DataSource.DataSet.FieldByName('senha').AsString;
-    Profissional.Telefone  := dbgProfissionais.DataSource.DataSet.FieldByName('telefone').AsString;
-    Profissional.Latitude  := dbgProfissionais.DataSource.DataSet.FieldByName('latitude').AsFloat;
-    Profissional.Longitude := dbgProfissionais.DataSource.DataSet.FieldByName('longitude').AsFloat;
+    Profissional.Id                := dbgProfissionais.DataSource.DataSet.FieldByName('id').AsInteger;
+    Profissional.Nome              := dbgProfissionais.DataSource.DataSet.FieldByName('nome').AsString;
+    Profissional.Bio               := dbgProfissionais.DataSource.DataSet.FieldByName('bio').AsString;
+    Profissional.Email             := dbgProfissionais.DataSource.DataSet.FieldByName('email').AsString;
+    Profissional.Senha             := dbgProfissionais.DataSource.DataSet.FieldByName('senha').AsString;
+    Profissional.Telefone          := dbgProfissionais.DataSource.DataSet.FieldByName('telefone').AsString;
+    Profissional.Latitude          := dbgProfissionais.DataSource.DataSet.FieldByName('latitude').AsFloat;
+    Profissional.Longitude         := dbgProfissionais.DataSource.DataSet.FieldByName('longitude').AsFloat;
+    Profissional.RaioAtendimentoKm := dbgProfissionais.DataSource.DataSet.FieldByName('raio').AsFloat;
 
     frmProfissionaisRegistrar.recebeProfissional(Profissional);
     Close;
