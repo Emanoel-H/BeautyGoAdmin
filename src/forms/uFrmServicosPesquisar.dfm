@@ -317,8 +317,28 @@ object frmServicosPesquisar: TfrmServicosPesquisar
       ParentShowHint = False
       ShowHint = True
     end
-    object btnConfirmar: TToolButton
+    object btnDeletar: TToolButton
       Left = 300
+      Top = 0
+      Hint = 'Deletar'
+      Caption = 'btnDeletar'
+      ImageIndex = 10
+      ImageName = 'recycle'
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object btnCancelar: TToolButton
+      Left = 375
+      Top = 0
+      Hint = 'Cancelar'
+      Caption = 'btnCancelar'
+      ImageIndex = 20
+      ImageName = 'cancel 72'
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object btnConfirmar: TToolButton
+      Left = 450
       Top = 0
       Hint = 'Confirmar'
       Caption = 'btnConfirmar'

@@ -29,6 +29,8 @@ type
     sbCategoriasPesquisar: TSpeedButton;
     btnAdd: TToolButton;
     btnAtualizar: TToolButton;
+    btnDeletar: TToolButton;
+    btnCancelar: TToolButton;
   private
     { Private declarations }
   public
