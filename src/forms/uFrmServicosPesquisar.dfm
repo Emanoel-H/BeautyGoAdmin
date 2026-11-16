@@ -197,7 +197,7 @@ object frmServicosPesquisar: TfrmServicosPesquisar
     object nbPreco: TNumberBox
       Left = 489
       Top = 25
-      Width = 121
+      Width = 112
       Height = 23
       Enabled = False
       TabOrder = 2
@@ -297,8 +297,18 @@ object frmServicosPesquisar: TfrmServicosPesquisar
       ParentShowHint = False
       ShowHint = True
     end
-    object btnConfirmar: TToolButton
+    object btnAdd: TToolButton
       Left = 150
+      Top = 0
+      Hint = 'Adicionar'
+      Caption = 'btnAdicionar'
+      ImageIndex = 19
+      ImageName = 'plus 72'
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object btnConfirmar: TToolButton
+      Left = 225
       Top = 0
       Hint = 'Confirmar'
       Caption = 'btnConfirmar'
