@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.ComCtrls, Vcl.ToolWin,
-  Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids;
+  Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.DBCtrls, Vcl.NumberBox,
+  Vcl.Buttons;
 
 type
   TfrmServicosPesquisar = class(TForm)
@@ -21,6 +22,11 @@ type
     btnVoltar: TToolButton;
     btnPesquisar: TToolButton;
     btnConfirmar: TToolButton;
+    dbCBCategorias: TDBComboBox;
+    nbPreco: TNumberBox;
+    lblCategorias: TLabel;
+    lblPreco: TLabel;
+    sbCategoriasPesquisar: TSpeedButton;
   private
     { Private declarations }
   public

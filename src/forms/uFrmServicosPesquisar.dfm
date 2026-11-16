@@ -120,6 +120,51 @@ object frmServicosPesquisar: TfrmServicosPesquisar
       ParentColor = False
       ParentFont = False
     end
+    object lblCategorias: TLabel
+      Left = 81
+      Top = 2
+      Width = 69
+      Height = 17
+      Caption = 'Categorias:'
+      Color = clWhite
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      Font.Quality = fqClearType
+      ParentColor = False
+      ParentFont = False
+    end
+    object lblPreco: TLabel
+      Left = 489
+      Top = 2
+      Width = 38
+      Height = 17
+      Caption = 'Preco:'
+      Color = clWhite
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      Font.Quality = fqClearType
+      ParentColor = False
+      ParentFont = False
+    end
+    object sbCategoriasPesquisar: TSpeedButton
+      Left = 447
+      Top = 24
+      Width = 23
+      Height = 25
+      Hint = 'Pesquisar categorias'
+      ImageIndex = 24
+      ImageName = 'search 72'
+      Images = dmConexao.VirtualImageList1
+      Enabled = False
+      ParentShowHint = False
+      ShowHint = True
+    end
     object edtCodigo: TEdit
       Left = 6
       Top = 25
@@ -137,6 +182,22 @@ object frmServicosPesquisar: TfrmServicosPesquisar
       NumbersOnly = True
       ParentFont = False
       TabOrder = 0
+    end
+    object dbCBCategorias: TDBComboBox
+      Left = 81
+      Top = 25
+      Width = 360
+      Height = 23
+      ReadOnly = True
+      TabOrder = 1
+    end
+    object nbPreco: TNumberBox
+      Left = 489
+      Top = 25
+      Width = 121
+      Height = 23
+      Enabled = False
+      TabOrder = 2
     end
   end
   object pnRodape: TPanel
@@ -200,7 +261,7 @@ object frmServicosPesquisar: TfrmServicosPesquisar
     Top = 0
     Width = 610
     Height = 56
-    ButtonHeight = 62
+    ButtonHeight = 36
     ButtonWidth = 75
     Caption = 'tbPesquisar'
     Color = 6765239
@@ -213,7 +274,6 @@ object frmServicosPesquisar: TfrmServicosPesquisar
     ParentColor = False
     ParentFont = False
     TabOrder = 3
-    ExplicitWidth = 604
     object btnVoltar: TToolButton
       Left = 0
       Top = 0
