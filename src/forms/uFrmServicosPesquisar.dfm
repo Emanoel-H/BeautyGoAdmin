@@ -286,6 +286,7 @@ object frmServicosPesquisar: TfrmServicosPesquisar
       ImageName = 'back'
       ParentShowHint = False
       ShowHint = True
+      OnClick = btnVoltarClick
     end
     object btnPesquisar: TToolButton
       Left = 75

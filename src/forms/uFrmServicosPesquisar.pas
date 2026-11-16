@@ -31,6 +31,7 @@ type
     btnDeletar: TToolButton;
     btnCancelar: TToolButton;
     cbCategorias: TComboBox;
+    procedure btnVoltarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -43,5 +44,10 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TfrmServicosPesquisar.btnVoltarClick(Sender: TObject);
+begin
+  Close;
+end;
 
 end.
