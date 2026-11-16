@@ -164,7 +164,6 @@ object frmServicosPesquisar: TfrmServicosPesquisar
       ImageIndex = 24
       ImageName = 'search 72'
       Images = dmConexao.VirtualImageList1
-      Enabled = False
       ParentShowHint = False
       ShowHint = True
     end
@@ -186,21 +185,22 @@ object frmServicosPesquisar: TfrmServicosPesquisar
       ParentFont = False
       TabOrder = 0
     end
-    object dbCBCategorias: TDBComboBox
-      Left = 81
-      Top = 25
-      Width = 360
-      Height = 23
-      ReadOnly = True
-      TabOrder = 1
-    end
     object nbPreco: TNumberBox
       Left = 489
       Top = 25
       Width = 112
       Height = 23
       Enabled = False
+      TabOrder = 1
+    end
+    object cbCategorias: TComboBox
+      Left = 81
+      Top = 25
+      Width = 360
+      Height = 23
       TabOrder = 2
+      Items.Strings = (
+        '')
     end
   end
   object pnRodape: TPanel

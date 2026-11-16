@@ -22,7 +22,6 @@ type
     btnVoltar: TToolButton;
     btnPesquisar: TToolButton;
     btnConfirmar: TToolButton;
-    dbCBCategorias: TDBComboBox;
     nbPreco: TNumberBox;
     lblCategorias: TLabel;
     lblPreco: TLabel;
@@ -31,6 +30,7 @@ type
     btnAtualizar: TToolButton;
     btnDeletar: TToolButton;
     btnCancelar: TToolButton;
+    cbCategorias: TComboBox;
   private
     { Private declarations }
   public
