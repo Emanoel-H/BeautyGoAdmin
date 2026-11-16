@@ -332,6 +332,7 @@ object frmServicosPesquisar: TfrmServicosPesquisar
       Top = 0
       Hint = 'Cancelar'
       Caption = 'btnCancelar'
+      Enabled = False
       ImageIndex = 20
       ImageName = 'cancel 72'
       ParentShowHint = False
