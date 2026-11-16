@@ -28,6 +28,7 @@ type
     lblPreco: TLabel;
     sbCategoriasPesquisar: TSpeedButton;
     btnAdd: TToolButton;
+    btnAtualizar: TToolButton;
   private
     { Private declarations }
   public

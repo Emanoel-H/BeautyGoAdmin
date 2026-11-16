@@ -307,8 +307,18 @@ object frmServicosPesquisar: TfrmServicosPesquisar
       ParentShowHint = False
       ShowHint = True
     end
-    object btnConfirmar: TToolButton
+    object btnAtualizar: TToolButton
       Left = 225
+      Top = 0
+      Hint = 'Atualizar'
+      Caption = 'btnAtualizar'
+      ImageIndex = 22
+      ImageName = 'asterisk 72'
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object btnConfirmar: TToolButton
+      Left = 300
       Top = 0
       Hint = 'Confirmar'
       Caption = 'btnConfirmar'
