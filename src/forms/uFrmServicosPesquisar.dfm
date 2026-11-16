@@ -1,6 +1,8 @@
 object frmServicosPesquisar: TfrmServicosPesquisar
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
   Caption = 'Servi'#231'os'
   ClientHeight = 636
   ClientWidth = 610
@@ -10,6 +12,7 @@ object frmServicosPesquisar: TfrmServicosPesquisar
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poScreenCenter
   TextHeight = 15
   object dbgServicos: TDBGrid
     Left = 0
