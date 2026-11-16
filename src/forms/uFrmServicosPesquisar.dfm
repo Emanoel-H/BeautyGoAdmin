@@ -160,7 +160,8 @@ object frmServicosPesquisar: TfrmServicosPesquisar
       Top = 24
       Width = 23
       Height = 25
-      Hint = 'Pesquisar categorias'
+      Hint = 'Categorias'
+      DisabledImageName = 'sbCategorias'
       ImageIndex = 24
       ImageName = 'search 72'
       Images = dmConexao.VirtualImageList1
