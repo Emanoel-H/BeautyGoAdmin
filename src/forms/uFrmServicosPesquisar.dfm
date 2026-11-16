@@ -84,6 +84,12 @@ object frmServicosPesquisar: TfrmServicosPesquisar
         Expanded = False
         FieldName = 'preco'
         Title.Caption = 'Pre'#231'o'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -12
+        Title.Font.Name = 'Segoe UI'
+        Title.Font.Style = [fsBold]
+        Title.Font.Quality = fqClearType
         Width = 80
         Visible = True
       end>
@@ -97,7 +103,7 @@ object frmServicosPesquisar: TfrmServicosPesquisar
     Color = clBlack
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 593
+    ExplicitWidth = 604
     object lblCodigo: TLabel
       Left = 6
       Top = 2
@@ -143,7 +149,7 @@ object frmServicosPesquisar: TfrmServicosPesquisar
     ParentBackground = False
     TabOrder = 2
     ExplicitTop = 577
-    ExplicitWidth = 593
+    ExplicitWidth = 604
     object pnRegistros: TPanel
       Left = 1
       Top = 1
@@ -207,7 +213,7 @@ object frmServicosPesquisar: TfrmServicosPesquisar
     ParentColor = False
     ParentFont = False
     TabOrder = 3
-    ExplicitWidth = 593
+    ExplicitWidth = 604
     object btnVoltar: TToolButton
       Left = 0
       Top = 0
