@@ -119,8 +119,8 @@ begin
   begin
     try
       Service.Excluir(Profissional);
-      estadoInicial;
       limparCampos;
+      estadoInicial;
     except
       on E: Exception do
       begin
