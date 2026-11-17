@@ -30,7 +30,7 @@ type
     btnAtualizar: TToolButton;
     btnDeletar: TToolButton;
     btnCancelar: TToolButton;
-    cbCategorias: TComboBox;
+    dblCategorias: TDBLookupComboBox;
     procedure btnVoltarClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
@@ -89,6 +89,7 @@ end;
 
 procedure TfrmServicosPesquisar.FormShow(Sender: TObject);
 begin
+  cbCategorias.
   estadoInicial;
 end;
 

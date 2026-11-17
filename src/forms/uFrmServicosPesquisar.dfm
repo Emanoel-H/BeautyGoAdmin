@@ -197,14 +197,21 @@ object frmServicosPesquisar: TfrmServicosPesquisar
       Enabled = False
       TabOrder = 1
     end
-    object cbCategorias: TComboBox
+    object dblCategorias: TDBLookupComboBox
       Left = 81
       Top = 25
       Width = 360
       Height = 23
+      DropDownRows = 10
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -12
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      KeyField = 'id'
+      ListField = 'nome'
+      ParentFont = False
       TabOrder = 2
-      Items.Strings = (
-        '')
     end
   end
   object pnRodape: TPanel
