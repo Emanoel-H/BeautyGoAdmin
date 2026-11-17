@@ -52,6 +52,7 @@ type
     dsCategorias: TDataSource;
     Categoria: TCategoria;
     procedure estadoInicial;
+    procedure limparCampos;
   public
     { Public declarations }
   end;
@@ -65,8 +66,8 @@ implementation
 
 procedure TfrmServicosPesquisar.btnPesquisarClick(Sender: TObject);
 begin
-  ServicoOferecido.CategoriaId    := StrToIntDef(VarToStr(dblCategorias.KeyValue), 0);
-  ServicoOferecido.Codigo         := edtCodigo.Text;
+  ServicoOferecido.CategoriaId := StrToIntDef(VarToStr(dblCategorias.KeyValue), 0);
+  ServicoOferecido.Codigo      := edtCodigo.Text;
 
   fdqServicos            := Service.Listar(ServicoOferecido);
 
@@ -165,6 +166,18 @@ begin
 
   dsCategorias.DataSet     := fdqServicos;
   lblQtdeRegistros.Caption := fdqServicos.RecordCount.ToString;
+end;
+
+procedure TfrmServicosPesquisar.limparCampos;
+begin
+  ServicoOferecido.Id          := 0;
+  ServicoOferecido.CategoriaId := 0;
+  ServicoOferecido.Codigo      := '';
+  ServicoOferecido.Preco       := 0;
+
+  edtCodigo.Text := '';
+  dblCategorias.KeyValue := null;
+  nbPreco.Value  := 0;
 end;
 
 end.
