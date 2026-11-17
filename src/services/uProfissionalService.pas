@@ -104,7 +104,12 @@ begin
   if AServico.Id = 0 then
     ProfissionalDAO.InserirServico(AServico)
   else
-    ProfissionalDAO.AtualizarServico(AServico);
+  begin
+    if not ProfissionalDAO.ExisteServico(AServico) then
+      ProfissionalDAO.AtualizarServico(AServico)
+    else
+      raise Exception.Create('Esse serviço já existe!');
+  end;
 end;
 
 end.
