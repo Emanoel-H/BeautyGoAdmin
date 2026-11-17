@@ -103,7 +103,7 @@ begin
   Profissional.Endereco          := trim(edtEndereco.Text);
 
   try
-    Service.Salvar(Profissional);
+    Profissional.Id := Service.Salvar(Profissional);
     estadoInicial;
   except
     on E: Exception do
