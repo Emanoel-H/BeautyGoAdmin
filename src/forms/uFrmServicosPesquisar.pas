@@ -103,6 +103,14 @@ begin
   dsCategorias.DataSet     := CategoriaService.Listar(Categoria);
   dblCategorias.ListSource := dsCategorias;
   estadoInicial;
+
+  fdqServicos            := Service.Listar(ServicoOferecido);
+
+  if fdqServicos.IsEmpty then
+    Application.MessageBox('Não há registros na consulta!', 'Atenção!', MB_OK + MB_ICONWARNING);
+
+  dsCategorias.DataSet     := fdqServicos;
+  lblQtdeRegistros.Caption := fdqServicos.RecordCount.ToString;
 end;
 
 end.
