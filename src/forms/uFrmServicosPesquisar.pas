@@ -47,6 +47,7 @@ type
     procedure btnInserirClick(Sender: TObject);
     procedure btnAtualizarClick(Sender: TObject);
     procedure btnDeletarClick(Sender: TObject);
+    procedure btnCancelarClick(Sender: TObject);
   private
     { Private declarations }
     ServicoOferecido: TServicoOferecido;
@@ -71,6 +72,12 @@ implementation
 procedure TfrmServicosPesquisar.btnAtualizarClick(Sender: TObject);
 begin
   estadoEdicao;
+end;
+
+procedure TfrmServicosPesquisar.btnCancelarClick(Sender: TObject);
+begin
+  estadoInicial;
+  limparCampos;
 end;
 
 procedure TfrmServicosPesquisar.btnDeletarClick(Sender: TObject);

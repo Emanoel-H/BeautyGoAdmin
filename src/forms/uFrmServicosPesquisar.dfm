@@ -357,6 +357,7 @@ object frmServicosPesquisar: TfrmServicosPesquisar
       ImageName = 'cancel 72'
       ParentShowHint = False
       ShowHint = True
+      OnClick = btnCancelarClick
     end
     object btnConfirmar: TToolButton
       Left = 450
