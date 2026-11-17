@@ -52,7 +52,6 @@ type
     procedure sbCategoriasPesquisarClick(Sender: TObject);
   private
     { Private declarations }
-    ServicoOferecido: TServicoOferecido;
     Service: TProfissionalService;
     CategoriaService: TCategoriaService;
     dsCategorias: TDataSource;
@@ -62,6 +61,7 @@ type
     procedure estadoEdicao;
   public
     { Public declarations }
+    ServicoOferecido: TServicoOferecido;
   end;
 
 var
