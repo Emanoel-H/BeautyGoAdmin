@@ -13,6 +13,7 @@ object frmServicosPesquisar: TfrmServicosPesquisar
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poScreenCenter
+  OnClose = FormClose
   TextHeight = 15
   object dbgServicos: TDBGrid
     Left = 0
@@ -278,6 +279,7 @@ object frmServicosPesquisar: TfrmServicosPesquisar
     ParentColor = False
     ParentFont = False
     TabOrder = 3
+    ExplicitWidth = 604
     object btnVoltar: TToolButton
       Left = 0
       Top = 0

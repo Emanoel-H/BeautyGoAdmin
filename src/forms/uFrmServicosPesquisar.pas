@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.ComCtrls, Vcl.ToolWin,
   Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.DBCtrls, Vcl.NumberBox,
-  Vcl.Buttons;
+  Vcl.Buttons, uServicoOferecido, uProfissionalService;
 
 type
   TfrmServicosPesquisar = class(TForm)
@@ -32,8 +32,11 @@ type
     btnCancelar: TToolButton;
     cbCategorias: TComboBox;
     procedure btnVoltarClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
+    ServicoOferecido: TServicoOferecido;
+    Service: TProfissionalService;
   public
     { Public declarations }
   end;
@@ -48,6 +51,18 @@ implementation
 procedure TfrmServicosPesquisar.btnVoltarClick(Sender: TObject);
 begin
   Close;
+end;
+
+procedure TfrmServicosPesquisar.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+  try
+    ServicoOferecido.Free;
+    Service.Free;
+  finally
+    Action               := caFree;
+    frmServicosPesquisar := nil;
+  end;
 end;
 
 end.
