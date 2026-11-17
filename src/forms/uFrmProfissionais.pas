@@ -254,6 +254,11 @@ begin
   btnCancelar.Enabled  := false;
   btnConfirmar.Enabled := false;
   pnPrincipal.Enabled  := false;
+
+  if Profissional.Id <> 0 then
+    btnServicos.Enabled  := true;
+  else
+    btnServicos.Enabled  := false;
 end;
 
 procedure TfrmProfissionaisRegistrar.estadoPesquisar;
