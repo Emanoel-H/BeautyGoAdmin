@@ -363,13 +363,28 @@ begin
             'ON servico.profissional_id = profissional.id     '+
             'LEFT JOIN categorias_servico as categoria        '+
             'ON servico.categoria_id = categoria.id           '+
-            'WHERE servico.profissional_id = :profissional_id '+
-            'ORDER BY servico.code DESC                       ';
+            'WHERE servico.profissional_id = :profissional_id ';
+
+            if (AEntidade.Codigo <> '') then
+              sSQL := sSQL + 'AND servico.code = :codigo ';
+
+            if (AEntidade.CategoriaId <> 0) then
+              sSQL := sSQL + 'AND servico.categoria_id = :categoria_id ';
+
+            sSQL := sSQL +  'ORDER BY servico.code DESC ';
 
     fGet.Close;
     fGet.SQL.Clear;
     fGet.SQL.Text := sSQL;
+
+    if (AEntidade.Codigo <> '') then
+        fGet.ParamByName('codigo').AsString := AEntidade.Codigo;
+
+    if (AEntidade.CategoriaId <> 0) then
+        fGet.ParamByName('categoria_id').AsInteger := AEntidade.CategoriaId;
+
     fGet.ParamByName('profissional_id').AsInteger := AEntidade.ProfissionalId;
+
     fGet.Open;
   finally
     Result := fGet;
