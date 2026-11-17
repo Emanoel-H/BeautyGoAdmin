@@ -45,6 +45,7 @@ type
     ServicoOferecido: TServicoOferecido;
     Service: TProfissionalService;
     CategoriaService: TCategoriaService;
+    dsCategorias: TDataSource;
     procedure estadoInicial;
   public
     { Public declarations }
@@ -90,6 +91,7 @@ begin
   ServicoOferecido := TServicoOferecido.Create;
   Service          := TProfissionalService.Create(dmConexao.FDConnection);
   CategoriaService := TCategoriaService.Create(dmConexao.FDConnection);
+  dsCategorias     := TDataSource.Create(nil);
 end;
 
 procedure TfrmServicosPesquisar.FormShow(Sender: TObject);
