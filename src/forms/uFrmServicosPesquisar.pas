@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.ComCtrls, Vcl.ToolWin,
   Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.DBCtrls, Vcl.NumberBox,
-  Vcl.Buttons, uServicoOferecido, uProfissionalService, uDmConexao;
+  Vcl.Buttons, uServicoOferecido, uProfissionalService, uDmConexao, uCategoriaService;
 
 type
   TfrmServicosPesquisar = class(TForm)
