@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.ComCtrls, Vcl.ToolWin,
   Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.DBCtrls, Vcl.NumberBox,
-  Vcl.Buttons, uServicoOferecido, uProfissionalService;
+  Vcl.Buttons, uServicoOferecido, uProfissionalService, uDmConexao;
 
 type
   TfrmServicosPesquisar = class(TForm)
@@ -33,6 +33,7 @@ type
     cbCategorias: TComboBox;
     procedure btnVoltarClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
     ServicoOferecido: TServicoOferecido;
@@ -63,6 +64,12 @@ begin
     Action               := caFree;
     frmServicosPesquisar := nil;
   end;
+end;
+
+procedure TfrmServicosPesquisar.FormCreate(Sender: TObject);
+begin
+  ServicoOferecido := TServicoOferecido.Create;
+  Service := TProfissionalService.Create(dmConexao.FDConnection);
 end;
 
 end.

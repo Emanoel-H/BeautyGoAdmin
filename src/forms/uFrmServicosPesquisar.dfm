@@ -14,6 +14,7 @@ object frmServicosPesquisar: TfrmServicosPesquisar
   Font.Style = []
   Position = poScreenCenter
   OnClose = FormClose
+  OnCreate = FormCreate
   TextHeight = 15
   object dbgServicos: TDBGrid
     Left = 0
