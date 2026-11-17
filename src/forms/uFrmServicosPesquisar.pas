@@ -163,6 +163,7 @@ begin
   btnConfirmar.Enabled := true;
   nbPreco.Enabled      := true;
   edtCodigo.Enabled    := false;
+  dbgServicos.Enabled  := false;
 
   dblCategorias.SetFocus;
 end;
