@@ -38,6 +38,7 @@ type
     { Private declarations }
     ServicoOferecido: TServicoOferecido;
     Service: TProfissionalService;
+    procedure estadoInicial;
   public
     { Public declarations }
   end;
@@ -52,6 +53,16 @@ implementation
 procedure TfrmServicosPesquisar.btnVoltarClick(Sender: TObject);
 begin
   Close;
+end;
+
+procedure TfrmServicosPesquisar.estadoInicial;
+begin
+  btnAtualizar.Enabled := false;
+  btnInserir.Enabled   := true;
+  btnDeletar.Enabled   := false;
+  btnPesquisar.Enabled := true;
+  btnCancelar.Enabled  := false;
+  btnConfirmar.Enabled := false;
 end;
 
 procedure TfrmServicosPesquisar.FormClose(Sender: TObject;
