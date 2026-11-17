@@ -81,6 +81,8 @@ begin
     ServicoOferecido.Free;
     Service.Free;
     CategoriaService.Free;
+    dsCategorias.Free;
+    Categoria.Free;
   finally
     Action               := caFree;
     frmServicosPesquisar := nil;
