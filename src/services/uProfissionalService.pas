@@ -56,7 +56,7 @@ end;
 
 function TProfissionalService.Listar(AServico: TServicoOferecido): TFDQuery;
 begin
-  Result := ProfissionalDAO.ListarServicos(AServico.ProfissionalId);
+  Result := ProfissionalDAO.ListarServicos(AServico);
 end;
 
 function TProfissionalService.Listar(AProfissional: TProfissional): TFDQuery;
