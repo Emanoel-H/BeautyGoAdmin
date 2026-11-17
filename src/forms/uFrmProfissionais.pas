@@ -74,7 +74,7 @@ var
 implementation
 
 uses
-  uFrmProfissionaisPesquisar;
+  uFrmProfissionaisPesquisar, uFrmServicosPesquisar;
 
 {$R *.dfm}
 
