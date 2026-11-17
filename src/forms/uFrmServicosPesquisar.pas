@@ -53,6 +53,7 @@ type
     Categoria: TCategoria;
     procedure estadoInicial;
     procedure limparCampos;
+    procedure estadoEdicao;
   public
     { Public declarations }
   end;
@@ -109,6 +110,20 @@ begin
     dbgServicos.Canvas.Brush.Color := $00673AB7;
   end;
   dbgServicos.DefaultDrawColumnCell(Rect, DataCol, Column, State);
+end;
+
+procedure TfrmServicosPesquisar.estadoEdicao;
+begin
+  btnAtualizar.Enabled := false;
+  btnInserir.Enabled   := false;
+  btnDeletar.Enabled   := false;
+  btnPesquisar.Enabled := false;
+  btnCancelar.Enabled  := true;
+  btnConfirmar.Enabled := true;
+  nbPreco.Enabled      := true;
+  edtCodigo.Enabled    := false;
+
+  dblCategorias.SetFocus;
 end;
 
 procedure TfrmServicosPesquisar.estadoInicial;
@@ -175,9 +190,9 @@ begin
   ServicoOferecido.Codigo      := '';
   ServicoOferecido.Preco       := 0;
 
-  edtCodigo.Text := '';
+  edtCodigo.Text         := '';
   dblCategorias.KeyValue := null;
-  nbPreco.Value  := 0;
+  nbPreco.Value          := 0;
 end;
 
 end.
