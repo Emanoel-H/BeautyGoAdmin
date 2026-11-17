@@ -26,7 +26,7 @@ type
     lblCategorias: TLabel;
     lblPreco: TLabel;
     sbCategoriasPesquisar: TSpeedButton;
-    btnAdd: TToolButton;
+    btnInserir: TToolButton;
     btnAtualizar: TToolButton;
     btnDeletar: TToolButton;
     btnCancelar: TToolButton;

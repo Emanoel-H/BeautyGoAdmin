@@ -302,7 +302,7 @@ object frmServicosPesquisar: TfrmServicosPesquisar
       ParentShowHint = False
       ShowHint = True
     end
-    object btnAdd: TToolButton
+    object btnInserir: TToolButton
       Left = 150
       Top = 0
       Hint = 'Adicionar'
