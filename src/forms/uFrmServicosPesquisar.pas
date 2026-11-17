@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.ComCtrls, Vcl.ToolWin,
   Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.DBCtrls, Vcl.NumberBox,
   Vcl.Buttons, uServicoOferecido, uProfissionalService, uDmConexao, uCategoriaService,
-  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param, uCategoria,
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
   FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
 
@@ -46,6 +46,7 @@ type
     Service: TProfissionalService;
     CategoriaService: TCategoriaService;
     dsCategorias: TDataSource;
+    Categoria: TCategoria;
     procedure estadoInicial;
   public
     { Public declarations }
@@ -92,6 +93,7 @@ begin
   Service          := TProfissionalService.Create(dmConexao.FDConnection);
   CategoriaService := TCategoriaService.Create(dmConexao.FDConnection);
   dsCategorias     := TDataSource.Create(nil);
+  Categoria        := TCategoria.Create;
 end;
 
 procedure TfrmServicosPesquisar.FormShow(Sender: TObject);
