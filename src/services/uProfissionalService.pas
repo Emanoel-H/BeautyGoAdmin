@@ -13,7 +13,7 @@ type
       constructor Create(AConexao: TFDConnection);
       destructor Destroy; override;
 
-      procedure Salvar(AProfissional: TProfissional); overload;
+      function Salvar(AProfissional: TProfissional): Int64; overload;
       procedure Excluir(AProfissional: TProfissional); overload;
       function Listar(AProfissional: TProfissional): TFDQuery; overload;
 
@@ -64,7 +64,7 @@ begin
   Result := FDAO.Listar(AProfissional);
 end;
 
-procedure TProfissionalService.Salvar(AProfissional: TProfissional);
+function TProfissionalService.Salvar(AProfissional: TProfissional): Int64;
 begin
   if AProfissional.Nome = '' then
     raise Exception.Create('O Profissional deve possuir um nome!');
@@ -88,9 +88,11 @@ begin
     raise Exception.Create('Informe a localização do Profissional!');
 
   if AProfissional.Id = 0 then
-    FDAO.Inserir(AProfissional)
+    AProfissional.Id := ProfissionalDAO.Inserir(AProfissional)
   else
     FDAO.Atualizar(AProfissional);
+
+  Result := AProfissional.Id;
 end;
 
 procedure TProfissionalService.Salvar(AServico: TServicoOferecido);
