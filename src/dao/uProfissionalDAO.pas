@@ -23,6 +23,7 @@ type
     procedure AtualizarServico(AServico: TServicoOferecido);
     procedure DeletarServico(AServicoId: Int64);
     function ListarServicos(AEntidade: TServicoOferecido): TFDQuery;
+    function ExisteServico(AEntidade: TServicoOferecido): boolean;
 
   end;
 
@@ -223,6 +224,11 @@ begin
     fGet.Close;
     fGet.Free;
   end;
+end;
+
+function TProfissionalDAO.ExisteServico(AEntidade: TServicoOferecido): boolean;
+begin
+
 end;
 
 procedure TProfissionalDAO.Inserir(AEntidade: TProfissional);
