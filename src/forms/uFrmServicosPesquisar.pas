@@ -45,6 +45,7 @@ type
       DataCol: Integer; Column: TColumn; State: TGridDrawState);
     procedure dbgServicosDblClick(Sender: TObject);
     procedure btnInserirClick(Sender: TObject);
+    procedure btnAtualizarClick(Sender: TObject);
   private
     { Private declarations }
     ServicoOferecido: TServicoOferecido;
@@ -65,6 +66,11 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TfrmServicosPesquisar.btnAtualizarClick(Sender: TObject);
+begin
+  estadoEdicao;
+end;
 
 procedure TfrmServicosPesquisar.btnInserirClick(Sender: TObject);
 begin

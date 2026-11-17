@@ -334,6 +334,7 @@ object frmServicosPesquisar: TfrmServicosPesquisar
       ImageName = 'asterisk 72'
       ParentShowHint = False
       ShowHint = True
+      OnClick = btnAtualizarClick
     end
     object btnDeletar: TToolButton
       Left = 300
