@@ -12,7 +12,7 @@ type
     public
       constructor Create(AConexao: TFDConnection);
 
-    procedure Inserir(AEntidade: TProfissional);
+    function Inserir(AEntidade: TProfissional): Int64;
     procedure Atualizar(AEntidade: TProfissional);
     procedure Deletar(AEntidade: TProfissional);
     function BuscarPorCodigo(ACodigo: string): TProfissional;
@@ -252,7 +252,7 @@ begin
   end;
 end;
 
-procedure TProfissionalDAO.Inserir(AEntidade: TProfissional);
+function TProfissionalDAO.Inserir(AEntidade: TProfissional): Int64;
 var
   sSQL: string;
   fSet: TFDQuery;
@@ -264,7 +264,8 @@ begin
     sSQL := 'INSERT INTO profissionais                                                       '+
             '(nome, bio, email, telefone, senha, raio_atendimento_km, localizacao, endereco) '+
             'VALUES(:nome, :bio, :email, :telefone, crypt(:senha, gen_salt(''bf'')),         '+
-            ':raio, ST_MakePoint(:lng, :lat)::geography, :endereco)                          ';
+            ':raio, ST_MakePoint(:lng, :lat)::geography, :endereco)                          '+
+            'RETURNING id;                                                                   ';
 
     fSet.Close;
     fSet.SQL.Clear;
@@ -278,7 +279,9 @@ begin
     fSet.ParamByName('lng').AsFloat       := AEntidade.Longitude;
     fSet.ParamByName('lat').AsFloat       := AEntidade.Latitude;
     fSet.ParamByName('endereco').AsString := AEntidade.Endereco;
-    fSet.ExecSQL;
+    fSet.Open;
+
+    Result := fSet.FieldByName('id').AsInteger;
   finally
     fSet.Close;
     fSet.Free;
