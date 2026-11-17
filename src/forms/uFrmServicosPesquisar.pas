@@ -65,7 +65,7 @@ implementation
 
 procedure TfrmServicosPesquisar.btnPesquisarClick(Sender: TObject);
 begin
-  ServicoOferecido.CategoriaId    := StrToIntDef(dblCategorias.KeyField, 0);
+  ServicoOferecido.CategoriaId    := StrToIntDef(VarToStr(dblCategorias.KeyValue), 0);
   ServicoOferecido.Codigo         := edtCodigo.Text;
 
   fdqServicos            := Service.Listar(ServicoOferecido);
