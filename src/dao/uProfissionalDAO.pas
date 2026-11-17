@@ -22,7 +22,7 @@ type
     procedure InserirServico(AServico: TServicoOferecido);
     procedure AtualizarServico(AServico: TServicoOferecido);
     procedure DeletarServico(AServicoId: Int64);
-    function ListarServicos(AProfissionalId: Int64): TFDQuery;
+    function ListarServicos(AEntidade: TServicoOferecido): TFDQuery;
 
   end;
 
@@ -343,7 +343,7 @@ begin
     end;
 end;
 
-function TProfissionalDAO.ListarServicos(AProfissionalId: Int64): TFDQuery;
+function TProfissionalDAO.ListarServicos(AEntidade: TServicoOferecido): TFDQuery;
 var
   sSQL: string;
   fGet: TFDQuery;
@@ -369,7 +369,7 @@ begin
     fGet.Close;
     fGet.SQL.Clear;
     fGet.SQL.Text := sSQL;
-    fGet.ParamByName('profissional_id').AsInteger := AProfissionalId;
+    fGet.ParamByName('profissional_id').AsInteger := AEntidade.ProfissionalId;
     fGet.Open;
   finally
     Result := fGet;
