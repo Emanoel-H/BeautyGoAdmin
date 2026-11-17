@@ -96,7 +96,8 @@ end;
 
 procedure TfrmServicosPesquisar.FormShow(Sender: TObject);
 begin
-  dblCategorias.ListSource := CategoriaService.Listar();
+  dsCategorias.DataSet     := CategoriaService.Listar();
+  dblCategorias.ListSource := dsCategorias;
   estadoInicial;
 end;
 
