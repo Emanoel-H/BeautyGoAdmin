@@ -24,6 +24,7 @@ object frmServicosPesquisar: TfrmServicosPesquisar
     Height = 457
     Align = alClient
     Color = clBlack
+    DataSource = dsServicos
     FixedColor = clBlack
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
