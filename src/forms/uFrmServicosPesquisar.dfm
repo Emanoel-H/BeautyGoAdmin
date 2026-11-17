@@ -345,6 +345,7 @@ object frmServicosPesquisar: TfrmServicosPesquisar
       ImageName = 'recycle'
       ParentShowHint = False
       ShowHint = True
+      OnClick = btnDeletarClick
     end
     object btnCancelar: TToolButton
       Left = 375

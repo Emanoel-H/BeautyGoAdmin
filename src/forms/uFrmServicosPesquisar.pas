@@ -46,6 +46,7 @@ type
     procedure dbgServicosDblClick(Sender: TObject);
     procedure btnInserirClick(Sender: TObject);
     procedure btnAtualizarClick(Sender: TObject);
+    procedure btnDeletarClick(Sender: TObject);
   private
     { Private declarations }
     ServicoOferecido: TServicoOferecido;
@@ -70,6 +71,26 @@ implementation
 procedure TfrmServicosPesquisar.btnAtualizarClick(Sender: TObject);
 begin
   estadoEdicao;
+end;
+
+procedure TfrmServicosPesquisar.btnDeletarClick(Sender: TObject);
+begin
+  if ServicoOferecido.Id <> 0 then
+  begin
+    if MessageBox(Handle, PChar('Tem certeza que deseja excluir esse Serviço?'), PChar('Atenção!'), MB_YESNO + MB_ICONQUESTION) = IDYES then
+    begin
+      try
+        Service.Excluir(ServicoOferecido);
+        estadoInicial;
+        limparCampos;
+      except
+        on E: Exception do
+        begin
+          Application.MessageBox(PChar(E.Message), 'Atenção!', MB_OK + MB_ICONWARNING)
+        end;
+      end;
+    end;
+  end;
 end;
 
 procedure TfrmServicosPesquisar.btnInserirClick(Sender: TObject);
