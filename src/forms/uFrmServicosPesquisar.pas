@@ -73,6 +73,7 @@ begin
   try
     ServicoOferecido.Free;
     Service.Free;
+    CategoriaService.Free;
   finally
     Action               := caFree;
     frmServicosPesquisar := nil;
