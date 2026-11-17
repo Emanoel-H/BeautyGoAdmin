@@ -227,8 +227,29 @@ begin
 end;
 
 function TProfissionalDAO.ExisteServico(AEntidade: TServicoOferecido): boolean;
+var
+  sSQL: string;
+  fGet: TFDQuery;
 begin
+  fGet := TFDQuery.Create(nil);
+  try
+    fGet.Connection := FConexao;
 
+    sSQL := 'SELECT id                                                           '+
+            'FROM servicos_oferecidos                                            '+
+            'WHERE profissional_id = '''+ AEntidade.ProfissionalId.ToString +''' '+
+            'AND categoria_id = '''+AEntidade.CategoriaId.ToString+''';          ';
+
+    fGet.Close;
+    fGet.SQL.Clear;
+    fGet.SQL.Text := sSQL;
+    fGet.Open;
+
+    Result := not (fGet.IsEmpty);
+  finally
+    fGet.Close;
+    fGet.Free;
+  end;
 end;
 
 procedure TProfissionalDAO.Inserir(AEntidade: TProfissional);
