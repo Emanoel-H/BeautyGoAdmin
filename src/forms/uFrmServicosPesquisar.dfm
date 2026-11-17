@@ -323,6 +323,7 @@ object frmServicosPesquisar: TfrmServicosPesquisar
       ImageName = 'plus 72'
       ParentShowHint = False
       ShowHint = True
+      OnClick = btnInserirClick
     end
     object btnAtualizar: TToolButton
       Left = 225
