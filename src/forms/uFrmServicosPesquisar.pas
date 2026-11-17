@@ -41,6 +41,8 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure btnPesquisarClick(Sender: TObject);
+    procedure dbgServicosDrawColumnCell(Sender: TObject; const Rect: TRect;
+      DataCol: Integer; Column: TColumn; State: TGridDrawState);
   private
     { Private declarations }
     ServicoOferecido: TServicoOferecido;
@@ -79,6 +81,22 @@ end;
 procedure TfrmServicosPesquisar.btnVoltarClick(Sender: TObject);
 begin
   Close;
+end;
+
+procedure TfrmServicosPesquisar.dbgServicosDrawColumnCell(Sender: TObject;
+  const Rect: TRect; DataCol: Integer; Column: TColumn; State: TGridDrawState);
+begin
+  if gdSelected in State then
+  begin
+    dbgServicos.Canvas.Brush.Color := clNavy;
+    dbgServicos.Canvas.Font.Color := clWhite;
+  end
+
+    else if dbgServicos.DataSource.DataSet.RecNo mod 2 = 0 then
+  begin
+    dbgServicos.Canvas.Brush.Color := $00673AB7;
+  end;
+  dbgServicos.DefaultDrawColumnCell(Rect, DataCol, Column, State);
 end;
 
 procedure TfrmServicosPesquisar.estadoInicial;

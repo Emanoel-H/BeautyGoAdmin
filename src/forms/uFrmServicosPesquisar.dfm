@@ -40,6 +40,7 @@ object frmServicosPesquisar: TfrmServicosPesquisar
     TitleFont.Height = -12
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
+    OnDrawColumnCell = dbgServicosDrawColumnCell
     Columns = <
       item
         Expanded = False
