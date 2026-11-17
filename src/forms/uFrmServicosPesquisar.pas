@@ -48,6 +48,7 @@ type
     procedure btnAtualizarClick(Sender: TObject);
     procedure btnDeletarClick(Sender: TObject);
     procedure btnCancelarClick(Sender: TObject);
+    procedure btnConfirmarClick(Sender: TObject);
   private
     { Private declarations }
     ServicoOferecido: TServicoOferecido;
@@ -78,6 +79,22 @@ procedure TfrmServicosPesquisar.btnCancelarClick(Sender: TObject);
 begin
   estadoInicial;
   limparCampos;
+end;
+
+procedure TfrmServicosPesquisar.btnConfirmarClick(Sender: TObject);
+begin
+  ServicoOferecido.CategoriaId := dbgServicos.DataSource.DataSet.FieldByName('categoria_id').AsInteger;
+  ServicoOferecido.Preco       := dbgServicos.DataSource.DataSet.FieldByName('preco').AsCurrency;
+
+  try
+    Service.Salvar(ServicoOferecido);
+    estadoInicial;
+  except
+    on E: Exception do
+    begin
+      Application.MessageBox(PChar(E.Message), 'Atenção!', MB_OK + MB_ICONWARNING)
+    end;
+  end;
 end;
 
 procedure TfrmServicosPesquisar.btnDeletarClick(Sender: TObject);
