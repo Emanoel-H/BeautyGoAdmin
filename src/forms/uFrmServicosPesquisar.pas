@@ -96,6 +96,14 @@ begin
   CategoriaService := TCategoriaService.Create(dmConexao.FDConnection);
   dsCategorias     := TDataSource.Create(nil);
   Categoria        := TCategoria.Create;
+
+  dbgServicos.Color           := clBlack;
+  dbgServicos.FixedColor      := $00202020;
+  dbgServicos.Font.Color      := clWhite;
+  dbgServicos.TitleFont.Color := clWhite;
+  dbgServicos.TitleFont.Style := [fsBold];
+  dbgServicos.DrawingStyle    := gdsClassic;
+  dbgServicos.ParentColor     := False;
 end;
 
 procedure TfrmServicosPesquisar.FormShow(Sender: TObject);
