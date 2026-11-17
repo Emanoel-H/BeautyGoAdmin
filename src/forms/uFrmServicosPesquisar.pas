@@ -176,6 +176,7 @@ begin
   btnPesquisar.Enabled := true;
   btnCancelar.Enabled  := false;
   btnConfirmar.Enabled := false;
+  dbgServicos.Enabled  := true;
 end;
 
 procedure TfrmServicosPesquisar.FormClose(Sender: TObject;
