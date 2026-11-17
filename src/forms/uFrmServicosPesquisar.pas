@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.ComCtrls, Vcl.ToolWin,
   Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.DBCtrls, Vcl.NumberBox,
   Vcl.Buttons, uServicoOferecido, uProfissionalService, uDmConexao, uCategoriaService,
-  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param, uCategoria,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param, uCategoria, uProfissional,
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
   FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
 
@@ -40,6 +40,7 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure btnPesquisarClick(Sender: TObject);
   private
     { Private declarations }
     ServicoOferecido: TServicoOferecido;
@@ -47,6 +48,7 @@ type
     CategoriaService: TCategoriaService;
     dsCategorias: TDataSource;
     Categoria: TCategoria;
+    Profissional: TProfissional;
     procedure estadoInicial;
   public
     { Public declarations }
@@ -58,6 +60,21 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TfrmServicosPesquisar.btnPesquisarClick(Sender: TObject);
+begin
+  ServicoOferecido.ProfissionalId := Profissional.Id;
+  ServicoOferecido.CategoriaId    := StrToIntDef(dblCategorias.KeyField, 0);
+  ServicoOferecido.Codigo         := edtCodigo.Text;
+
+  fdqServicos            := Service.Listar(ServicoOferecido);
+
+  if fdqServicos.IsEmpty then
+    Application.MessageBox('Não há registros na consulta!', 'Atenção!', MB_OK + MB_ICONWARNING);
+
+  dsCategorias.DataSet     := fdqServicos;
+  lblQtdeRegistros.Caption := fdqServicos.RecordCount.ToString;
+end;
 
 procedure TfrmServicosPesquisar.btnVoltarClick(Sender: TObject);
 begin

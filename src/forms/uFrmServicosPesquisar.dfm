@@ -310,6 +310,7 @@ object frmServicosPesquisar: TfrmServicosPesquisar
       ImageName = 'search 72'
       ParentShowHint = False
       ShowHint = True
+      OnClick = btnPesquisarClick
     end
     object btnInserir: TToolButton
       Left = 150
