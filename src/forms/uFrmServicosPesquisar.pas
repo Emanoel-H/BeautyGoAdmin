@@ -58,9 +58,9 @@ end;
 
 procedure TfrmServicosPesquisar.estadoInicial;
 begin
-  btnAtualizar.Enabled := false;
+  btnAtualizar.Enabled := true;
   btnInserir.Enabled   := true;
-  btnDeletar.Enabled   := false;
+  btnDeletar.Enabled   := true;
   btnPesquisar.Enabled := true;
   btnCancelar.Enabled  := false;
   btnConfirmar.Enabled := false;
