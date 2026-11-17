@@ -362,4 +362,14 @@ object frmServicosPesquisar: TfrmServicosPesquisar
       ShowHint = True
     end
   end
+  object fdqServicos: TFDQuery
+    Connection = dmConexao.FDConnection
+    Left = 240
+    Top = 104
+  end
+  object dsServicos: TDataSource
+    DataSet = fdqServicos
+    Left = 320
+    Top = 104
+  end
 end

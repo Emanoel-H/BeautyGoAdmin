@@ -6,7 +6,10 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.ComCtrls, Vcl.ToolWin,
   Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.DBCtrls, Vcl.NumberBox,
-  Vcl.Buttons, uServicoOferecido, uProfissionalService, uDmConexao, uCategoriaService;
+  Vcl.Buttons, uServicoOferecido, uProfissionalService, uDmConexao, uCategoriaService,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
 
 type
   TfrmServicosPesquisar = class(TForm)
@@ -31,6 +34,8 @@ type
     btnDeletar: TToolButton;
     btnCancelar: TToolButton;
     dblCategorias: TDBLookupComboBox;
+    fdqServicos: TFDQuery;
+    dsServicos: TDataSource;
     procedure btnVoltarClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
@@ -89,7 +94,7 @@ end;
 
 procedure TfrmServicosPesquisar.FormShow(Sender: TObject);
 begin
-  cbCategorias.
+  dblCategorias.ListSource := CategoriaService.Listar();
   estadoInicial;
 end;
 
