@@ -173,6 +173,7 @@ object frmServicosPesquisar: TfrmServicosPesquisar
       Images = dmConexao.VirtualImageList1
       ParentShowHint = False
       ShowHint = True
+      OnClick = sbCategoriasPesquisarClick
     end
     object edtCodigo: TEdit
       Left = 6

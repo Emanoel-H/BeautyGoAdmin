@@ -49,6 +49,7 @@ type
     procedure btnDeletarClick(Sender: TObject);
     procedure btnCancelarClick(Sender: TObject);
     procedure btnConfirmarClick(Sender: TObject);
+    procedure sbCategoriasPesquisarClick(Sender: TObject);
   private
     { Private declarations }
     ServicoOferecido: TServicoOferecido;
@@ -67,6 +68,9 @@ var
   frmServicosPesquisar: TfrmServicosPesquisar;
 
 implementation
+
+uses
+  uFrmCategorias;
 
 {$R *.dfm}
 
@@ -253,6 +257,19 @@ begin
   edtCodigo.Text         := '';
   dblCategorias.KeyValue := null;
   nbPreco.Value          := 0;
+end;
+
+procedure TfrmServicosPesquisar.sbCategoriasPesquisarClick(Sender: TObject);
+begin
+  if frmCategoriasRegistrar = nil then
+  begin
+    frmCategoriasRegistrar := TFrmCategoriasRegistrar.Create(Self);
+    frmCategoriasRegistrar.ShowModal;
+
+    dsCategorias.DataSet     := CategoriaService.Listar(Categoria);
+    dblCategorias.ListSource := dsCategorias;
+    estadoInicial;
+  end;
 end;
 
 end.
