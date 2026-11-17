@@ -41,6 +41,7 @@ object frmServicosPesquisar: TfrmServicosPesquisar
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
     OnDrawColumnCell = dbgServicosDrawColumnCell
+    OnDblClick = dbgServicosDblClick
     Columns = <
       item
         Expanded = False

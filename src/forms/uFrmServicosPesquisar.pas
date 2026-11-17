@@ -43,6 +43,7 @@ type
     procedure btnPesquisarClick(Sender: TObject);
     procedure dbgServicosDrawColumnCell(Sender: TObject; const Rect: TRect;
       DataCol: Integer; Column: TColumn; State: TGridDrawState);
+    procedure dbgServicosDblClick(Sender: TObject);
   private
     { Private declarations }
     ServicoOferecido: TServicoOferecido;
@@ -81,6 +82,18 @@ end;
 procedure TfrmServicosPesquisar.btnVoltarClick(Sender: TObject);
 begin
   Close;
+end;
+
+procedure TfrmServicosPesquisar.dbgServicosDblClick(Sender: TObject);
+begin
+  ServicoOferecido.Id          := dbgServicos.DataSource.DataSet.FieldByName('id').AsInteger;
+  ServicoOferecido.CategoriaId := dbgServicos.DataSource.DataSet.FieldByName('categoria_id').AsInteger;
+  ServicoOferecido.Codigo      := dbgServicos.DataSource.DataSet.FieldByName('codigo').AsString;
+  ServicoOferecido.Preco       := dbgServicos.DataSource.DataSet.FieldByName('preco').AsCurrency;
+
+  edtCodigo.Text         := ServicoOferecido.Codigo;
+  dblCategorias.KeyValue := ServicoOferecido.CategoriaId;
+  nbPreco.ValueCurrency  := ServicoOferecido.Preco;
 end;
 
 procedure TfrmServicosPesquisar.dbgServicosDrawColumnCell(Sender: TObject;
