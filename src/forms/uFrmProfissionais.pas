@@ -205,7 +205,7 @@ end;
 
 procedure TfrmProfissionaisRegistrar.btnServicosClick(Sender: TObject);
 begin
-  if frmServicosPesquisar = nil then
+  if (frmServicosPesquisar = nil) and (Profissional.Id <> 0) then
   begin
     frmServicosPesquisar                                 := TFrmServicosPesquisar.Create(Self);
     frmServicosPesquisar.ServicoOferecido.ProfissionalId := Profissional.Id;
