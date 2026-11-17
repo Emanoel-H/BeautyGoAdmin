@@ -197,6 +197,8 @@ begin
   btnPesquisar.Enabled := true;
   btnCancelar.Enabled  := false;
   btnConfirmar.Enabled := false;
+  nbPreco.Enabled      := false;
+  edtCodigo.Enabled    := true;
   dbgServicos.Enabled  := true;
 end;
 
