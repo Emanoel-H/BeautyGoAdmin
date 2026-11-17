@@ -39,6 +39,7 @@ type
     { Private declarations }
     ServicoOferecido: TServicoOferecido;
     Service: TProfissionalService;
+    CategoriaService: TCategoriaService;
     procedure estadoInicial;
   public
     { Public declarations }
@@ -81,7 +82,8 @@ end;
 procedure TfrmServicosPesquisar.FormCreate(Sender: TObject);
 begin
   ServicoOferecido := TServicoOferecido.Create;
-  Service := TProfissionalService.Create(dmConexao.FDConnection);
+  Service          := TProfissionalService.Create(dmConexao.FDConnection);
+  CategoriaService := TCategoriaService.Create(dmConexao.FDConnection);
 end;
 
 procedure TfrmServicosPesquisar.FormShow(Sender: TObject);
