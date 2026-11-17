@@ -15,6 +15,7 @@ object frmServicosPesquisar: TfrmServicosPesquisar
   Position = poScreenCenter
   OnClose = FormClose
   OnCreate = FormCreate
+  OnShow = FormShow
   TextHeight = 15
   object dbgServicos: TDBGrid
     Left = 0

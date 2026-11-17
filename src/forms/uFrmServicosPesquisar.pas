@@ -34,6 +34,7 @@ type
     procedure btnVoltarClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
     ServicoOferecido: TServicoOferecido;
@@ -81,6 +82,11 @@ procedure TfrmServicosPesquisar.FormCreate(Sender: TObject);
 begin
   ServicoOferecido := TServicoOferecido.Create;
   Service := TProfissionalService.Create(dmConexao.FDConnection);
+end;
+
+procedure TfrmServicosPesquisar.FormShow(Sender: TObject);
+begin
+  estadoInicial;
 end;
 
 end.
