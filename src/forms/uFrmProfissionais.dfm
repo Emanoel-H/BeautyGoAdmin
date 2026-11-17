@@ -430,6 +430,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
       ImageName = 'app'
       ParentShowHint = False
       ShowHint = True
+      OnClick = btnServicosClick
     end
   end
 end

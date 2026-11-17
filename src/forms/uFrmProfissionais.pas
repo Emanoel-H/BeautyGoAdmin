@@ -53,6 +53,7 @@ type
     procedure cbxMostrarSenhaClick(Sender: TObject);
     procedure btnPesquisarClick(Sender: TObject);
     procedure btnLocalizarClick(Sender: TObject);
+    procedure btnServicosClick(Sender: TObject);
   private
     { Private declarations }
     Profissional: TProfissional;
@@ -199,6 +200,16 @@ begin
 
     if Profissional.Id <> 0 then
       estadoPesquisar;
+  end;
+end;
+
+procedure TfrmProfissionaisRegistrar.btnServicosClick(Sender: TObject);
+begin
+  if frmServicosPesquisar = nil then
+  begin
+    frmServicosPesquisar := TFrmServicosPesquisar.Create(Self);
+    frmServicosPesquisar.ServicoOferecido.ProfissionalId := Profissional.Id;
+    frmServicosPesquisar.ShowModal;
   end;
 end;
 
