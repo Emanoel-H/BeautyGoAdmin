@@ -244,7 +244,8 @@ begin
     sSQL := 'SELECT id                                                           '+
             'FROM servicos_oferecidos                                            '+
             'WHERE profissional_id = '''+ AEntidade.ProfissionalId.ToString +''' '+
-            'AND categoria_id = '''+AEntidade.CategoriaId.ToString+''';          ';
+            'AND categoria_id = '''+AEntidade.CategoriaId.ToString+'''           '+
+            'AND id <> '''+AEntidade.Id.ToString+''';                            ';
 
     fGet.Close;
     fGet.SQL.Clear;
