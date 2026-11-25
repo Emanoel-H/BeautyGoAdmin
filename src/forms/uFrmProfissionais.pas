@@ -364,8 +364,7 @@ begin
   edtLongitude.Text            := FloatToStr(Profissional.Longitude).Replace('.', FormatSettings.DecimalSeparator);
   edtLatitude.Text             := FloatToStr(Profissional.Latitude).Replace('.', FormatSettings.DecimalSeparator);
   nbRaioAtendimento.ValueFloat := Profissional.RaioAtendimentoKm;
-
-  setEndereco(Profissional.Latitude, Profissional.Longitude);
+  edtEndereco.Text             := GeocodingService.getEndereco(Profissional.Latitude, Profissional.Longitude);
 end;
 
 end.
