@@ -137,7 +137,7 @@ begin
   if fdqServicos.IsEmpty then
     Application.MessageBox('Não há registros na consulta!', 'Atenção!', MB_OK + MB_ICONWARNING);
 
-  dsCategorias.DataSet     := fdqServicos;
+  dsServicos.DataSet       := fdqServicos;
   lblQtdeRegistros.Caption := fdqServicos.RecordCount.ToString;
 end;
 

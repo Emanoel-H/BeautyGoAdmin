@@ -4,8 +4,8 @@ object frmServicosPesquisar: TfrmServicosPesquisar
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Servi'#231'os'
-  ClientHeight = 636
-  ClientWidth = 610
+  ClientHeight = 627
+  ClientWidth = 604
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -20,8 +20,8 @@ object frmServicosPesquisar: TfrmServicosPesquisar
   object dbgServicos: TDBGrid
     Left = 0
     Top = 129
-    Width = 610
-    Height = 457
+    Width = 604
+    Height = 448
     Align = alClient
     Color = clBlack
     DataSource = dsServicos
@@ -106,13 +106,12 @@ object frmServicosPesquisar: TfrmServicosPesquisar
   object pnMenu: TPanel
     Left = 0
     Top = 56
-    Width = 610
+    Width = 604
     Height = 73
     Align = alTop
     Color = clBlack
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 604
     object lblCodigo: TLabel
       Left = 6
       Top = 2
@@ -220,15 +219,13 @@ object frmServicosPesquisar: TfrmServicosPesquisar
   end
   object pnRodape: TPanel
     Left = 0
-    Top = 586
-    Width = 610
+    Top = 577
+    Width = 604
     Height = 50
     Align = alBottom
     Color = clBlack
     ParentBackground = False
     TabOrder = 2
-    ExplicitTop = 577
-    ExplicitWidth = 604
     object pnRegistros: TPanel
       Left = 1
       Top = 1
@@ -277,7 +274,7 @@ object frmServicosPesquisar: TfrmServicosPesquisar
   object tbPesquisar: TToolBar
     Left = 0
     Top = 0
-    Width = 610
+    Width = 604
     Height = 56
     ButtonHeight = 36
     ButtonWidth = 75
@@ -292,7 +289,6 @@ object frmServicosPesquisar: TfrmServicosPesquisar
     ParentColor = False
     ParentFont = False
     TabOrder = 3
-    ExplicitWidth = 604
     object btnVoltar: TToolButton
       Left = 0
       Top = 0
