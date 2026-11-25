@@ -93,6 +93,7 @@ begin
   try
     Service.Salvar(ServicoOferecido);
     estadoInicial;
+    btnPesquisar.Click;
   except
     on E: Exception do
     begin
