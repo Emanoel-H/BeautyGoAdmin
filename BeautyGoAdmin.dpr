@@ -18,7 +18,8 @@ uses
   uProfissionalService in 'src\services\uProfissionalService.pas',
   uFrmProfissionais in 'src\forms\uFrmProfissionais.pas' {frmProfissionaisRegistrar},
   uFrmProfissionaisPesquisar in 'src\forms\uFrmProfissionaisPesquisar.pas' {frmProfissionaisPesquisar},
-  uFrmServicosPesquisar in 'src\forms\uFrmServicosPesquisar.pas' {frmServicosPesquisar};
+  uFrmServicosPesquisar in 'src\forms\uFrmServicosPesquisar.pas' {frmServicosPesquisar},
+  uGeocodingService in 'src\services\uGeocodingService.pas';
 
 {$R *.res}
 
