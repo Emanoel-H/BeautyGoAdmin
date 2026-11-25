@@ -4,8 +4,8 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Profissionais'
-  ClientHeight = 515
-  ClientWidth = 591
+  ClientHeight = 524
+  ClientWidth = 597
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -20,13 +20,18 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
   object pnPrincipal: TPanel
     Left = 0
     Top = 56
-    Width = 591
-    Height = 459
+    Width = 597
+    Height = 468
     Align = alClient
     Color = clBlack
     Enabled = False
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 591
+    ExplicitHeight = 459
+    DesignSize = (
+      597
+      468)
     object lblName: TLabel
       Left = 14
       Top = 14
@@ -176,6 +181,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
       Top = 33
       Width = 341
       Height = 23
+      Anchors = [akLeft, akTop, akRight]
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
       Font.Height = -12
@@ -191,6 +197,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
       Top = 209
       Width = 339
       Height = 89
+      Anchors = [akLeft, akTop, akRight]
       TabOrder = 1
     end
     object edtEmail: TEdit
@@ -198,6 +205,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
       Top = 78
       Width = 341
       Height = 23
+      Anchors = [akLeft, akTop, akRight]
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
       Font.Height = -12
@@ -213,6 +221,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
       Top = 123
       Width = 120
       Height = 23
+      Anchors = [akLeft, akTop, akRight]
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
       Font.Height = -12
@@ -229,6 +238,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
       Top = 166
       Width = 139
       Height = 23
+      Anchors = [akLeft, akTop, akRight]
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
       Font.Height = -12
@@ -255,6 +265,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
       Top = 326
       Width = 443
       Height = 23
+      Anchors = [akLeft, akTop, akRight]
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
       Font.Height = -12
@@ -281,6 +292,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
       Top = 377
       Width = 139
       Height = 23
+      Anchors = [akLeft, akTop, akRight]
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
       Font.Height = -12
@@ -299,6 +311,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
       Top = 377
       Width = 139
       Height = 23
+      Anchors = [akLeft, akTop, akRight]
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
       Font.Height = -12
@@ -317,13 +330,14 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
       Top = 426
       Width = 121
       Height = 23
+      Anchors = [akLeft, akTop, akRight]
       TabOrder = 10
     end
   end
   object tbCategorias: TToolBar
     Left = 0
     Top = 0
-    Width = 591
+    Width = 597
     Height = 56
     ButtonHeight = 62
     ButtonWidth = 67
@@ -338,6 +352,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
     ParentColor = False
     ParentFont = False
     TabOrder = 1
+    ExplicitWidth = 591
     object btnVoltar: TToolButton
       Left = 0
       Top = 0
