@@ -103,15 +103,13 @@ begin
   if AServico.CategoriaId = 0 then
     raise Exception.Create('O Serviço deve possuir uma categoria!');
 
+  if ProfissionalDAO.ExisteServico(AServico) then
+    raise Exception.Create('Esse serviço já existe!');
+
   if AServico.Id = 0 then
     ProfissionalDAO.InserirServico(AServico)
   else
-  begin
-    if not ProfissionalDAO.ExisteServico(AServico) then
-      ProfissionalDAO.AtualizarServico(AServico)
-    else
-      raise Exception.Create('Esse serviço já existe!');
-  end;
+    ProfissionalDAO.AtualizarServico(AServico);
 end;
 
 end.
