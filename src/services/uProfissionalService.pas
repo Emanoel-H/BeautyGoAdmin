@@ -72,7 +72,7 @@ begin
   if AProfissional.Email = '' then
     raise Exception.Create('O Profissional deve possuir um email!');
 
-  if AProfissional.Senha = '' then
+  if (AProfissional.Id = 0) and (AProfissional.Senha = '') then
     raise Exception.Create('O Profissional deve possuir uma senha!');
 
   if AProfissional.Telefone = '' then
