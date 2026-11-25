@@ -87,8 +87,8 @@ end;
 
 procedure TfrmServicosPesquisar.btnConfirmarClick(Sender: TObject);
 begin
-  ServicoOferecido.CategoriaId := dbgServicos.DataSource.DataSet.FieldByName('categoria_id').AsInteger;
-  ServicoOferecido.Preco       := dbgServicos.DataSource.DataSet.FieldByName('preco').AsCurrency;
+  ServicoOferecido.CategoriaId := dblCategorias.KeyValue;
+  ServicoOferecido.Preco       := nbPreco.ValueCurrency;
 
   try
     Service.Salvar(ServicoOferecido);
