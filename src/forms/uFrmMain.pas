@@ -59,18 +59,4 @@ begin
   frmProfissionaisRegistrar.Show;
 end;
 
-procedure TfrmMain.pcMainChange(Sender: TObject);
-begin
-  if pcMain.TabIndex = 1 then
-  begin
-    frmMain.Height := 740;
-    pcMain.Height  := 680;
-  end
-  else
-  begin
-    frmMain.Height := 592;
-    pcMain.Height  := 532;
-  end;
-end;
-
 end.
