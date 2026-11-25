@@ -4,7 +4,7 @@ interface
 uses
   System.SysUtils, IRepositorio, uProfissional, uServicoOferecido, System.Generics.Collections, uDmConexao,
   FireDAC.Comp.Client, FireDAC.Comp.DataSet, FireDAC.Stan.Param, FireDAC.Phys.PG, DB,
-  Classes, System.RegularExpressions;
+  Classes, System.RegularExpressions, System.StrUtils;
 type
   TProfissionalDAO = class(TInterfacedObject, IRepositorio.Repositorio<TProfissional>)
     private
