@@ -4,8 +4,8 @@ object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Pesquisar Profissionais'
-  ClientHeight = 634
-  ClientWidth = 835
+  ClientHeight = 643
+  ClientWidth = 841
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -20,8 +20,8 @@ object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
   object dbgProfissionais: TDBGrid
     Left = 0
     Top = 129
-    Width = 835
-    Height = 455
+    Width = 841
+    Height = 464
     Align = alClient
     Color = clBlack
     FixedColor = clBlack
@@ -90,12 +90,6 @@ object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
       end
       item
         Expanded = False
-        FieldName = 'senha'
-        Title.Caption = 'Senha'
-        Visible = False
-      end
-      item
-        Expanded = False
         FieldName = 'email'
         Title.Caption = 'Email'
         Title.Font.Charset = DEFAULT_CHARSET
@@ -142,12 +136,13 @@ object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
   object pnMenu: TPanel
     Left = 0
     Top = 56
-    Width = 835
+    Width = 841
     Height = 73
     Align = alTop
     Color = clBlack
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 835
     object lblCodigo: TLabel
       Left = 6
       Top = 2
@@ -220,13 +215,15 @@ object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
   end
   object pnRodape: TPanel
     Left = 0
-    Top = 584
-    Width = 835
+    Top = 593
+    Width = 841
     Height = 50
     Align = alBottom
     Color = clBlack
     ParentBackground = False
     TabOrder = 2
+    ExplicitTop = 584
+    ExplicitWidth = 835
     object pnRegistros: TPanel
       Left = 1
       Top = 1
@@ -275,7 +272,7 @@ object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
   object tbPesquisar: TToolBar
     Left = 0
     Top = 0
-    Width = 835
+    Width = 841
     Height = 56
     ButtonHeight = 62
     ButtonWidth = 75
@@ -290,6 +287,7 @@ object frmProfissionaisPesquisar: TfrmProfissionaisPesquisar
     ParentColor = False
     ParentFont = False
     TabOrder = 3
+    ExplicitWidth = 835
     object btnVoltar: TToolButton
       Left = 0
       Top = 0
