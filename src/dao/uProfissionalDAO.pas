@@ -391,6 +391,7 @@ begin
             'servico.id,                                      '+
             'servico.code as codigo,                          '+
             'profissional.nome as profissional,               '+
+            'servico.categoria_id,                            '+
             'categoria.nome as categoria,                     '+
             'servico.preco                                    '+
             'FROM servicos_oferecidos as servico              '+
