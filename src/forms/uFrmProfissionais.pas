@@ -315,7 +315,7 @@ procedure TfrmProfissionaisRegistrar.setEndereco(dLat, dLng: double);
 var
   Http: THttpClient;
   Response: IHTTPResponse;
-  JSON: TJSONArray;
+  JSON: TJSONObject;
   sURL, sEndereco: string;
 begin
   Http := THTTPClient.Create;
@@ -332,13 +332,12 @@ begin
       if Response.StatusCode <> 200 then
         Exit;
 
-      JSON := TJSONObject.ParseJSONValue(Response.ContentAsString()) as TJSONArray;
+      JSON := TJSONObject.ParseJSONValue(Response.ContentAsString()) as TJSONObject;
       try
         if (JSON <> nil) and (JSON.Count > 0) then
         begin
-          sEndereco := JSON.Items[0].GetValue<string>('display_name');
-
-          edtEndereco.Text := sEndereco;
+          if JSON.TryGetValue<string>('display_name', sEndereco) then
+            edtEndereco.Text := sEndereco;
         end
         else
           Application.MessageBox('Endereço não encontrado conforme as coordenadas.', 'Atenção', MB_OK + MB_ICONWARNING);
