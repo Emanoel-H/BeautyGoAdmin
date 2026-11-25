@@ -283,6 +283,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
       Top = 326
       Width = 65
       Height = 24
+      Anchors = [akTop, akRight]
       Caption = 'Localizar'
       TabOrder = 7
       OnClick = btnLocalizarClick
