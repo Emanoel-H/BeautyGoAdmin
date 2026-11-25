@@ -50,12 +50,6 @@ begin
   frmProfissionaisRegistrar.Align       := alClient;
   frmProfissionaisRegistrar.BorderStyle := bsNone;
 
-  if pcMain.TabIndex = 1 then
-  begin
-    frmMain.Height := 740;
-    pcMain.Height  := 680;
-  end;
-
   frmProfissionaisRegistrar.Show;
 end;
 
