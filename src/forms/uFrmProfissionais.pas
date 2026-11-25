@@ -88,8 +88,8 @@ end;
 
 procedure TfrmProfissionaisRegistrar.btnCancelarClick(Sender: TObject);
 begin
-  estadoInicial;
   limparCampos;
+  estadoInicial;
 end;
 
 procedure TfrmProfissionaisRegistrar.btnConfirmarClick(Sender: TObject);
