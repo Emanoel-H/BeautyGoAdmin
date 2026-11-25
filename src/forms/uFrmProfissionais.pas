@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.ToolWin, Vcl.StdCtrls, System.Math,
   Vcl.ExtCtrls, System.RegularExpressions, System.StrUtils, uProfissional, uProfissionalService,
-  uDmConexao, Vcl.NumberBox, System.Net.HttpClient, System.JSON, System.NetEncoding;
+  uDmConexao, Vcl.NumberBox, System.Net.HttpClient, System.JSON, System.NetEncoding, uGeocodingService;
 
 type
   TfrmProfissionaisRegistrar = class(TForm)
@@ -58,6 +58,7 @@ type
     { Private declarations }
     Profissional: TProfissional;
     Service: TProfissionalService;
+    GeocodingService: TGeocodingService;
     function FormatarTelefone(sTelefone: string): string;
     procedure estadoInicial;
     procedure estadoEdicao;
@@ -138,57 +139,18 @@ end;
 
 procedure TfrmProfissionaisRegistrar.btnLocalizarClick(Sender: TObject);
 var
-  Http: THttpClient;
-  Response: IHTTPResponse;
   JSON: TJSONArray;
-  sURL, sLat, sLng: string;
+  sLat, sLng: string;
 begin
-  if Trim(edtEndereco.Text) = '' then
-  begin
-    Application.MessageBox('Digite um endereço para localizar.', 'Atenção!', MB_OK + MB_ICONWARNING);
-    Exit;
-  end;
+  JSON := GeocodingService.Geocodificar(edtEndereco.Text);
+  sLat := JSON.Items[0].GetValue<string>('lat');
+  sLng := JSON.Items[0].GetValue<string>('lon');
 
-  Http := THTTPClient.Create;
-  try
-    try
-      Http.CustomHeaders['User-Agent'] := 'BeautyGoAdmin/1.0';
+  edtLatitude.Text  := sLat;
+  edtLongitude.Text := sLng;
 
-      sUrl := 'https://nominatim.openstreetmap.org/search?q=' +
-              TNetEncoding.URL.Encode(Trim(edtEndereco.Text)) +
-              '&format=json&limit=1';
-
-      Response := Http.Get(sURL);
-      if Response.StatusCode <> 200 then
-        Exit;
-
-      JSON := TJSONObject.ParseJSONValue(Response.ContentAsString()) as TJSONArray;
-      try
-        if (JSON <> nil) and (JSON.Count > 0) then
-        begin
-          sLat := JSON.Items[0].GetValue<string>('lat');
-          sLng := JSON.Items[0].GetValue<string>('lon');
-
-          edtLatitude.Text  := sLat;
-          edtLongitude.Text := sLng;
-
-          Profissional.Latitude  := StrToFloat(sLat.Replace('.', FormatSettings.DecimalSeparator));
-          Profissional.Longitude := StrToFloat(sLng.Replace('.', FormatSettings.DecimalSeparator));
-        end
-        else
-          Application.MessageBox('Endereço não encontrado. Tente ser mais específico.', 'Atenção', MB_OK + MB_ICONWARNING);
-      finally
-        JSON.Free;
-      end;
-    except
-      on E: Exception do
-      begin
-        Application.MessageBox(PChar('Erro ao buscar localização: ' + E.Message), 'Atenção!', MB_OK + MB_ICONWARNING);
-      end;
-    end;
-  finally
-    Http.Free;
-  end;
+  Profissional.Latitude  := StrToFloat(sLat.Replace('.', FormatSettings.DecimalSeparator));
+  Profissional.Longitude := StrToFloat(sLng.Replace('.', FormatSettings.DecimalSeparator));
 end;
 
 procedure TfrmProfissionaisRegistrar.btnPesquisarClick(Sender: TObject);
@@ -294,6 +256,7 @@ begin
   try
     Profissional.Free;
     Service.Free;
+    GeocodingService.Free;
   finally
     Action                    := caFree;
     frmProfissionaisRegistrar := nil;
@@ -302,8 +265,9 @@ end;
 
 procedure TfrmProfissionaisRegistrar.FormCreate(Sender: TObject);
 begin
-  Profissional := TProfissional.Create;
-  Service      := TProfissionalService.Create(dmConexao.FDConnection);
+  Profissional     := TProfissional.Create;
+  Service          := TProfissionalService.Create(dmConexao.FDConnection);
+  GeocodingService := TGeocodingService.Create;
 end;
 
 procedure TfrmProfissionaisRegistrar.FormShow(Sender: TObject);
