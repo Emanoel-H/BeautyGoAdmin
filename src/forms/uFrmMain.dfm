@@ -1,6 +1,7 @@
 object frmMain: TfrmMain
   Left = 0
   Top = 0
+  Align = alClient
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Tela Principal'
