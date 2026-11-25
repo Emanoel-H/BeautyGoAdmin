@@ -332,7 +332,6 @@ begin
               'telefone,                                 '+
               'ST_Y(localizacao::geometry) AS latitude,  '+
               'ST_X(localizacao::geometry) AS longitude, '+
-              'senha,                                    '+
               'raio_atendimento_km as raio               '+
               'FROM profissionais                        '+
               'WHERE 1=1                                 ';
