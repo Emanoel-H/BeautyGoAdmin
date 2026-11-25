@@ -9,12 +9,52 @@ type
 
     public
       function getEndereco(dLat, dLng: double): string;
+      function Geocodificar(sEndereco: string): TJSONArray;
   end;
 
 
 implementation
 
 { TGeocodingService }
+
+function TGeocodingService.Geocodificar(sEndereco: string): TJSONArray;
+var
+  Http: THttpClient;
+  Response: IHTTPResponse;
+  JSON: TJSONArray;
+  sURL: string;
+begin
+  if Trim(sEndereco) = '' then
+    raise Exception.Create('Digite um endereço para localizar.');
+
+  Http := THTTPClient.Create;
+  try
+    try
+      Http.CustomHeaders['User-Agent'] := 'BeautyGoAdmin/1.0';
+
+      sUrl := 'https://nominatim.openstreetmap.org/search?q=' +
+              TNetEncoding.URL.Encode(Trim(sEndereco)) +
+              '&format=json&limit=1';
+
+      Response := Http.Get(sURL);
+      if Response.StatusCode <> 200 then
+        Exit;
+
+      JSON := TJSONObject.ParseJSONValue(Response.ContentAsString()) as TJSONArray;
+      if (JSON <> nil) and (JSON.Count > 0) then
+        Result := JSON
+      else
+        raise Exception.Create('Endereço não encontrado. Tente ser mais específico.');
+    except
+      on E: Exception do
+      begin
+        raise Exception.Create(PChar('Erro ao buscar localização: ' + E.Message));
+      end;
+    end;
+  finally
+    Http.Free;
+  end;
+end;
 
 function TGeocodingService.getEndereco(dLat, dLng: double): string;
 var
