@@ -5,7 +5,7 @@ object frmMain: TfrmMain
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Tela Principal'
-  ClientHeight = 442
+  ClientHeight = 524
   ClientWidth = 628
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
