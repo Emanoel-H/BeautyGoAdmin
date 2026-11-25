@@ -112,6 +112,7 @@ begin
         Service.Excluir(ServicoOferecido);
         estadoInicial;
         limparCampos;
+        btnPesquisar.Click;
       except
         on E: Exception do
         begin
