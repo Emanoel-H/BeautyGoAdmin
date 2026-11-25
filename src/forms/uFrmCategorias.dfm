@@ -128,6 +128,9 @@ object frmCategoriasRegistrar: TfrmCategoriasRegistrar
     TabOrder = 1
     ExplicitWidth = 478
     ExplicitHeight = 195
+    DesignSize = (
+      484
+      204)
     object lblName: TLabel
       Left = 14
       Top = 14
@@ -165,6 +168,7 @@ object frmCategoriasRegistrar: TfrmCategoriasRegistrar
       Top = 33
       Width = 341
       Height = 23
+      Anchors = [akLeft, akTop, akRight]
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
       Font.Height = -12
@@ -180,6 +184,7 @@ object frmCategoriasRegistrar: TfrmCategoriasRegistrar
       Top = 80
       Width = 339
       Height = 89
+      Anchors = [akLeft, akTop, akRight]
       TabOrder = 1
     end
   end
