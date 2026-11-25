@@ -323,7 +323,7 @@ begin
     try
       Http.CustomHeaders['User-Agent'] := 'BeautyGoAdmin/1.0';
 
-      sUrl := 'http://nominatim.openstreetmap.org/reverse?&format=json'+
+      sUrl := 'https://nominatim.openstreetmap.org/reverse?&format=json'+
               '&lat='+FloatToStr(dLat, TFormatSettings.Invariant)+
               '&lon='+FloatToStr(dLng, TFormatSettings.Invariant);
 
