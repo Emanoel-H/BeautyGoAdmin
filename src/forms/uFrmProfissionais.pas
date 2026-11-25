@@ -269,6 +269,7 @@ begin
   btnPesquisar.Enabled := false;
   btnCancelar.Enabled  := true;
   btnConfirmar.Enabled := false;
+  btnServicos.Enabled  := true;
   pnPrincipal.Enabled  := false;
 end;
 
