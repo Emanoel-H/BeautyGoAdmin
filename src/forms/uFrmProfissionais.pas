@@ -303,6 +303,8 @@ end;
 procedure TfrmProfissionaisRegistrar.recebeProfissional(
   AProfissional: TProfissional);
 begin
+  edtSenha.Text := '';
+
   Profissional.Id                := AProfissional.Id;
   Profissional.Nome              := AProfissional.Nome;
   Profissional.Bio               := AProfissional.Bio;

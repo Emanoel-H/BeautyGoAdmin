@@ -4,8 +4,8 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Profissionais'
-  ClientHeight = 515
-  ClientWidth = 591
+  ClientHeight = 524
+  ClientWidth = 597
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -20,16 +20,18 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
   object pnPrincipal: TPanel
     Left = 0
     Top = 56
-    Width = 591
-    Height = 459
+    Width = 597
+    Height = 468
     Align = alClient
     Color = clBlack
     Enabled = False
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 591
+    ExplicitHeight = 459
     DesignSize = (
-      591
-      459)
+      597
+      468)
     object lblName: TLabel
       Left = 14
       Top = 14
@@ -177,7 +179,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
     object edtNome: TEdit
       Left = 14
       Top = 33
-      Width = 329
+      Width = 335
       Height = 23
       Anchors = [akLeft, akTop, akRight]
       Font.Charset = DEFAULT_CHARSET
@@ -189,19 +191,21 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
       MaxLength = 150
       ParentFont = False
       TabOrder = 0
+      ExplicitWidth = 329
     end
     object mmBio: TMemo
       Left = 14
       Top = 209
-      Width = 327
+      Width = 333
       Height = 89
       Anchors = [akLeft, akTop, akRight]
       TabOrder = 1
+      ExplicitWidth = 327
     end
     object edtEmail: TEdit
       Left = 14
       Top = 78
-      Width = 329
+      Width = 335
       Height = 23
       Anchors = [akLeft, akTop, akRight]
       Font.Charset = DEFAULT_CHARSET
@@ -213,11 +217,12 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
       MaxLength = 150
       ParentFont = False
       TabOrder = 2
+      ExplicitWidth = 329
     end
     object edtSenha: TEdit
       Left = 14
       Top = 123
-      Width = 108
+      Width = 114
       Height = 23
       Anchors = [akLeft, akTop, akRight]
       Font.Charset = DEFAULT_CHARSET
@@ -230,11 +235,12 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
       ParentFont = False
       PasswordChar = '*'
       TabOrder = 3
+      ExplicitWidth = 108
     end
     object edtTelefone: TEdit
       Left = 14
       Top = 166
-      Width = 127
+      Width = 133
       Height = 23
       Anchors = [akLeft, akTop, akRight]
       Font.Charset = DEFAULT_CHARSET
@@ -248,6 +254,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
       ParentFont = False
       TabOrder = 4
       OnChange = edtTelefoneChange
+      ExplicitWidth = 127
     end
     object cbxMostrarSenha: TCheckBox
       Left = 152
@@ -261,7 +268,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
     object edtEndereco: TEdit
       Left = 14
       Top = 326
-      Width = 431
+      Width = 437
       Height = 23
       Anchors = [akLeft, akTop, akRight]
       Font.Charset = DEFAULT_CHARSET
@@ -275,9 +282,10 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
       ParentFont = False
       TabOrder = 6
       OnChange = edtTelefoneChange
+      ExplicitWidth = 431
     end
     object btnLocalizar: TButton
-      Left = 457
+      Left = 463
       Top = 326
       Width = 65
       Height = 24
@@ -285,11 +293,12 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
       Caption = 'Localizar'
       TabOrder = 7
       OnClick = btnLocalizarClick
+      ExplicitLeft = 457
     end
     object edtLatitude: TEdit
       Left = 14
       Top = 377
-      Width = 127
+      Width = 133
       Height = 23
       Anchors = [akLeft, akTop, akRight]
       Font.Charset = DEFAULT_CHARSET
@@ -304,11 +313,12 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
       ReadOnly = True
       TabOrder = 8
       OnChange = edtTelefoneChange
+      ExplicitWidth = 127
     end
     object edtLongitude: TEdit
       Left = 182
       Top = 377
-      Width = 127
+      Width = 133
       Height = 23
       Anchors = [akLeft, akTop, akRight]
       Font.Charset = DEFAULT_CHARSET
@@ -323,20 +333,22 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
       ReadOnly = True
       TabOrder = 9
       OnChange = edtTelefoneChange
+      ExplicitWidth = 127
     end
     object nbRaioAtendimento: TNumberBox
       Left = 14
       Top = 426
-      Width = 109
+      Width = 115
       Height = 23
       Anchors = [akLeft, akTop, akRight]
       TabOrder = 10
+      ExplicitWidth = 109
     end
   end
   object tbCategorias: TToolBar
     Left = 0
     Top = 0
-    Width = 591
+    Width = 597
     Height = 56
     ButtonHeight = 62
     ButtonWidth = 67
@@ -351,6 +363,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
     ParentColor = False
     ParentFont = False
     TabOrder = 1
+    ExplicitWidth = 591
     object btnVoltar: TToolButton
       Left = 0
       Top = 0
