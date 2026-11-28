@@ -12,7 +12,7 @@ type
   public
     constructor Create(AConexao: TFDConnection);
 
-    procedure Inserir(AEntidade: TCategoria);
+    function Inserir(AEntidade: TCategoria): int64;
     procedure Atualizar(AEntidade: TCategoria);
     procedure Deletar(AEntidade: TCategoria);
     function BuscarPorCodigo(ACodigo: string): TCategoria;
@@ -144,7 +144,7 @@ begin
   end;
 end;
 
-procedure TCategoriaDAO.Inserir(AEntidade: TCategoria);
+function TCategoriaDAO.Inserir(AEntidade: TCategoria): int64;
 var
   sSQL: string;
   fSet: TFDQuery;
@@ -153,15 +153,18 @@ begin
   try
     fSet.Connection := FConexao;
 
-    sSQL := 'INSERT INTO categorias_servico(nome, descricao)'+
-            'VALUES(:nome, :descricao)';
+    sSQL := 'INSERT INTO categorias_servico(nome, descricao) '+
+            'VALUES(:nome, :descricao)                       '+
+            'RETURNING id                                    ';
 
     fSet.Close;
     fSet.SQL.Clear;
     fSet.SQL.Text := sSQL;
     fSet.ParamByName('nome').AsString      := AEntidade.Nome;
     fSet.ParamByName('descricao').AsString := AEntidade.Descricao;
-    fSet.ExecSQL;
+    fSet.Open();
+
+    Result := fSet.FieldByName('id').AsInteger;
   finally
     fSet.Close;
     fSet.Free;
