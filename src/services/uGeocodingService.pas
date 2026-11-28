@@ -35,19 +35,23 @@ begin
     try
       Http.CustomHeaders['User-Agent'] := 'BeautyGoAdmin/1.0';
 
-      sUrl := 'https://nominatim.openstreetmap.org/search?q=' +
-              TNetEncoding.URL.Encode(Trim(sEndereco)) +
-              '&format=json&limit=1';
+      sUrl := 'https://nominatim.openstreetmap.org/search?format=json&limit=1&q=' +
+              TNetEncoding.URL.Encode(Trim(sEndereco));
 
       Response := Http.Get(sURL);
       if Response.StatusCode <> 200 then
-        Exit;
+        raise Exception.CreateFmt('Serviço de localização indisponível (HTTP %d)', [Response.StatusCode]);
 
       JSON := TJSONObject.ParseJSONValue(Response.ContentAsString()) as TJSONArray;
-      if (JSON <> nil) and (JSON.Count > 0) then
-        Result := JSON
-      else
-        raise Exception.Create('Endereço não encontrado. Tente ser mais específico.');
+      try
+        if (JSON <> nil) and (JSON.Count > 0) then
+          raise Exception.Create('Endereço não encontrado. Tente ser mais específico.');
+
+        Result.Latitude  := StrToFloat(JSON.Items[0].GetValue<string>('lat'), TFormatSettings.Invariant);
+        Result.Longitude := StrToFloat(JSON.Items[0].GetValue<string>('lon'), TFormatSettings.Invariant);
+      finally
+        JSON.Free
+      end;
     except
       on E: Exception do
       begin
