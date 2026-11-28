@@ -25,3 +25,4 @@ OSXARM64/
 *.cfg
 *.res
 config.ini
+.env
