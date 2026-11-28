@@ -138,8 +138,6 @@ begin
 end;
 
 procedure TfrmProfissionaisRegistrar.btnLocalizarClick(Sender: TObject);
-var
-  sLat, sLng: string;
 begin
   try
     Coordenada := GeocodingService.Geocodificar(edtEndereco.Text);
