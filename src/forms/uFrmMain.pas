@@ -13,7 +13,6 @@ type
     Profissionais: TTabSheet;
     procedure FormShow(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure pcMainChange(Sender: TObject);
   private
     { Private declarations }
   public
