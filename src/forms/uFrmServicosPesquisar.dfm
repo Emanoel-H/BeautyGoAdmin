@@ -161,20 +161,6 @@ object frmServicosPesquisar: TfrmServicosPesquisar
       ParentColor = False
       ParentFont = False
     end
-    object sbCategoriasPesquisar: TSpeedButton
-      Left = 447
-      Top = 24
-      Width = 23
-      Height = 25
-      Hint = 'Categorias'
-      DisabledImageName = 'sbCategorias'
-      ImageIndex = 24
-      ImageName = 'search 72'
-      Images = dmConexao.VirtualImageList1
-      ParentShowHint = False
-      ShowHint = True
-      OnClick = sbCategoriasPesquisarClick
-    end
     object edtCodigo: TEdit
       Left = 6
       Top = 25

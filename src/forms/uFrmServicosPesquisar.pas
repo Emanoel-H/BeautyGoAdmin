@@ -28,7 +28,6 @@ type
     nbPreco: TNumberBox;
     lblCategorias: TLabel;
     lblPreco: TLabel;
-    sbCategoriasPesquisar: TSpeedButton;
     btnInserir: TToolButton;
     btnAtualizar: TToolButton;
     btnDeletar: TToolButton;
