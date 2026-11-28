@@ -47,10 +47,10 @@ begin
             'telefone = :telefone,                              '+
             'raio_atendimento_km = :raio,                       '+
             'localizacao = ST_MakePoint(:lng, :lat)::geography, '+
-            'endereco = :endereco,                              '+
+            'endereco = :endereco                               '+
 
             IfThen(AEntidade.Senha <> '',
-            'senha = crypt(:senha, gen_salt(''bf'')) ', '')+
+            ', senha = crypt(:senha, gen_salt(''bf'')) ', '')+
 
             'WHERE id = :id                                     ';
 
