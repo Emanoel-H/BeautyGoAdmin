@@ -241,15 +241,18 @@ begin
   try
     fGet.Connection := FConexao;
 
-    sSQL := 'SELECT id                                                           '+
-            'FROM servicos_oferecidos                                            '+
-            'WHERE profissional_id = '''+ AEntidade.ProfissionalId.ToString +''' '+
-            'AND categoria_id = '''+AEntidade.CategoriaId.ToString+'''           '+
-            'AND id <> '''+AEntidade.Id.ToString+''';                            ';
+    sSQL := 'SELECT id                                '+
+            'FROM servicos_oferecidos                 '+
+            'WHERE profissional_id = :profissional_id '+
+            'AND categoria_id = :categoria_id         '+
+            'AND id <> :id;                           ';
 
     fGet.Close;
     fGet.SQL.Clear;
     fGet.SQL.Text := sSQL;
+    fGet.ParamByName('profissional_id').AsInteger := AEntidade.ProfissionalId;
+    fGet.ParamByName('categoria_id').AsInteger := AEntidade.CategoriaId;
+    fGet.ParamByName('id').AsInteger := AEntidade.Id;
     fGet.Open;
 
     Result := not (fGet.IsEmpty);
