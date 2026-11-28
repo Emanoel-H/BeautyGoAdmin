@@ -88,7 +88,7 @@ begin
     raise Exception.Create('Informe a localização do Profissional!');
 
   if AProfissional.Id = 0 then
-    AProfissional.Id := ProfissionalDAO.Inserir(AProfissional)
+    AProfissional.Id := FDAO.Inserir(AProfissional)
   else
     FDAO.Atualizar(AProfissional);
 
