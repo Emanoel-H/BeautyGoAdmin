@@ -5,7 +5,7 @@ uses
   System.SysUtils, FireDAC.Comp.Client;
 type
   Repositorio<T: class> = interface
-    procedure Inserir(AEntidade: T);
+    function Inserir(AEntidade: T): int64;
     procedure Atualizar(AEntidade: T);
     procedure Deletar(AEntidade: T);
     function BuscarPorCodigo(ACodigo: string): T;
