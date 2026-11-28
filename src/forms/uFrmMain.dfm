@@ -1,12 +1,11 @@
 object frmMain: TfrmMain
   Left = 0
   Top = 0
-  Align = alClient
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Tela Principal'
-  ClientHeight = 524
-  ClientWidth = 628
+  ClientHeight = 580
+  ClientWidth = 646
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -20,14 +19,15 @@ object frmMain: TfrmMain
   object pcMain: TPageControl
     Left = 8
     Top = 8
-    Width = 612
-    Height = 417
+    Width = 630
+    Height = 564
     ActivePage = Profissionais
     TabOrder = 0
     object Categorias: TTabSheet
       Caption = 'Categorias'
     end
     object Profissionais: TTabSheet
+      AlignWithMargins = True
       Caption = 'Profissionais'
       ImageIndex = 1
     end
