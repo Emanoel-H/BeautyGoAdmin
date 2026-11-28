@@ -59,6 +59,7 @@ type
     Profissional: TProfissional;
     Service: TProfissionalService;
     GeocodingService: TGeocodingService;
+    Coordenada: TCoordenada;
     function FormatarTelefone(sTelefone: string): string;
     procedure estadoInicial;
     procedure estadoEdicao;
@@ -138,18 +139,22 @@ end;
 
 procedure TfrmProfissionaisRegistrar.btnLocalizarClick(Sender: TObject);
 var
-  JSON: TJSONArray;
   sLat, sLng: string;
 begin
-  JSON := GeocodingService.Geocodificar(edtEndereco.Text);
-  sLat := JSON.Items[0].GetValue<string>('lat');
-  sLng := JSON.Items[0].GetValue<string>('lon');
+  try
+    Coordenada := GeocodingService.Geocodificar(edtEndereco.Text);
+    Profissional.Latitude  := Coordenada.Latitude;
+    Profissional.Longitude := Coordenada.Longitude;
 
-  edtLatitude.Text  := sLat;
-  edtLongitude.Text := sLng;
+    edtLatitude.Text  := FloatToStr(Profissional.Latitude);
+    edtLongitude.Text := FloatToStr(Profissional.Longitude);
+  except
+    on E: Exception do
+    begin
+      Application.MessageBox(PChar(E.Message), 'Atenção!', MB_OK + MB_ICONWARNING)
+    end;
+  end;
 
-  Profissional.Latitude  := StrToFloat(sLat.Replace('.', FormatSettings.DecimalSeparator));
-  Profissional.Longitude := StrToFloat(sLng.Replace('.', FormatSettings.DecimalSeparator));
 end;
 
 procedure TfrmProfissionaisRegistrar.btnPesquisarClick(Sender: TObject);
