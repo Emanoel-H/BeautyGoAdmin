@@ -87,7 +87,7 @@ end;
 
 procedure TfrmServicosPesquisar.btnConfirmarClick(Sender: TObject);
 begin
-  ServicoOferecido.CategoriaId := dblCategorias.KeyValue;
+  ServicoOferecido.CategoriaId := StrToIntDef(VarToStr(dblCategorias.KeyValue), 0);
   ServicoOferecido.Preco       := nbPreco.ValueCurrency;
 
   try
