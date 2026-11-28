@@ -4,8 +4,8 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Profissionais'
-  ClientHeight = 524
-  ClientWidth = 597
+  ClientHeight = 515
+  ClientWidth = 591
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -20,18 +20,16 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
   object pnPrincipal: TPanel
     Left = 0
     Top = 56
-    Width = 597
-    Height = 468
+    Width = 591
+    Height = 459
     Align = alClient
     Color = clBlack
     Enabled = False
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 591
-    ExplicitHeight = 459
     DesignSize = (
-      597
-      468)
+      591
+      459)
     object lblName: TLabel
       Left = 14
       Top = 14
@@ -179,7 +177,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
     object edtNome: TEdit
       Left = 14
       Top = 33
-      Width = 341
+      Width = 329
       Height = 23
       Anchors = [akLeft, akTop, akRight]
       Font.Charset = DEFAULT_CHARSET
@@ -195,7 +193,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
     object mmBio: TMemo
       Left = 14
       Top = 209
-      Width = 339
+      Width = 327
       Height = 89
       Anchors = [akLeft, akTop, akRight]
       TabOrder = 1
@@ -203,7 +201,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
     object edtEmail: TEdit
       Left = 14
       Top = 78
-      Width = 341
+      Width = 329
       Height = 23
       Anchors = [akLeft, akTop, akRight]
       Font.Charset = DEFAULT_CHARSET
@@ -219,7 +217,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
     object edtSenha: TEdit
       Left = 14
       Top = 123
-      Width = 120
+      Width = 108
       Height = 23
       Anchors = [akLeft, akTop, akRight]
       Font.Charset = DEFAULT_CHARSET
@@ -236,7 +234,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
     object edtTelefone: TEdit
       Left = 14
       Top = 166
-      Width = 139
+      Width = 127
       Height = 23
       Anchors = [akLeft, akTop, akRight]
       Font.Charset = DEFAULT_CHARSET
@@ -263,7 +261,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
     object edtEndereco: TEdit
       Left = 14
       Top = 326
-      Width = 443
+      Width = 431
       Height = 23
       Anchors = [akLeft, akTop, akRight]
       Font.Charset = DEFAULT_CHARSET
@@ -279,7 +277,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
       OnChange = edtTelefoneChange
     end
     object btnLocalizar: TButton
-      Left = 469
+      Left = 457
       Top = 326
       Width = 65
       Height = 24
@@ -291,7 +289,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
     object edtLatitude: TEdit
       Left = 14
       Top = 377
-      Width = 139
+      Width = 127
       Height = 23
       Anchors = [akLeft, akTop, akRight]
       Font.Charset = DEFAULT_CHARSET
@@ -310,7 +308,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
     object edtLongitude: TEdit
       Left = 182
       Top = 377
-      Width = 139
+      Width = 127
       Height = 23
       Anchors = [akLeft, akTop, akRight]
       Font.Charset = DEFAULT_CHARSET
@@ -329,7 +327,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
     object nbRaioAtendimento: TNumberBox
       Left = 14
       Top = 426
-      Width = 121
+      Width = 109
       Height = 23
       Anchors = [akLeft, akTop, akRight]
       TabOrder = 10
@@ -338,7 +336,7 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
   object tbCategorias: TToolBar
     Left = 0
     Top = 0
-    Width = 597
+    Width = 591
     Height = 56
     ButtonHeight = 62
     ButtonWidth = 67
@@ -353,7 +351,6 @@ object frmProfissionaisRegistrar: TfrmProfissionaisRegistrar
     ParentColor = False
     ParentFont = False
     TabOrder = 1
-    ExplicitWidth = 591
     object btnVoltar: TToolButton
       Left = 0
       Top = 0

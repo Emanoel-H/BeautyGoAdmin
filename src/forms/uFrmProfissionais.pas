@@ -319,7 +319,16 @@ begin
   edtLongitude.Text            := FloatToStr(Profissional.Longitude).Replace('.', FormatSettings.DecimalSeparator);
   edtLatitude.Text             := FloatToStr(Profissional.Latitude).Replace('.', FormatSettings.DecimalSeparator);
   nbRaioAtendimento.ValueFloat := Profissional.RaioAtendimentoKm;
-  edtEndereco.Text             := GeocodingService.getEndereco(Profissional.Latitude, Profissional.Longitude);
+
+  try
+    edtEndereco.Text := GeocodingService.getEndereco(Profissional.Latitude, Profissional.Longitude);
+  except
+    on E: Exception do
+    begin
+      edtEndereco.Text := '';
+      Application.MessageBox(PChar(E.Message), 'Atenção', MB_OK + MB_ICONWARNING);
+    end;
+  end;
 end;
 
 end.
