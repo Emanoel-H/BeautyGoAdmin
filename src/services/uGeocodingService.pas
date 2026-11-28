@@ -4,20 +4,23 @@ interface
 uses
   System.Net.HttpClient, System.JSON, System.NetEncoding, System.StrUtils, System.SysUtils;
 type
+  TCoordenada = record
+    Latitude, Longitude: Double;
+  end;
+type
   TGeocodingService = class
     private
 
     public
       function getEndereco(dLat, dLng: double): string;
-      function Geocodificar(sEndereco: string): TJSONArray;
+      function Geocodificar(sEndereco: string): TCoordenada;
   end;
-
 
 implementation
 
 { TGeocodingService }
 
-function TGeocodingService.Geocodificar(sEndereco: string): TJSONArray;
+function TGeocodingService.Geocodificar(sEndereco: string): TCoordenada;
 var
   Http: THttpClient;
   Response: IHTTPResponse;
