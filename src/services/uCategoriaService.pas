@@ -11,7 +11,7 @@ type
       constructor Create(AConexao: TFDConnection);
       destructor Destroy; override;
 
-      procedure Salvar(ACategoria: TCategoria);
+      function Salvar(ACategoria: TCategoria): int64;
       procedure Excluir(ACategoria: TCategoria);
       function Listar(ACategoria: TCategoria): TFDQuery;
   end;
@@ -44,15 +44,17 @@ begin
   Result := FDAO.Listar(ACategoria);
 end;
 
-procedure TCategoriaService.Salvar(ACategoria: TCategoria);
+function TCategoriaService.Salvar(ACategoria: TCategoria): int64;
 begin
   if ACategoria.Nome = '' then
     raise Exception.Create('A Categoria deve possuir um nome!');
 
   if ACategoria.Id = 0 then
-    FDAO.Inserir(ACategoria)
+    ACategoria.Id := FDAO.Inserir(ACategoria)
   else
     FDAO.Atualizar(ACategoria);
+
+  Result := ACategoria.Id;
 end;
 
 end.
